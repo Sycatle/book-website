@@ -1,0 +1,52 @@
+/* --- SETTING UP UTILS --- */
+
+/* IMPORTING VARIABLES */
+@import "./utils/variables";
+/* END VARIABLES */
+
+/* --- END UTILS --- */
+
+
+/* --- SETTING UP LAYOUTS --- */
+
+/* IMPORTING NAV */
+@import "./layouts/nav";
+/* END NAV */
+
+/* --- SETTING UP LAYOUTS --- */
+
+
+/* --- SETTING UP BASE --- */
+
+/* IMPORTING BASE */
+@import "./base/base";
+/* END BASE */
+
+/* --- SETTING UP BASE --- */
+
+
+/* --- SETTING UP VENDORS --- */
+
+/* IMPORTING FLICKITY */
+@import "./vendors/flickity";
+/* END FLICKITY */
+
+/* --- SETTING UP VENDORS --- */
+
+
+/* --- SETTING UP PAGES --- */
+
+/* IMPORTING USER-PROFILE */
+@import "./pages/user-profile";
+/* END USER-PROFILE */
+
+/* --- SETTING UP PAGES --- */
+
+
+/* --- SETTING UP THEMES --- */
+
+/* IMPORTING THEMES */
+@import "./themes/themes";
+/* END THEMES */
+
+/* --- SETTING UP THEMES --- */

@@ -1,0 +1,23 @@
+.carousel-cell {
+  width: 28%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  margin-right: 10px;
+  background: rgba(180, 180, 180, 0.884);
+  border-radius: 5px;
+}
+
+.carousel-cell.is-selected {
+  background: #eeaa22;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.carousel-cell::before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+/*# sourceMappingURL=flickity.css.map */

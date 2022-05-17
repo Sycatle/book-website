@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="550"
+   height="200"
+   viewBox="0 0 145.52083 52.916667"
+   version="1.1"
+   id="svg8378"
+   sodipodi:docname="flying_book_text_light_mode.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8380"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     height="512px"
+     inkscape:zoom="0.8825"
+     inkscape:cx="655.52408"
+     inkscape:cy="101.41643"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer3"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     width="256px" />
+  <defs
+     id="defs8375">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient56826">
+      <stop
+         style="stop-color:#1a1a1a;stop-opacity:1"
+         offset="0"
+         id="stop56822" />
+      <stop
+         style="stop-color:#333333;stop-opacity:1"
+         offset="1"
+         id="stop56824" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient47834">
+      <stop
+         style="stop-color:#f21106;stop-opacity:1"
+         offset="0"
+         id="stop47830" />
+      <stop
+         style="stop-color:#f28006;stop-opacity:1"
+         offset="1"
+         id="stop47832" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient47834"
+       id="linearGradient48488"
+       x1="228.22937"
+       y1="182.21123"
+       x2="235.89941"
+       y2="182.21123"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient56826"
+       id="linearGradient58883"
+       gradientUnits="userSpaceOnUse"
+       x1="126.56405"
+       y1="196.18958"
+       x2="262.29529"
+       y2="196.18958" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer11"
+     inkscape:label="Light Mode"
+     style="display:inline">
+    <g
+       inkscape:groupmode="layer"
+       id="layer13"
+       inkscape:label="Light Background"
+       style="display:none">
+      <path
+         id="rect57061"
+         style="opacity:1;fill:#ffffff;stroke-width:0.79375;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+         d="M 0,0 H 211.66667 V 52.916667 H 0 Z"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer3"
+       inkscape:label="Title"
+       style="display:inline">
+      <g
+         id="g959"
+         transform="translate(-64.591285,0.64776606)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:50.8px;line-height:1.25;font-family:sans-serif;letter-spacing:-2.11667px;fill:url(#linearGradient58883);fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="126.21679"
+           y="214.3342"
+           id="text38416"
+           transform="translate(-57.077967,-169.73124)"><tspan
+             sodipodi:role="line"
+             id="tspan38414"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;font-family:'Book Antiqua';-inkscape-font-specification:'Book Antiqua';fill:url(#linearGradient58883);fill-opacity:1;stroke-width:0.264583"
+             x="126.21679"
+             y="214.3342">bebl.io</tspan></text>
+        <path
+           id="path43241"
+           style="opacity:1;fill:url(#linearGradient48488);fill-opacity:1;stroke-width:1.27834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+           d="m 228.22937,176.07969 7.67005,6.13154 -7.67005,6.13154 z"
+           sodipodi:nodetypes="cccc"
+           transform="translate(-57.077967,-169.73124)" />
+      </g>
+    </g>
+  </g>
+</svg>

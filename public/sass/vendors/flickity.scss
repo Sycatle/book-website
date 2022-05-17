@@ -1,0 +1,18 @@
+.carousel-cell {
+    width: 28%;
+    transform: scale(1);
+    margin-right: 10px;
+    background: rgba(180, 180, 180, 0.884);
+    border-radius: 5px;
+    &.is-selected {
+        background: rgb(238, 170, 34);
+        transform: scale(1.2);
+    }
+    &::before {
+        display: block; 
+        text-align: center;
+        line-height: 200px;
+        font-size: 80px;
+        color: white;
+    }
+}

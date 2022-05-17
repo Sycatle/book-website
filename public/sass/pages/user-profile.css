@@ -1,0 +1,113 @@
+#thumb-avatar {
+  border: solid 2px white;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+#user-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#user-profile #user-banner {
+  height: 50%;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  border: 2px solid white;
+}
+
+#user-profile #user-banner img {
+  z-index: -1;
+  width: 100%;
+}
+
+#user-profile #user-banner:hover {
+  border-radius: 0px;
+  -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.832);
+          box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.832);
+}
+
+#user-profile #user-avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  border: 2px solid white;
+}
+
+#user-profile #user-avatar:hover {
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.832);
+          box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.832);
+}
+
+#user-profile #user-names {
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+
+#user-profile #user-names .firstname {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 32px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#user-profile #user-names .username {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #c69733;
+  font-size: 16px;
+}
+
+#user-profile #biography {
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+
+#user-profile #join-date {
+  margin-left: auto;
+  margin-right: auto;
+  color: gray;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+/*# sourceMappingURL=user-profile.css.map */

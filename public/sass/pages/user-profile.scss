@@ -1,0 +1,78 @@
+#thumb-avatar {
+    border: solid 2px white;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+#user-profile {
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    #user-banner {
+        height: 50%;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        transition-duration: 500ms;
+        border: 2px solid white;
+        img {
+            z-index: -1;
+            width: 100%;
+        }
+        &:hover {
+            border-radius: 0px;
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.832);
+        }
+    }
+    #user-avatar {
+        display: flex;
+        height: 125px;
+        width: 125px;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        transition-duration: 500ms;
+        transform: translateY(-50px);
+        border: 2px solid white;
+        &:hover {
+            transform: translateY(-40px);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.832);
+        }
+    }
+    #user-names {
+        margin-left: auto;
+        margin-right: auto;
+        transform: translateY(-30px);
+
+        .firstname {
+            display: flex;
+            flex-direction: column;
+            font-size: 32px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .username {
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            flex-direction: column;
+            color: rgb(198, 151, 51);
+            font-size: 16px;
+        }
+    }
+    #biography{
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        transform: translateY(-30px);
+    }
+    #join-date{
+        margin-left: auto;
+        margin-right: auto;
+        color: gray;
+        transform: translateY(-30px);
+    }
+}

@@ -1,0 +1,95 @@
+/* 'position.css' */
+
+body {
+    display: flex;
+    box-sizing: border-box;
+}
+
+#banner {
+    height: 25vh;
+}
+
+.bottom {
+    margin-top: auto;
+}
+.right {
+    margin-left: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.content-wrapper {
+    padding: 5vh 0 5vh 0;
+}
+
+.quotation,
+.quotation h1,
+.quotation p {
+    color: white !important;
+    font-size: 25px !important;
+}
+
+#post-section .nav-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px !important;
+    border: none;
+    cursor: pointer;
+    transition-duration: 200ms;
+    height: 185px;
+}
+
+#post-section .nav-link:hover,
+.nav-link.active {
+    background-color: rgba(75, 173, 208, 0.214) !important;
+    box-shadow: 0 0 20px -12px rgba(0, 0, 0, 0.4);
+}
+
+#post-section .nav-link.active {
+    font-weight: bold;
+    background-color: rgba(75, 173, 208, 0.65) !important;
+    transform: scale(1.025);
+    z-index: 10;
+}
+
+#book-section .card,
+#author-section .card,
+#user-section .card {
+    flex-direction: row;
+}
+
+#notification-wrapper {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding: 25px 50px 50px 50px;
+    right: 50px;
+    bottom: 50px;
+    height: 100px;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+#feed-section a {
+    text-decoration: none;
+    color: white;
+}
+
+.notification-content {
+    font-size: 15px !important;
+}
+
+.fade {
+    transition-duration: 200ms !important;
+}
+
+.show {
+    display: block !important;
+}

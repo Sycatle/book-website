@@ -1,0 +1,121 @@
+/* 'position.css' */
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#banner {
+  height: 25vh;
+}
+
+.bottom {
+  margin-top: auto;
+}
+
+.right {
+  margin-left: auto;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-x: hidden;
+}
+
+.content-wrapper {
+  padding: 5vh 0 5vh 0;
+}
+
+.quotation,
+.quotation h1,
+.quotation p {
+  color: white !important;
+  font-size: 25px !important;
+}
+
+#post-section .nav-link {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 15px !important;
+  border: none;
+  cursor: pointer;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  height: 185px;
+}
+
+#post-section .nav-link:hover,
+.nav-link.active {
+  background-color: rgba(75, 173, 208, 0.214) !important;
+  -webkit-box-shadow: 0 0 20px -12px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 20px -12px rgba(0, 0, 0, 0.4);
+}
+
+#post-section .nav-link.active {
+  font-weight: bold;
+  background-color: rgba(75, 173, 208, 0.65) !important;
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+  z-index: 10;
+}
+
+#book-section .card,
+#author-section .card,
+#user-section .card {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#notification-wrapper {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding: 25px 50px 50px 50px;
+  right: 50px;
+  bottom: 50px;
+  height: 100px;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  cursor: pointer;
+}
+
+#feed-section a {
+  text-decoration: none;
+  color: white;
+}
+
+.notification-content {
+  font-size: 15px !important;
+}
+
+.fade {
+  -webkit-transition-duration: 200ms !important;
+          transition-duration: 200ms !important;
+}
+
+.show {
+  display: block !important;
+}
+/*# sourceMappingURL=base.css.map */
