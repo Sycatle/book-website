@@ -10,6 +10,7 @@
       -ms-flex-align: center;
           align-items: center;
   border-right: 1px solid black;
+  height: 720px;
 }
 
 #leftbar .left-items {
@@ -57,16 +58,26 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  border-bottom: 1px solid black;
 }
 
 #mainbar .main-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+#mainbar a {
+  color: white;
+  text-decoration: none;
 }
 
 .slot {

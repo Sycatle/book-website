@@ -10,10 +10,10 @@ ob_start();
 		<?php } ?>
 	</script>
 
-	<div id="banner" style="background-image: url('./public/img/banner.png')">
+<!-- 	<div id="banner" style="background-image: url('./public/img/banner.png')">
 		<span>Je suis un élément de la bannière</span>
 		<span>Je suis le deuxième élément de la bannière</span>
-	</div>
+	</div> -->
 
 	<div id="content-wrapper" class="container py-5">
 		<div id="feed-section">

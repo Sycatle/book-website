@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     border-right: 1px solid black;
-
+    height: 720px;
     & .left-items {
         margin-top: 5px;
         display: flex;
@@ -14,7 +14,7 @@
         }
     }
 
-    & .nav-text {
+    & .nav-text { 
         margin-left: 10px;
     }
 
@@ -38,12 +38,16 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    border-bottom: 1px solid black;
-
     .main-items {
+        display: flex;
         flex-direction: row;
+        align-items: center;
         margin-top: 3px;
         margin-bottom: 3px;
+    }
+    a {
+        color: white;
+        text-decoration: none;
     }
 }
 

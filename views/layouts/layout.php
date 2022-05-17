@@ -38,8 +38,7 @@
   <?php if($_SESSION['id'] != null)
     $user = new \sycatle\beblio\models\objects\User($_SESSION['id']); ?>
 
-  <nav id="leftbar" class="col-lg-2 col-sm-1 col-xs-1">
-    <!-- NAVBAR BRAND -->
+<!--   <nav id="leftbar" class="col-lg-2 col-sm-1 col-xs-1">
     <span class="navbar-brand">
       <img
         class="brand-image mx-auto"
@@ -53,7 +52,6 @@
       />
     </span>
 
-    <!-- NAV BAR ITEMS -->
     <div class="left-items">
       <a class="slot" title="Acceuil" href=".">
         <img src="./public/img/home.svg" height="25px" />
@@ -88,8 +86,9 @@
         <span class="nav-text">Mode sombre</span>
       </a>
     </div>
-  </nav>
-    <div class="main-content col-lg-10 col-sm-11 col-sm-11">
-  <?php include("header.php"); ?>
-  <?= $content ?>
+  </nav> -->
+    <div class="main-content container-fluid">
+      <?php include("header.php"); ?>
+      <?= $content ?>
+    </div>
 </html>

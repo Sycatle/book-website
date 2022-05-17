@@ -3,10 +3,10 @@ $pageTitle = "Créer du contenu";
 ob_start(); 
 ?>
 
-<div id="banner" style="background-image: url('./public/img/banner_6.jpg'); background-position: 150px">
+<!-- <div id="banner" style="background-image: url('./public/img/banner_6.jpg'); background-position: 150px">
     <span>Je suis un élément de la bannière</span>
     <span>Je suis le deuxième élément de la bannière</span>
-</div>
+</div> -->
 
 <section id="post-section" class="container">
 
