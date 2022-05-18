@@ -1,6 +1,12 @@
 ﻿<?php
 
-// $allowedRoutes = ["book", "author", "quote", "category", "user", "admin", "error"];
+/* require('./src/Router.php');
+$router = new \sycatle\beblio\Router(
+    $_GET['r'] != null || $_GET['r'] != "" ? 
+        $_GET['r'] 
+    :
+        'main'
+); */
 
 // Le fichier index.php est utilisé ici comme routeur, il appelle des contrôleurs spécifiques aux demandes de l'utilisateur.
 if (isset($_GET["r"])) {

@@ -1,5 +1,5 @@
 <?php
-namespace sycatle\beblio\models;
+namespace sycatle\beblio;
 require_once("./models/managers/DataManager.php");
 require_once("./models/managers/BookManager.php");
 require_once("./models/managers/UserManager.php");
