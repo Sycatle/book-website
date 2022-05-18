@@ -1,11 +1,11 @@
 <?php 
-namespace sycatle\beblio\models\managers;
-require_once("./models/Manager.php");
+namespace sycatle\beblio\managers;
+require_once("./src/Manager.php");
 
-class CategoryManager extends \sycatle\beblio\models\Manager {
+class CategoryManager extends \sycatle\beblio\Manager {
 
     public function getCategory($id) {
-        return new \sycatle\beblio\models\objects\Category($id);
+        return new \sycatle\beblio\objects\Category($id);
     }
 
     function registerCategory($title, $slug, $category, $description, $summary, $parution, $category_id, $book_cover) {

@@ -1,11 +1,11 @@
 <?php 
-namespace sycatle\beblio\models\managers;
-require_once("./models/Manager.php");
+namespace sycatle\beblio\managers;
+require_once("./src/Manager.php");
 
-class QuoteManager extends \sycatle\beblio\models\Manager {
+class QuoteManager extends \sycatle\beblio\Manager {
 
     public function getQuote($id) {
-        return new \sycatle\beblio\models\objects\Quote($id);
+        return new \sycatle\beblio\objects\Quote($id);
     }
 
     function registerQuote($quote_text, $quote_slug, $quote_author_id, $quote_category_id) {

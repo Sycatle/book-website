@@ -2,12 +2,12 @@
 
 session_start();
 
-require('./models/Manager.php');
-$manager = new \sycatle\beblio\models\Manager();
+require('./src/Manager.php');
+$manager = new \sycatle\beblio\Manager();
 
 $books = $manager->getBookManager()->getBooks();
 
-require("./views/pages/explore.php");
+require("./src/templates/pages/explore.php");
 
 /* if(isset($_SESSION["user"])) {
 	require_once("./views/dashboard.php");

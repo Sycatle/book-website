@@ -1,8 +1,8 @@
 <?php 
-namespace sycatle\beblio\models\managers;
-require_once("./models/Manager.php");
+namespace sycatle\beblio\managers;
+require_once("./src/Manager.php");
 
-class BookManager extends \sycatle\beblio\models\Manager {
+class BookManager extends \sycatle\beblio\Manager {
 
     public function getBooks(){
         $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM books ORDER BY book_title");
@@ -33,7 +33,7 @@ class BookManager extends \sycatle\beblio\models\Manager {
     }
 
     public function getBook($id) {
-        return new \sycatle\beblio\models\objects\Book($id);
+        return new \sycatle\beblio\objects\Book($id);
     }
 
     function registerBook($title, $slug, $author_id, $description, $summary, $parution, $category_id, $book_cover) {

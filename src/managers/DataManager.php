@@ -1,8 +1,8 @@
 <?php 
-namespace sycatle\beblio\models\managers;
-require_once("./models/Manager.php");
+namespace sycatle\beblio\managers;
+require_once("./src/Manager.php");
 
-class DataManager extends \sycatle\beblio\models\Manager {
+class DataManager extends \sycatle\beblio\Manager {
     private String $databaseHost = "localhost";
     private String $databaseName = "tp_login";
     private String $databaseUser = "root";

@@ -1,5 +1,5 @@
 <?php
-namespace sycatle\beblio\models\objects;
+namespace sycatle\beblio\entity;
 
 class User{
     private int $id;
@@ -17,7 +17,7 @@ class User{
 
     function __construct(int $id){
         $this->id = $id;
-        $this->manager = new \sycatle\beblio\models\Manager();
+        $this->manager = new \sycatle\beblio\Manager();
 
         $this->username = $this->getData("user_username");
         $this->firstname = $this->getData("user_firstname");

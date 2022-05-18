@@ -2,7 +2,7 @@
 
 session_start();
 
-require('./models/Manager.php');
-$manager = new \sycatle\beblio\models\Manager();
+require('./src/Manager.php');
+$manager = new \sycatle\beblio\Manager();
 
-require("./views/pages/home.php");
+require("./src/templates/pages/home.php");

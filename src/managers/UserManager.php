@@ -1,9 +1,9 @@
 <?php 
-namespace sycatle\beblio\models\managers;
-require_once("./models/Manager.php");
-require_once("./models/objects/User.php");
+namespace sycatle\beblio\managers;
+require_once("./src/Manager.php");
+require_once("./src/entity/User.php");
 
-class UserManager extends \sycatle\beblio\models\Manager {
+class UserManager extends \sycatle\beblio\Manager {
     private $user;
 
     public function getUsers(){
@@ -15,7 +15,7 @@ class UserManager extends \sycatle\beblio\models\Manager {
     }
 
     public function createUser($id) {
-        $user = new \sycatle\beblio\models\objects\User($id);
+        $user = new \sycatle\beblio\objects\User($id);
         return $user;
     }
 
@@ -28,7 +28,7 @@ class UserManager extends \sycatle\beblio\models\Manager {
         $statement->execute(array(':user_username'=>$username));
         $row=$statement->fetch(\PDO::FETCH_ASSOC);
 
-        $user = new \sycatle\beblio\models\objects\User($row['user_id']);
+        $user = new \sycatle\beblio\objects\User($row['user_id']);
         return $user;
     }
     

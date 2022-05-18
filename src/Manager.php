@@ -1,35 +1,35 @@
 <?php
 namespace sycatle\beblio;
-require_once("./models/managers/DataManager.php");
-require_once("./models/managers/BookManager.php");
-require_once("./models/managers/UserManager.php");
-require_once("./models/managers/AuthorManager.php");
-require_once("./models/managers/CategoryManager.php");
-require_once("./models/managers/QuoteManager.php");
+require_once("./src/managers/DataManager.php");
+require_once("./src/managers/BookManager.php");
+require_once("./src/managers/UserManager.php");
+require_once("./src/managers/AuthorManager.php");
+require_once("./src/managers/CategoryManager.php");
+require_once("./src/managers/QuoteManager.php");
 
 class Manager{
     public function getDataManager() {
-        return new \sycatle\beblio\models\managers\DataManager();
+        return new \sycatle\beblio\managers\DataManager();
     }
 
     public function getUserManager() {
-        return new \sycatle\beblio\models\managers\UserManager();
+        return new \sycatle\beblio\managers\UserManager();
     }
 
     public function getBookManager() {
-        return new \sycatle\beblio\models\managers\BookManager();
+        return new \sycatle\beblio\managers\BookManager();
     }
 
     public function getAuthorManager() {
-        return new \sycatle\beblio\models\managers\AuthorManager();
+        return new \sycatle\beblio\managers\AuthorManager();
     }
 
     public function getCategoryManager() {
-        return new \sycatle\beblio\models\managers\CategoryManager();
+        return new \sycatle\beblio\managers\CategoryManager();
     }
 
     public function getQuoteManager() {
-        return new \sycatle\beblio\models\managers\QuoteManager();
+        return new \sycatle\beblio\managers\QuoteManager();
     }
 
     public function encrypt(String $data) : String{

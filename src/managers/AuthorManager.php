@@ -1,8 +1,8 @@
 <?php 
-namespace sycatle\beblio\models\managers;
-require_once("./models/Manager.php");
+namespace sycatle\beblio\managers;
+require_once("./src/Manager.php");
 
-class AuthorManager extends \sycatle\beblio\models\Manager {
+class AuthorManager extends \sycatle\beblio\Manager {
 
     public function getAuthors(){
         $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors ORDER BY author_name");
@@ -26,7 +26,7 @@ class AuthorManager extends \sycatle\beblio\models\Manager {
     }
 
     public function getAuthor($id) {
-        return new \sycatle\beblio\models\objects\Author($id);
+        return new \sycatle\beblio\objects\Author($id);
     }
 
     function registerAuthor($author_name, $author_name_slug, $author_birth, $author_gender, $author_description, $author_biography, $author_picture) {

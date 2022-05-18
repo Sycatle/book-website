@@ -1,5 +1,5 @@
 <?php
-namespace sycatle\beblio\models\objects;
+namespace sycatle\beblio\entity;
 
 class Post {
     

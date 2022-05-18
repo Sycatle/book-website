@@ -2,7 +2,7 @@
 
 /* -- Future optimisation du routeur. --
 
-require('./src/Router.php');
+require('./src/controllers/Router.php');
 $router = new \sycatle\beblio\Router(
     $_GET['r'] != null || $_GET['r'] != "" ? 
         $_GET['r'] 
@@ -10,31 +10,32 @@ $router = new \sycatle\beblio\Router(
         'main'
 ); */
 
+
 // -- Routeur actuel, à optimiser !
 
 $getter_r = $_GET['r'];
 if (isset($getter_r)) {
     switch ($getter_r){
         case 'connect':
-            require("./src/ConnectController.php");
+            require("./src/controllers/ConnectController.php");
             exit();
         case 'explore':
-            require("./src/ExploreController.php");
+            require("./src/controllers/ExploreController.php");
             exit();
         case 'post':
-            require("./src/PostController.php");
+            require("./src/controllers/PostController.php");
             exit();
         case 'library':
-            require("./src/PostController.php");
+            require("./src/controllers/PostController.php");
             exit();
         case 'settings':
-            require("./src/SettingsController.php");
+            require("./src/controllers/SettingsController.php");
             exit();
         case 'admin':
-            require("./src/AdminController.php");
+            require("./src/controllers/AdminController.php");
             exit();
         case 'disconnect':
-            require("./src/DisconnectController.php");
+            require("./src/controllers/DisconnectController.php");
             exit();
         default:
             header("Location: ./?error=404");
@@ -44,21 +45,21 @@ if (isset($getter_r)) {
 /* à OPTIMISER AUSSI.*/
 
 } else if (isset($_GET["book"])) {
-    require("./src/BookController.php");
+    require("./src/controllers/BookController.php");
 } else if (isset($_GET["author"])) {
-    require("./src/AuthorController.php");
+    require("./src/controllers/AuthorController.php");
 } else if (isset($_GET["quote"])) {
-    require("./src/QuoteController.php");
+    require("./src/controllers/QuoteController.php");
 } else if (isset($_GET["category"])) {
-    require("./src/CategoryController.php");
+    require("./src/controllers/CategoryController.php");
 } else if (isset($_GET["user"])) {
-    require("./src/UserController.php");
+    require("./src/controllers/UserController.php");
 } else if (isset($_GET["admin"])) {
-    require("./src/AdminController.php");
+    require("./src/controllers/AdminController.php");
 } else if (isset($_GET["error"])) {
-    require("./src/ErrorController.php");
+    require("./src/controllers/ErrorController.php");
 } else {
-    require("./src/home.php"); 
+    require("./src/controllers/HomeController.php"); 
 }
 
 
@@ -66,18 +67,18 @@ if (isset($getter_r)) {
 /* -- ANCIEN ROUTEUR TRèS MOCHE
 
     if ($_GET["r"] == "connect") { // Appelle le contrôleur "Connect" afin d'afficher la page à l'utilisateur.
-        require("./src/ConnectController.php");
+        require("./src/controllers/ConnectController.php");
     } else if ($_GET["r"] == "explore") { // Appelle le contrôleur "Post" afin d'afficher la page à l'utilisateur.
-        require("./src/ExploreController.php");
+        require("./src/controllers/ExploreController.php");
     } else if ($_GET["r"] == "post") { // Appelle le contrôleur "Post" afin d'afficher la page à l'utilisateur.
-        require("./src/PostController.php");
+        require("./src/controllers/PostController.php");
     } else if ($_GET["r"] == "library") { // Appelle le contrôleur "Post" afin d'afficher la page à l'utilisateur.
-        require("./src/LibraryController.php");
+        require("./src/controllers/LibraryController.php");
     } else if ($_GET["r"] == "settings") { // Appelle le contrôleur "Post" afin d'afficher la page à l'utilisateur.
-        require("./src/SettingsController.php");
+        require("./src/controllers/SettingsController.php");
     } else if ($_GET["r"] == "admin") { // Appelle le contrôleur "Post" afin d'afficher la page à l'utilisateur.
-        require("./src/AdminController.php");
+        require("./src/controllers/AdminController.php");
     } else if ($_GET["r"] == "disconnect") { // Appelle le contrôleur "Disconnect" afin de deconnecter page à l'utilisateur.
-        require("./src/DisconnectController.php");    
+        require("./src/controllers/DisconnectController.php");    
     }
 */
