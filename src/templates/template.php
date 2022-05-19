@@ -35,10 +35,12 @@
     <!-- STYLE.CSS END -->
   </head>
   
-  <div class="main-content container-fluid row">
+  <div class="main-content container-fluid">
     <?php include("layouts/header.php"); ?>
-    <div class="col-lg-2 col-sm-1 col-xs-1 d-flex"><?php include("layouts/navbar.php"); ?></div>
-    <div class="col-lg-10 col-sm-11 col-xs-11"><?= $content ?></div>
+    <div id="page-content" class="d-flex flex-row">
+      <nav id="leftbar" class="col-lg-2 col-sm-1 col-xs-1 d-flex"><?php include("layouts/navbar.php"); ?></nav>
+      <div class="col-lg-10 col-sm-11 col-xs-11"><?= $content ?></div>
+    </div>
   </div>
 </html>
 
