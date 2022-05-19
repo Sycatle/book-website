@@ -5,7 +5,7 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="./public/img/light/brand_icon.svg"
+      href="./assets/img/light/brand_icon.svg"
     />
 
     <!-- BOOTSTRAP START -->
@@ -36,7 +36,8 @@
   </head>
   
   <div class="main-content container-fluid">
-    <?php include("layouts/header.php"); ?>
+    <?php include("layouts/navbar.php");
+    include("layouts/header.php");?>
     <?= $content ?>
   </div>
 </html>
