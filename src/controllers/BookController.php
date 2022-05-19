@@ -2,7 +2,7 @@
 session_start();
 
 require("./models/Manager.php");
-$manager = new \sycatle\beblio\models\Manager();
+$manager = new \sycatle\beblio\Manager();
 $bookManager = $manager->getBookManager();
 
 if (isset($_GET['book'])) {

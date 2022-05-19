@@ -38,8 +38,15 @@
   <div class="main-content container-fluid">
     <?php include("layouts/header.php"); ?>
     <div id="page-content" class="d-flex flex-row">
-      <nav id="leftbar" class="col-lg-2 col-sm-1 col-xs-1 d-flex"><?php include("layouts/navbar.php"); ?></nav>
-      <div class="col-lg-10 col-sm-11 col-xs-11"><?= $content ?></div>
+      <nav id="leftbar" class="col-lg-2 col-sm-1 col-xs-1 d-flex">
+        <?php include("layouts/leftbar.php"); ?>
+      </nav>
+      <div class="col-lg-10 col-sm-11 col-xs-11">
+        <nav id="pagebar" class="col-lg-2 col-sm-1 col-xs-1 d-flex">
+          <?php include("layouts/navbar.php"); ?>
+        </nav>
+        <?= $content ?>
+      </div>
     </div>
   </div>
 </html>

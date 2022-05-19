@@ -5,12 +5,8 @@
             <img src="./assets/img/dark/brand_icon.svg" height="40px">
             <img class="mobile-hide" src="./assets/img/dark/brand_text.svg" height="40px">
         </a>
-        <div id="search-bar" class="flex-row flex-wrap mx-auto">
-            <form action="" autocomplete="on">
-                <input id="search" name="search" type="text" placeholder="What're we looking for ?"><input id="search_submit" value="Rechercher" type="submit">
-            </form>
-        </div>
         <?php if(isset($_SESSION['id'])) { $user = new \sycatle\beblio\entity\User($_SESSION['id']); ?>
+            <div class="mx-auto"></div>
             <div class="dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="./assets/img/bell.svg" height="25px">
