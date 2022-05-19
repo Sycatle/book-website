@@ -36,7 +36,7 @@
   </head>
   
   <div class="main-content container-fluid">
-    <?php include("layouts/header.php"); ?>
+    <?php include("layouts/mainbar.php"); ?>
     <div id="page-content" class="d-flex flex-row">
       <nav id="leftbar" class="col-lg-2 col-sm-1 col-xs-1 d-flex">
         <?php include("layouts/leftbar.php"); ?>

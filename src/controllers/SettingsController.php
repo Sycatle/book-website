@@ -5,4 +5,4 @@ session_start();
 require('./src/Manager.php');
 $manager = new \sycatle\beblio\Manager();
 
-require("./src/templates/pages/admin.php");
+require("./src/templates/pages/settings.php");
