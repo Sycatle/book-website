@@ -13,8 +13,9 @@ $router = new \sycatle\beblio\Router(
 
 // -- Routeur actuel, à optimiser !
 
-$getter = $_GET['r'];
-if (isset($getter)) {
+
+if (isset($_GET['r'])) {
+    $getter = $_GET['r'];
     switch ($getter){
         case 'connect':
             require("./src/controllers/ConnectController.php");
