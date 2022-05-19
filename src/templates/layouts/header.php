@@ -2,7 +2,7 @@
 top: 0; z-index: 500;">
     <nav class="container-xxl flex-wrap flex-md-nowrap" aria-label="Main navigation">
         <a class="navbar-brand p-0 me-2" href="." aria-label="Bebl.io">
-            <img src="./public/img/dark/brand.svg" height="40px">
+            <img src="./assets/img/dark/brand.svg" height="40px">
         </a>
 
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar"
@@ -32,11 +32,10 @@ top: 0; z-index: 500;">
             <hr class="d-md-none text-white-50" />
             <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
                 <?php if(isset($_SESSION['id'])) { 
-            $user = new \sycatle\beblio\models\objects\User($_SESSION['id']); ?>
+            $user = new \sycatle\beblio\entity\User($_SESSION['id']); ?>
                 <li class="nav-item col-6 col-md-auto">
                     <a class="nav-link p-2" href="./?user=<?php echo($user->getUsername()); ?>">
-                        <img class="avatar-thumbnail" src="./uploads/users/<?php echo($user->getUsername()); ?>.webp"
-                            height="30px">
+                        <img class="avatar-thumbnail" src="./uploads/users/<?php echo($user->getUsername()); ?>.webp" height="30px">
                         <span class="d-md-none ms-2">
                             <?php echo($user->getUsername()); ?>
                         </span>

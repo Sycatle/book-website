@@ -1,10 +1,10 @@
 <?php 
-$pageTitle = "Explorer";
+$pageTitle = "Poster";
 
 ob_start();
 ?>
-<section id="explore-section">
-    <h1>Explore Section</h1>
+<section id="post-section">
+    <h1>Post Section</h1>
 </section>
 
 <?php 

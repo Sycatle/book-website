@@ -13,9 +13,9 @@ $router = new \sycatle\beblio\Router(
 
 // -- Routeur actuel, à optimiser !
 
-$getter_r = $_GET['r'];
-if (isset($getter_r)) {
-    switch ($getter_r){
+$getter = $_GET['r'];
+if (isset($getter)) {
+    switch ($getter){
         case 'connect':
             require("./src/controllers/ConnectController.php");
             exit();
@@ -26,7 +26,7 @@ if (isset($getter_r)) {
             require("./src/controllers/PostController.php");
             exit();
         case 'library':
-            require("./src/controllers/PostController.php");
+            require("./src/controllers/LibraryController.php");
             exit();
         case 'settings':
             require("./src/controllers/SettingsController.php");

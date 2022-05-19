@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require("./models/Manager.php");
-$manager = new \sycatle\beblio\models\Manager();
+require("./src/Manager.php");
+$manager = new \sycatle\beblio\Manager();
 
 function toSlug($str){
     $slug = strtolower(trim(preg_replace('/[\s-]+/', '-', preg_replace('/[^A-Za-z0-9-]+/', '-', preg_replace('/[&]/', 'and', preg_replace('/[\']/', '', iconv('UTF-8', 'ASCII//TRANSLIT', $str))))), '-'));
@@ -131,7 +131,7 @@ if (isset($_POST['post_book'])) {
 /* Si l'utilisateur est connecté, afficher le formulaire de post de contenu. Sinon, demander à l'utilisateur de se connecter
 puis de rediriger l'utilisateur vers le formulaire de post. */
 if(isset($_SESSION["user"])) {
-	require("./views/pages/post.php");
+	require("./src/templates/pages/post.php");
 } else {
 	header("Location: ./?r=connect&&a=post");
 }

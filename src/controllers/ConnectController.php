@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-require("./models/Manager.php");
+require("./src/Manager.php");
 
-$manager = new \sycatle\beblio\models\Manager();
+$manager = new \sycatle\beblio\Manager();
 $userManager = $manager->getUserManager();
 
 if (isset($_POST['login'])) {
@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 		$password = stripslashes($_POST['password']);
 
 		if($userManager->login($identifier, $password) != null) {
-			$user = new \sycatle\beblio\models\objects\User($userManager->login($identifier, $password));
+			$user = new \sycatle\beblio\entity\User($userManager->login($identifier, $password));
 			$user->setupSession();
 		} else {
 			die("Identifiants incorrects: " . $identifier . $password);
@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
 		if (!$userManager->isUsernameTaken($username)) {
 			if (!$userManager->isMailTaken($email)) {
 				if ($userManager->register($name, $surname, $username, $email, $password) != null) {
-					$user = new \sycatle\beblio\models\objects\User($userManager->login($username, $password));
+					$user = new \sycatle\beblio\entity\User($userManager->login($username, $password));
 					$user->setupSession();
 				} else {
 					die("Impossible de créer votre compte, veuillez ré-essayez plus tard.");
@@ -47,7 +47,7 @@ if (isset($_POST['login'])) {
 
 // Si l'utilisateur n'est pas connecté, afficher le formulaire de connection. Sinon, retourner au routeur index.php.
 if(!isset($_SESSION["user"])) {
-	require("./views/pages/connect.php");
+	require("./src/templates/pages/connect.php");
 } else {
 	//echo("Aucune session détectée.");
 	header("Location: .".(isset($_GET["a"]) ? "/?r=".$_GET["a"] : ""));
