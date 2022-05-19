@@ -9,13 +9,13 @@ class UserManager extends \sycatle\beblio\Manager {
     public function getUsers(){
         $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM users ORDER BY user_id");
         $statement->execute();
-        $row=$statement->fetch(\PDO::FETCH_ASSOC);
-    
-        return $row;
+
+        return $statement;
     }
 
     public function createUser($id) {
-        $user = new \sycatle\beblio\objects\User($id);
+        $user = new \sycatle\beblio\entity\User($id);
+        
         return $user;
     }
 

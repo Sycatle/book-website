@@ -4,7 +4,6 @@ $pageTitle = "Réglages";
 ob_start();
 ?>
 <section id="settings-section">
-    <h1><?php echo($pageTitle);?></h1>
 </section>
 
 <?php 
