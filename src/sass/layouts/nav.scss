@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 1px solid black;
-    height: 720px;
+    height: 100%;
     & .left-items {
         margin-top: 5px;
         display: flex;
+        position: fixed;
         flex-direction: column;
-
+        height: 100%;
         &.bottom {
             margin-top: auto;
         }
@@ -36,9 +36,12 @@
 
 #mainbar {
     display: flex;
+    position: sticky; 
+    top: 0; 
+    z-index: 500;
     align-items: center;
     flex-direction: row;
-    .main-items {
+    .nav-item {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -62,4 +65,13 @@
     :hover {
         cursor: pointer;
     }
+}
+
+#pagebar {
+    display: flex;
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
 }

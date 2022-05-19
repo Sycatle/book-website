@@ -1,18 +1,27 @@
-.carousel-cell {
+.carousel {
+    background: #EEE;
+  }
+  
+  .carousel-cell {
     width: 28%;
-    transform: scale(1);
+    height: 200px;
     margin-right: 10px;
-    background: rgba(180, 180, 180, 0.884);
+    background: #8C8;
     border-radius: 5px;
-    &.is-selected {
-        background: rgb(238, 170, 34);
-        transform: scale(1.2);
-    }
-    &::before {
-        display: block; 
-        text-align: center;
-        line-height: 200px;
-        font-size: 80px;
-        color: white;
-    }
-}
+    counter-increment: carousel-cell;
+  }
+  
+  .carousel-cell.is-selected {
+    background: #ED2;
+  }
+  
+  /* cell number */
+  .carousel-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(carousel-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+  }
+  

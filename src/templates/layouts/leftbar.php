@@ -28,10 +28,9 @@ if($_SESSION['id'] != null) { $user = new \sycatle\beblio\entity\User($_SESSION[
             <img src="./assets/img/admin.svg" height="25px"> <span class="nav-text">Admin</span>
         </a>
         <?php } ?>
-    </div>
 <?php } ?>
-<div class="left-items bottom">
-    <a class="slot light-switch">
+    <a class="slot light-switch bottom">
         <img src="./assets/img/dark/moon.png" height="20px"> <span class="nav-text">Mode sombre</span>
     </a>
+    <div>
 </div>

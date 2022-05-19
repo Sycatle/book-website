@@ -36,14 +36,20 @@
   </head>
   
   <div class="main-content container-fluid">
-    <?php include("layouts/mainbar.php"); ?>
+    <nav id="mainbar">
+      <?php include("layouts/mainbar.php"); ?>
+    </nav>
     <div id="page-content" class="d-flex flex-row">
-      <nav id="leftbar" class="col-lg-2 col-sm-1 col-xs-1 d-flex">
+
+
+      <nav id="leftbar" class="col-1 col-lg-2 d-flex">
         <?php include("layouts/leftbar.php"); ?>
       </nav>
-      <div class="col-lg-10 col-sm-11 col-xs-11">
-        <nav id="pagebar" class="col-lg-2 col-sm-1 col-xs-1 d-flex">
-          <?php include("layouts/navbar.php"); ?>
+
+
+      <div class="col-11 col-lg-10">
+        <nav id="pagebar">
+          <?php include("layouts/pagebar.php"); ?>
         </nav>
         <?= $content ?>
       </div>

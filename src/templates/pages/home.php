@@ -5,7 +5,7 @@ ob_start();?>
 
 <div id="feed-section" class="py-5">
     <h3 class="title">Hey <?php echo($user->getFirstname()); ?>, retrouve tes livres préférés.</h3>
-    <div class="carousel" data-flickity='{ "wrapAround": true, "pageDots": false }'>
+    <div class="carousel" data-flickity='{ "wrapAround": true }'>
         <?php $books = $manager->getBookManager()->getBooks();
             while($row = $books->fetch(PDO::FETCH_ASSOC)) { ?>
         <a href="./?book=<?php echo $row['book_slug']; ?>" class="carousel-cell">
