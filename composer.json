@@ -1,0 +1,17 @@
+{
+    "name": "sycatle/bebl.io",
+    "description": "bebl.io website sources.",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Sycatle\\BeblIo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sycatle",
+            "email": "sycatle@pm.me"
+        }
+    ],
+    "require": {}
+}

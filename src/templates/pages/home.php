@@ -3,6 +3,10 @@ $pageTitle = "Accueil";
 
 ob_start();?>
 
+<div id="banner">
+    <img id="background-image" src="./assets/img/banner_edge.webp" width="100%">
+</div>
+
 <div id="feed-section" class="py-5">
     <h3 class="title">Hey <?php echo($user->getFirstname()); ?>, retrouve tes livres préférés.</h3>
     <div class="carousel" data-flickity='{ "wrapAround": true }'>

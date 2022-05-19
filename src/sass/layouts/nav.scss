@@ -2,13 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
     & .left-items {
         margin-top: 5px;
         display: flex;
         position: fixed;
         flex-direction: column;
-        height: 100%;
+        height: 90%;
         &.bottom {
             margin-top: auto;
         }

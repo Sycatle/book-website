@@ -3,10 +3,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Akshar&family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
-$navbar-background-color: rgb(16, 16, 16);
+/* SETTING UP COLORS*/
 
-$dark-background-color: rgb(28, 28, 28); 
-$dark-leftbar-color: rgb(16, 16, 16);
+/* RED VARIANTS */
+$bebl-red1: rgb(225, 75, 75);
+$bebl-red2: rgb(225, 55, 55);
+$bebl-red3: rgb(210, 35, 35);
+
+/* ORANGE */
+$bebl-orange1: rgb(225, 110, 75);
+$bebl-orange2: rgb(220, 90, 55);
+$bebl-orange3: rgb(210, 90, 55);
+
+/* YELLOW VARIANTS */
+$bebl-yellow1: rgb(225, 175, 75);
+$bebl-yellow2: rgb(225, 175, 55);
+$bebl-yellow3: rgb(220, 175, 40);
+
+/* GREEN VARIANTS */
+$bebl-green1: rgb(135, 213, 56);
+$bebl-green2: rgb(107, 169, 45);
+$bebl-green3: rgb(103, 181, 25);
+
+/* BLUE VARIANTS */
+$bebl-blue1: rgb(58, 195, 195);
+$bebl-blue2: rgb(43, 146, 198);
+$bebl-blue3: rgb(25, 147, 208);
+
+/* PURPLE VARIANTS */
+$bebl-purple1: rgb(167, 92, 246);
+$bebl-purple2: rgb(144, 62, 231);
+$bebl-purple3: rgb(111, 36, 192);
+
+/* GRAY VARIANTS */
+$bebl-gray1: rgb(205, 205, 205);
+$bebl-gray2: rgb(185, 185, 185);
+$bebl-gray3: rgb(155, 155, 155);
+$bebl-gray4: rgb(105, 105, 105);
+$bebl-gray5: rgb(75, 75, 75);
+$bebl-gray6: rgb(55, 55, 55);
+
+/* BLACK VARIANTS */
+$bebl-black1: rgb(35, 35, 35);
+$bebl-black2: rgb(25, 25, 25);
+$bebl-black3: rgb(20, 20, 20);
+$bebl-black4: rgb(15, 15, 15);
+$bebl-black5: rgb(10, 10, 10);
+$bebl-black6: rgb(5, 5, 5);
+
+$navbar-background-color: $bebl-black6;
+
+$dark-background-color: $bebl-gray6; 
+$dark-leftbar-color: $bebl-black4;
 $dark-text-color: rgb(255, 255, 255);
 
 $light-background-color: rgb(230, 230, 230);
