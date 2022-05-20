@@ -9,27 +9,27 @@ require_once("./src/managers/QuoteManager.php");
 
 class Manager{
     public function getDataManager() {
-        return new \sycatle\beblio\managers\DataManager();
+        return new managers\DataManager();
     }
 
     public function getUserManager() {
-        return new \sycatle\beblio\managers\UserManager();
+        return new managers\UserManager();
     }
 
     public function getBookManager() {
-        return new \sycatle\beblio\managers\BookManager();
+        return new managers\BookManager();
     }
 
     public function getAuthorManager() {
-        return new \sycatle\beblio\managers\AuthorManager();
+        return new managers\AuthorManager();
     }
 
     public function getCategoryManager() {
-        return new \sycatle\beblio\managers\CategoryManager();
+        return new managers\CategoryManager();
     }
 
     public function getQuoteManager() {
-        return new \sycatle\beblio\managers\QuoteManager();
+        return new managers\QuoteManager();
     }
 
     public function encrypt(String $data) : String{

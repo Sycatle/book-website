@@ -1,16 +1,14 @@
 <?php 
 namespace sycatle\beblio\managers;
 require_once("./src/Manager.php");
+require("./src/Config.php");
+
 
 class DataManager extends \sycatle\beblio\Manager {
-    private String $databaseHost = "localhost";
-    private String $databaseName = "tp_login";
-    private String $databaseUser = "root";
-    private String $databasePassword = "root";
-
     public function connectDatabase(){
+        $config = new \sycatle\beblio\Config();
         try {
-            $database = new \PDO("mysql:host=" . $this->databaseHost . ";dbname=" . $this->databaseName . ";charset=utf8", $this->databaseUser, $this->databasePassword);
+            $database = new \PDO("mysql:host=" . $config->getDatabaseHost() . ";dbname=" . $config->getDatabaseName() . ";charset=utf8", $config->getDatabaseUser(), $config->getDatabasePassword());
             $database->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             return $database;
         } catch(\PDOException $e) {

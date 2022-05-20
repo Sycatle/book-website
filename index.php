@@ -1,5 +1,22 @@
 ﻿<?php
 
+/*
+    ----------------------------------------------------------------------
+
+    Object : Application's Entry (index.php)
+            redirecting to requested controllers
+
+    Author: Sycatle
+    Creation Date: 1st April 2022
+    Last Update: 20th May 2022
+    Changelogs:
+        - Setting up a basic Router.
+    To-do:
+        - Create a strong Router.
+
+    ----------------------------------------------------------------------
+*/
+
 /* -- Future optimisation du routeur. --
 
 require('./src/controllers/Router.php');

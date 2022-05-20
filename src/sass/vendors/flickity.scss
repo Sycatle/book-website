@@ -1,27 +1,116 @@
-.carousel {
-    background: #EEE;
-  }
-  
-  .carousel-cell {
+.book-cell {
     width: 28%;
-    height: 200px;
+    height: 300px;
     margin-right: 10px;
     background: #8C8;
     border-radius: 5px;
-    counter-increment: carousel-cell;
+  display: flex;
+  height: 250px;
+  margin-right: 1px;
+  &:nth-child(1) {
+   background-color: #fbadaf;
   }
-  
-  .carousel-cell.is-selected {
-    background: #ED2;
+  &:nth-child(2) {
+   background-color: #a4e0eb;
   }
-  
-  /* cell number */
-  .carousel-cell:before {
-    display: block;
-    text-align: center;
-    content: counter(carousel-cell);
-    line-height: 200px;
-    font-size: 80px;
-    color: white;
+  &:nth-child(3) {
+   background-color: #edb9d6;
   }
-  
+  &:nth-child(4) {
+   background-color: #fdca95;
+  }
+  &:nth-child(5) {
+   background-color: #cbb5e2;
+  }
+ }
+ /*
+ 
+ .flickity-page-dots {
+  display: none;
+ }
+ 
+ .flickity-prev-next-button .arrow {
+  fill: #d6d6d6;
+ }
+ 
+ .flickity-prev-next-button svg {
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: 50%;
+ }
+ 
+ .flickity-prev-next-button {
+  &.previous {
+   left: 15px;
+  }
+  &.next {
+   right: 15px;
+  }
+ }
+ 
+ .flickity-viewport {
+  overflow: visible;
+ }
+ 
+ .book-photo {
+  width: 180px;
+  flex-shrink: 0;
+  bottom: -35px;
+  left: 35px;
+  border-radius: 2px;
+  box-shadow: -2px 6px 19px 0px #7f818e;
+  transition: .3s ease;
+  &:hover {
+   transform: scale(1.03);
+  }
+ }
+ 
+ .book-img {
+  flex-shrink: 0;
+ }
+ 
+ .book-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+ }
+ 
+ .book-title {
+  color: #ffffff;
+  font-weight: 600;
+ }
+ 
+ .book-author {
+  margin-top: 3px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+ }
+ 
+ .book-content {
+  padding: 0 20px;
+  color: #ffffff;
+  overflow: hidden;
+ } */
+
+ .carousel {
+  background: #EEE;
+}
+
+.carousel-cell {
+  width: 55%;
+  height: 300px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+}
+
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+} 
