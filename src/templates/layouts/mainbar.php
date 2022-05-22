@@ -1,5 +1,3 @@
-<? session_start(); ?>
-
 <!-- Initializing Main Header-->
 <div class="navbar container-fluid" aria-label="Main navigation">
     <a class="navbar-brand mx-auto" href="." aria-label="Bebl.io">

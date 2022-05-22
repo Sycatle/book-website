@@ -1,29 +1,34 @@
 .book-cell {
-    width: 28%;
-    height: 300px;
-    margin-right: 10px;
-    background: #8C8;
-    border-radius: 5px;
+  width: 28%;
+  height: 300px;
+  margin-right: 10px;
+  border-radius: 5px;
   display: flex;
   height: 250px;
   margin-right: 1px;
+
   &:nth-child(1) {
-   background-color: #fbadaf;
+    background-color: #fbadaf;
   }
+
   &:nth-child(2) {
-   background-color: #a4e0eb;
+    background-color: #a4e0eb;
   }
+
   &:nth-child(3) {
-   background-color: #edb9d6;
+    background-color: #edb9d6;
   }
+
   &:nth-child(4) {
-   background-color: #fdca95;
+    background-color: #fdca95;
   }
+
   &:nth-child(5) {
-   background-color: #cbb5e2;
+    background-color: #cbb5e2;
   }
- }
- /*
+}
+
+/*
  
  .flickity-page-dots {
   display: none;
@@ -95,22 +100,22 @@
   overflow: hidden;
  } */
 
- .carousel {
-  background: #EEE;
-}
+// .carousel {
+//   background: #EEE;
+// }
 
-.carousel-cell {
-  width: 55%;
-  height: 300px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
-}
+// .carousel-cell {
+//   width: 55%;
+//   height: 300px;
+//   margin-right: 10px;
+//   background: #8C8;
+//   border-radius: 5px;
+// }
 
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
-} 
+// .carousel-cell:before {
+//   display: block;
+//   text-align: center;
+//   line-height: 200px;
+//   font-size: 80px;
+//   color: white;
+// }

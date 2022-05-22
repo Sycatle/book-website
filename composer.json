@@ -13,5 +13,10 @@
             "email": "sycatle@pm.me"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
     "require": {}
 }
