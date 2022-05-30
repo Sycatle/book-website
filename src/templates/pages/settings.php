@@ -1,5 +1,6 @@
 <?php 
 $pageTitle = "Réglages";
+$canGoBack = true;
 
 ob_start();
 ?>

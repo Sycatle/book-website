@@ -11,7 +11,7 @@ class BookManager extends \sycatle\beblio\Manager {
         return $statement;
     }
 
-    public function getBooksByCategory($category){
+    public function getBooksByGender($category){
         $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM books WHERE book_category_id=:book_category_id");
         $statement->execute(array(":book_category_id" => $category));
         
@@ -33,7 +33,7 @@ class BookManager extends \sycatle\beblio\Manager {
     }
 
     public function getBook($id) {
-        return new \sycatle\beblio\objects\Book($id);
+        return new \sycatle\beblio\entity\Book($id);
     }
 
     function registerBook($title, $slug, $author_id, $description, $summary, $parution, $category_id, $book_cover) {

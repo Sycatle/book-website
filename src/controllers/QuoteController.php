@@ -6,7 +6,7 @@ $manager = new \sycatle\beblio\Manager();
 $quoteManager = $manager->getQuoteManager();
 
 if (isset($_GET['slug'])) {
-    require("./src/templates/pages/quote.php");
+    require("./src/templates/views/quote.php");
 } else {
     header("Location: .");
 }

@@ -11,7 +11,14 @@
   "license": "ISC",
   "browserslist": "last 4 versions",
   "dependencies": {
-    "flickity": "^3.0.0",
     "sass": "^1.51.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sycatle/bebl.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sycatle/bebl.io/issues"
+  },
+  "homepage": "https://github.com/Sycatle/bebl.io#readme"
 }

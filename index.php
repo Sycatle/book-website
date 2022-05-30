@@ -58,7 +58,7 @@ if (isset($_GET['r'])) {
         case 'book': require("./src/controllers/BookController.php");exit();
         case 'author': require("./src/controllers/AuthorController.php");exit();
         case 'quote': require("./src/controllers/QuoteController.php");exit();
-        case 'category': require("./src/controllers/CategoryController.php");exit();
+        case 'gender': require("./src/controllers/GenderController.php");exit();
         case 'error': require("./src/controllers/ErrorController.php");exit();
         default: header("Location: ./?error=404");exit();
     }

@@ -11,7 +11,7 @@ class AuthorManager extends \sycatle\beblio\Manager {
         return $statement;
     }
 
-    public function getAuthorsByCategory($category){
+    public function getAuthorsByGender($category){
         $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors WHERE author_category_id=:author_category_id");
         $statement->execute(array(":author_category_id" => $category));
         

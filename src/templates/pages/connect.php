@@ -1,6 +1,7 @@
 <?php 
 $pageTitle = "Connexion";
 $pageTypeName = "Accéder à votre compte";
+$canGoBack = true;
 
 ob_start();
 ?>

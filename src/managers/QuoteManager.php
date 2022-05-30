@@ -4,8 +4,14 @@ require_once("./src/Manager.php");
 
 class QuoteManager extends \sycatle\beblio\Manager {
 
-    public function getQuote($id) {
-        return new \sycatle\beblio\objects\Quote($id);
+    public function getQuotes() {
+        $statement= $this->getDataManager()->connectDatabase()->prepare(
+            "SELECT * FROM quotes
+            JOIN authors ON quotes.quote_author_id = authors.author_id
+        ");
+        $statement->execute();
+        
+        return $statement;
     }
 
     function registerQuote($quote_text, $quote_slug, $quote_author_id, $quote_category_id) {
@@ -43,7 +49,7 @@ class QuoteManager extends \sycatle\beblio\Manager {
         return $row;
     }
 
-    public function getQuotesByCategory($category){
+    public function getQuotesByGender($category){
         $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM quotes WHERE quote_category_id=:quote_category_id");
         $statement->execute(array(":quote_category_id" => $category));
         

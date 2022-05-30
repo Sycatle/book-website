@@ -1,5 +1,6 @@
 <?php 
 $pageTitle = "Administration";
+$canGoBack = false;
 
 ob_start();
 ?>

@@ -4,7 +4,7 @@ require_once("./src/managers/DataManager.php");
 require_once("./src/managers/BookManager.php");
 require_once("./src/managers/UserManager.php");
 require_once("./src/managers/AuthorManager.php");
-require_once("./src/managers/CategoryManager.php");
+require_once("./src/managers/GenderManager.php");
 require_once("./src/managers/QuoteManager.php");
 
 class Manager{
@@ -24,8 +24,8 @@ class Manager{
         return new managers\AuthorManager();
     }
 
-    public function getCategoryManager() {
-        return new managers\CategoryManager();
+    public function getGenderManager() {
+        return new managers\GenderManager();
     }
 
     public function getQuoteManager() {

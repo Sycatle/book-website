@@ -24,13 +24,27 @@ $user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <!-- JQUERY END -->
   <!-- FLICKITY START -->
-  <link href=".\node_modules\flickity\dist\flickity.min.css" rel="stylesheet" />
-  <script src=".\node_modules\flickity\dist\flickity.pkgd.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js"></script>
   <!-- FLICKITY END -->
 
   <!-- SCRIPT START -->
   <script src="./dist/js/scripts.js"></script>
   <!-- SCRIPT END -->
+
+  <!-- GOOGLE ANALYTICS START -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6DFKW4NX2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-P6DFKW4NX2');
+  </script>
+  <!-- GOOGLE ANALYTICS END -->
 
   <!-- STYLE.CSS START -->
   <link rel="stylesheet" type="text/css" href="./dist/css/style.min.css" />

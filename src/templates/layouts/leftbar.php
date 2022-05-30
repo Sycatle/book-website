@@ -24,8 +24,5 @@ if($user != null) { ?>
             <span class="nav-text">Poster</span>
         </a>
 <?php } ?>
-    <a class="slot light-switch bottom">
-        <img src="./assets/img/dark/moon.png" height="20px"> <span class="nav-text">Mode sombre</span>
-    </a>
     <div>
 </div>

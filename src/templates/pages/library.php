@@ -1,5 +1,6 @@
 <?php 
 $pageTitle = "Bibliothèque";
+$canGoBack = true;
 
 ob_start();
 ?>
