@@ -4,10 +4,8 @@ require_once("./src/Manager.php");
 require_once("./src/entity/User.php");
 
 class UserManager extends \sycatle\beblio\Manager {
-    private $user;
-
     public function getUsers(){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM users ORDER BY user_id");
+        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT user_id, user_username, user_firstname, user_lastname FROM users");
         $statement->execute();
 
         return $statement;
@@ -28,7 +26,7 @@ class UserManager extends \sycatle\beblio\Manager {
         $statement->execute(array(':user_username'=>$username));
         $row=$statement->fetch(\PDO::FETCH_ASSOC);
 
-        $user = new \sycatle\beblio\objects\User($row['user_id']);
+        $user = new \sycatle\beblio\entity\User($row['user_id']);
         return $user;
     }
     

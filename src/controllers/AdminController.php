@@ -8,7 +8,7 @@
 
     Author: Sycatle
     Creation Date: 1st April 2022
-    Last Update: 20th May 2022
+    Last Update: 22nd May 2022
     Changelogs:
         - 
     To-do:
@@ -17,9 +17,27 @@
     ----------------------------------------------------------------------
 */
 
-session_start();
+namespace sycatle\beblio\controllers;
+require('./src/Controller.php');
+use sycatle\beblio\Controller;
 
-require('./src/Manager.php');
-$manager = new \sycatle\beblio\Manager();
+class AdminController extends Controller{
+    private $users = [];
 
-require("./src/templates/pages/admin.php");
+    public function __construct(){
+        session_start();
+        
+        $this->initVariables();
+        $this->initTemplate("./src/templates/pages/admin.php");
+        $this->showTemplatePage();
+    }
+
+    public function initVariables(){
+        $this->users = $this->getManager()->getUserManager()->getUsers();
+    }
+
+    public function getUserList(){
+        return $this->users;
+    }
+
+}

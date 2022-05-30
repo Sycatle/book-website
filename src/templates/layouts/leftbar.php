@@ -1,6 +1,6 @@
 <?php 
 
-if($_SESSION['id'] != null) { $user = new \sycatle\beblio\entity\User($_SESSION['id']); ?>
+if(isset($_SESSION["user"])) { ?>
     <!-- NAV BAR ITEMS -->
     <div class="left-items">
         <a class="slot" title="Acceuil" href=".">
@@ -24,8 +24,8 @@ if($_SESSION['id'] != null) { $user = new \sycatle\beblio\entity\User($_SESSION[
             <span class="nav-text">Poster</span>
         </a>
 <?php } ?>
-    <a class="slot light-switch bottom">
-        <img src="./assets/img/dark/moon.png" height="20px"> <span class="nav-text">Mode sombre</span>
-    </a>
+        <a class="slot light-switch bottom">
+            <img src="./assets/img/dark/moon.png" height="20px"> <span class="nav-text">Mode sombre</span>
+        </a>
     <div>
 </div>

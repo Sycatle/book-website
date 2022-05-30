@@ -7,7 +7,7 @@
         <input id="search" name="search" type="text" placeholder="What're we looking for ?"><input id="search_submit" value="Rechercher" type="submit">
     </form>
 </div>
-<?php if(isset($_SESSION['id'])) { $user = new \sycatle\beblio\entity\User($_SESSION['id']); ?>
+<?php if(isset($_SESSION["user"])) { ?>
     <div class="dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="./assets/img/bell.svg" height="25px">
@@ -20,7 +20,7 @@
     </div>
     <div class="dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img class="avatar-thumbnail" src="./uploads/users/<?php echo($user->getUsername()); ?>.webp" height="30px">
+            <img class="avatar-thumbnail" src="./uploads/users/<?php echo($_SESSION["user"]->getUsername()); ?>.webp" height="30px">
         </a>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><a class="dropdown-item" href="#">Action</a></li>
