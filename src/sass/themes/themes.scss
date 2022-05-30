@@ -47,11 +47,15 @@
     #leftbar {
         color: $light-text-color;
         background-color: #e2e2e2;
+        -webkit-box-shadow: 5px 5px 5px 3px rgba(0,0,0,0.05); 
+        box-shadow: 5px 5px 5px 3px rgba(0,0,0,0.05);
     }
 
     #pagebar {
         color: $light-text-color;
-        background-color: #e0e0e0;
+        background-color: rgb(224, 224, 224, 0.9);
+        -webkit-box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05); 
+        box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05);
     }
 
     .slot {

@@ -42,6 +42,7 @@ class BookManager extends \sycatle\beblio\Manager {
 
     function registerBook($title, $slug, $author_id, $description, $summary, $parution, $category_id, $book_cover) {
         try {
+            echo($title . $slug . $author_id . $description . $summary . $parution . $category_id);
             $statement = $this->getDataManager()->connectDatabase()->prepare(
                 "INSERT INTO books (book_title, book_slug, book_author, book_description, book_summary, book_parution, book_category_id) VALUES (:book_title, :book_slug, :book_author, :book_description, :book_summary, :book_parution, :book_category_id)"
             );

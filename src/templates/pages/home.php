@@ -13,7 +13,7 @@ ob_start(); ?>
                 <div class="quote-content">
                     <span class="quote">
                         <h4>
-                            <img src="./assets/img/left_quote.png" height="25px"><?php echo $row['quote_text']; ?><img src="./assets/img/right_quote.png" height="25px">
+                            <img src="./assets/img/left_quote.png" height="20px"><?php echo $row['quote_text']; ?><img src="./assets/img/right_quote.png" height="20px">
                         </h4>
                     </span>
                     <div class="quote-author">Par <?php echo $row['author_name']; ?></div>

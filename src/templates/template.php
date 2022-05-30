@@ -38,19 +38,23 @@ $user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']
   <div class="main-content container-fluid">
     <nav id="mainbar"> <?php include("layouts/mainbar.php"); ?></nav>
     <div id="page-content" class="d-flex flex-row">
+
       <?php if ($user != null) { ?>
         <aside id="leftbar" class="col-1 col-lg-2 d-flex">
           <?php include("layouts/leftbar.php"); ?>
         </aside>
       <?php } ?>
-      <div class="col-11 col-lg-10">
-        <nav id="pagebar" class="container">
-          <?php include("layouts/pagebar.php"); ?>
-        </nav>
+
+      
+      <div class="col-10 col-lg-10">
+        <?php if ($user != null) { ?>
+          <nav id="pagebar" class="container">
+            <?php include("layouts/pagebar.php"); ?>
+          </nav>
+        <?php } ?>
         <?= $content ?>
       </div>
     </div>
   </div>
 </body>
-
 </html>
