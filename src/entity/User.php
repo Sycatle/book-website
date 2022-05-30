@@ -9,9 +9,9 @@ class User{
     private String $email;
     private String $gender;
     private String $password;
-    private $birthDate;
-    private $joinDate;
-    private $lastSeen;
+    private date $birthDate;
+    private date $joinDate;
+    private date $lastSeen;
 
     private $manager;
 
@@ -39,12 +39,14 @@ class User{
     }
 
     public function setupSession(){
-        $_SESSION["user"] = $this;
-        $_SESSION["id"] = $this->id;
-        $_SESSION["firstname"] = $this->firstname;
-        $_SESSION["lastname"] = $this->lastname;
-        $_SESSION["username"] = $this->username;
-        $_SESSION["email"] = $this->email;
+        session_start();
+
+        $_SESSION['user'] = $this;
+        $_SESSION['id'] = $this->id;
+        $_SESSION['firstname'] = $this->firstname;
+        $_SESSION['lastname'] = $this->lastname;
+        $_SESSION['username'] = $this->username;
+        $_SESSION['email'] = $this->email;
     }
 
     public function getId(): int {
@@ -71,19 +73,19 @@ class User{
         return $this->gender;
     }
 
-    public function getJoinDate(){
+    public function getJoinDate(): date {
         return $this->joinDate;
     }
 
-    public function getLastSeen() {
+    public function getLastSeen(): date {
         return $this->lastSeen;
     }
 
-    public function setLastSeen($date){
+    public function setLastSeen(date $date): date {
         $this->lastSeen = $date;
     }
 
-    public function getBirthDate() {
+    public function getBirthDate(): date {
         return $this->joinDate;
     }
 

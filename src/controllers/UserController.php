@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require("./src/Manager.php");
-$manager = new \sycatle\beblio\Manager();
+require("./models/Manager.php");
+$manager = new \sycatle\beblio\models\Manager();
 $userManager = $manager->getUserManager();
 
 if (isset($_GET['user'])) {

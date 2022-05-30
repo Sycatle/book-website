@@ -4,8 +4,10 @@ require_once("./src/Manager.php");
 require_once("./src/entity/User.php");
 
 class UserManager extends \sycatle\beblio\Manager {
+    private $user;
+
     public function getUsers(){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT user_id, user_username, user_firstname, user_lastname FROM users");
+        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM users ORDER BY user_id");
         $statement->execute();
 
         return $statement;

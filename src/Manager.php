@@ -12,7 +12,7 @@ class Manager{
         return new managers\DataManager();
     }
 
-    public static function getUserManager() {
+    public function getUserManager() {
         return new managers\UserManager();
     }
 

@@ -3,15 +3,15 @@ $pageTitle = "Administration";
 
 ob_start();
 ?>
-<section id="admin-section" class="py-5">
-    <table class="py-5">
+<section id="admin-section">
+    <table>
         <tr>
             <th>Id</th>
             <th>Username</th>
             <th>First Name</th>
             <th>Last Name</th>
         </tr>
-        <?php while($row = $this->getUserList()->fetch(PDO::FETCH_ASSOC)) { ?>
+        <?php $users = $manager->getUserManager()->getUsers(); while($row = $users->fetch(PDO::FETCH_ASSOC)) { ?>
             <tr>
                 <th><?php echo $row['user_id']; ?></th>
                 <th><?php echo $row['user_username']; ?></th>

@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-require("./models/Manager.php");
-$manager = new \sycatle\beblio\models\Manager();
+require("./src/Manager.php");
+$manager = new \sycatle\beblio\Manager();
 $quoteManager = $manager->getQuoteManager();
 
-if (isset($_GET['quote'])) {
-    require("./views/contents/quote.php");
+if (isset($_GET['slug'])) {
+    require("./src/templates/pages/quote.php");
 } else {
     header("Location: .");
 }

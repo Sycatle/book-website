@@ -4,6 +4,7 @@ $pageTitle = "Réglages";
 ob_start();
 ?>
 <section id="settings-section">
+    Affichage de vos paramètres;
 </section>
 
 <?php 
