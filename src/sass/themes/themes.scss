@@ -35,37 +35,34 @@
 
 .light-mode {
     color: $light-text-color;
-    background-color: $light-background-color;
-
-    #leftbar {
-        background-color: $navbar-background-color;
-        .slot {
-            a {
-                text-decoration: none;
-            }
-            .nav-text {
-                color: $light-text-color;
-            }
-            &:hover {
-                background-color: #cecece50;
-            }
-        }
-    }
+    background-color: #fbfbfb;
 
     #mainbar {
-        background-color: $navbar-background-color;
+        color: $light-text-color;
+        background-color: #e4e4e4;
+        -webkit-box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05); 
+        box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05);
+    }
+
+    #leftbar {
+        color: $light-text-color;
+        background-color: #e2e2e2;
+    }
+
+    #pagebar {
+        color: $light-text-color;
+        background-color: #e0e0e0;
+    }
+
+    .slot {
         a {
             text-decoration: none;
         }
         .nav-text {
             color: $light-text-color;
         }
-    }
-
-    #pagebar {
-        background-color: rgba(20, 20, 20, 0.8);
-        a {
-            text-decoration: none;
+        &:hover {
+            background-color: #94949450;
         }
     }
     .content-wrapper, & .card, & input  {

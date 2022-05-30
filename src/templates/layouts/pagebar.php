@@ -2,11 +2,14 @@
     <a href="."><img src="./assets/img/left-arrow.svg" height="20px"></a>
 <?php } ?>
 <span id="page-title"> <?php echo(isset($pageTypeName) ? $pageTypeName : $pageTitle); ?> </span>
-<div id="search-bar" class="justify-content-center">
-    <form action="" autocomplete="on">
-        <input id="search" name="search" type="text" placeholder="Que recherchez-vous?" required><input id="search_submit" value="Rechercher" type="submit">
-    </form>
-</div>
+
+
+<form method="GET" action="" class="input-group mx-auto">
+  <input type="text" class="form-control" placeholder="Recherche par mot-clés.." required>
+  <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><img src="./assets/img/dark/search.png" height="20px"></button>
+</form>
+
+
 <?php if($user != null) { ?>
 <div class="right d-flex">
     <div class="dropdown">

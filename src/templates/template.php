@@ -20,9 +20,6 @@ $user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <!-- BOOTSTRAP END -->
-  <!-- JQUERY START -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <!-- JQUERY END -->
   <!-- FLICKITY START -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js"></script>
@@ -32,40 +29,28 @@ $user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']
   <script src="./dist/js/scripts.js"></script>
   <!-- SCRIPT END -->
 
-  <!-- GOOGLE ANALYTICS START -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6DFKW4NX2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'G-P6DFKW4NX2');
-  </script>
-  <!-- GOOGLE ANALYTICS END -->
-
   <!-- STYLE.CSS START -->
   <link rel="stylesheet" type="text/css" href="./dist/css/style.min.css" />
   <!-- STYLE.CSS END -->
 </head>
 
-<div class="main-content container-fluid">
-  <nav id="mainbar">
-    <?php include("layouts/mainbar.php"); ?>
-  </nav>
-  <div id="page-content" class="d-flex flex-row">
-    <nav id="leftbar" class="col-1 col-lg-2 d-flex">
-      <?php include("layouts/leftbar.php"); ?>
-    </nav>
-    <div class="col-11 col-lg-10">
-      <nav id="pagebar" class="container">
-        <?php include("layouts/pagebar.php"); ?>
-      </nav>
-      <?= $content ?>
+<body onload="loadPage();">
+  <div class="main-content container-fluid">
+    <nav id="mainbar"> <?php include("layouts/mainbar.php"); ?></nav>
+    <div id="page-content" class="d-flex flex-row">
+      <?php if ($user != null) { ?>
+        <aside id="leftbar" class="col-1 col-lg-2 d-flex">
+          <?php include("layouts/leftbar.php"); ?>
+        </aside>
+      <?php } ?>
+      <div class="col-11 col-lg-10">
+        <nav id="pagebar" class="container">
+          <?php include("layouts/pagebar.php"); ?>
+        </nav>
+        <?= $content ?>
+      </div>
     </div>
   </div>
-</div>
+</body>
 
 </html>

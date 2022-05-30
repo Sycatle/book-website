@@ -9,9 +9,9 @@ class User{
     private String $email;
     private String $gender;
     private String $password;
-    private date $birthDate;
-    private date $joinDate;
-    private date $lastSeen;
+    private $birthDate;
+    private $joinDate;
+    private $lastSeen;
 
     private $manager;
 
@@ -49,48 +49,49 @@ class User{
         $_SESSION['email'] = $this->email;
     }
 
-    public function getId(): int {
+    public function getId() {
         return $this->id;
     }
 
-    public function getUsername(): string {
+    public function getUsername() {
         return $this->username;
     }
 
-    public function getFirstName(): string {
+    public function getFirstName() {
         return $this->firstname;
     }
 
-    public function getLastName(): string {
+    public function getLastName(){
         return $this->lastname;
     }
 
-    public function getEmail(): string {
+    public function getEmail(){
         return $this->email;
     }
 
-    public function getGender(): string {
+    public function getGender() {
         return $this->gender;
     }
 
-    public function getJoinDate(): date {
+    public function getJoinDate() {
         return $this->joinDate;
     }
 
-    public function getLastSeen(): date {
+    public function getLastSeen() {
         return $this->lastSeen;
     }
 
-    public function setLastSeen(date $date): date {
+    public function setLastSeen($date) {
         $this->lastSeen = $date;
     }
 
-    public function getBirthDate(): date {
+    public function getBirthDate(){
         return $this->joinDate;
     }
 
     public function hasPermission($permission){
         $userPermissions = $this->manager->getUserManager()->getPermissions($this->id);
+        if ($userPermissions == null) return false;
         return $userPermissions[$permission] == 1;
     }
 

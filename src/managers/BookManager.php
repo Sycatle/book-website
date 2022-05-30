@@ -5,7 +5,11 @@ require_once("./src/Manager.php");
 class BookManager extends \sycatle\beblio\Manager {
 
     public function getBooks(){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM books ORDER BY book_title");
+        $statement= $this->getDataManager()->connectDatabase()->prepare(
+            "SELECT * FROM books
+            JOIN authors 
+            ON books.book_author_id = authors.author_id"
+        );
         $statement->execute();
         
         return $statement;
