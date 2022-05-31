@@ -22,14 +22,14 @@ if (isset($_POST['post_book'])) {
                         if (isset($_POST['book_description'])) {
                             if (isset($_POST['book_summary'])) {
                                 if (isset($_FILES['book_cover'])) {
-                                    $book_name = htmlspecialchars(stripslashes(($_POST['book_name'])));
+                                    $book_name = htmlspecialchars(stripslashes(trim($_POST['book_name'])));
                                     $book_name_slug = toSlug($book_name);
-                                    $book_author = htmlspecialchars(stripslashes(($_POST['book_author'])));
-                                    $book_parution = $_POST['book_parution'];
-                                    $book_gender = $_POST['book_gender'];
-                                    $book_pages = $_POST['book_pages'];
-                                    $book_description = htmlspecialchars(stripslashes(($_POST['book_description'])));
-                                    $book_summary = htmlspecialchars(stripslashes(($_POST['book_summary'])));
+                                    $book_author = htmlspecialchars(stripslashes(trim($_POST['book_author'])));
+                                    $book_parution = htmlspecialchars(stripslashes(trim($_POST['book_parution'])));
+                                    $book_gender = htmlspecialchars(stripslashes(trim($_POST['book_gender'])));
+                                    $book_pages = htmlspecialchars(stripslashes(trim($_POST['book_pages'])));
+                                    $book_description = htmlspecialchars(stripslashes(trim($_POST['book_description'])));
+                                    $book_summary = htmlspecialchars(stripslashes(trim($_POST['book_summary'])));
                                     $book_cover = $_FILES['book_cover'];
 
                                     $fileInfo = pathinfo($book_cover['name']);
@@ -83,12 +83,12 @@ if (isset($_POST['post_book'])) {
                 if (isset($_POST['author_description'])) {
                     if (isset($_POST['author_biography'])) {
                         if (isset($_FILES['author_picture'])) {
-                            $author_name = htmlspecialchars(stripslashes(($_POST['author_name'])));
+                            $author_name = htmlspecialchars(stripslashes(trim($_POST['author_name'])));
                             $author_name_slug = toSlug($author_name);
-                            $author_birth = $_POST['author_birth'];
-                            $author_gender = $_POST['author_gender'];
-                            $author_description = htmlspecialchars(stripslashes(($_POST['author_description'])));
-                            $author_biography = htmlspecialchars(stripslashes(($_POST['author_biography'])));
+                            $author_birth = htmlspecialchars(stripslashes(trim($_POST['author_birth'])));
+                            $author_gender = htmlspecialchars(stripslashes(trim($_POST['author_gender'])));
+                            $author_description = htmlspecialchars(stripslashes(trim($_POST['author_description'])));
+                            $author_biography = htmlspecialchars(stripslashes(trim($_POST['author_biography'])));
                             $author_picture = $_FILES['author_picture'];
 
                             $fileInfo = pathinfo($author_picture['name']);

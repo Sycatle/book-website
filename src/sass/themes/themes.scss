@@ -6,6 +6,10 @@
     color: $dark-text-color;
     background-color: $bebl-black1;
 
+    section {
+        background-color: $bebl-black1;
+    }
+
     #leftbar {
         background-color: rgb(10, 10, 10);
     }
@@ -28,7 +32,7 @@
             background-color: #fafafa50;
         }
     }
-    .content-wrapper, & .card, & input  {
+    .content-wrapper, & .card, & input, & .book-cell  {
         background-color: rgb(42, 42, 42);
     }
 }
@@ -36,6 +40,10 @@
 .light-mode {
     color: $light-text-color;
     background-color: #fbfbfb;
+
+    section {
+        background-color: #fbfbfb;
+    }
 
     #mainbar {
         color: $light-text-color;
@@ -69,8 +77,8 @@
             background-color: #94949450;
         }
     }
-    .content-wrapper, & .card, & input  {
-        background-color: rgb(255, 255, 255);
+    .content-wrapper, & .card, & input, & .book-cell  {
+        background-color: #dfdfdf;
     }
 }
 

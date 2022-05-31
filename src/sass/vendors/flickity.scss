@@ -1,12 +1,34 @@
+.quote-carousel {
+    .flickity-prev-next-button {
+      display: none;
+    }
+}
+
 .book-cell {
-  width: 28%;
+  width: 100%;
   height: 300px;
-  margin-right: 10px;
-  border-radius: 5px;
+  margin-right: 20px;
+  border-radius: 10px;
   display: flex;
   height: 250px;
   margin-right: 1px;
-  background-color: #b3b3b3;
+}
+
+@media screen and ( min-width: 768px ) {
+  .book-cell { 
+    width: 50%; 
+  }
+}
+
+.quote-cell {
+  width: 100%;
+  height: 300px;
+  margin-right: 10px;
+  border-radius: 10px;
+  display: flex;
+  height: 250px;
+  margin-right: 1px;
+  
 }
 /*
  

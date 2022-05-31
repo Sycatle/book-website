@@ -8,7 +8,9 @@ class BookManager extends \sycatle\beblio\Manager {
         $statement= $this->getDataManager()->connectDatabase()->prepare(
             "SELECT * FROM books
             JOIN authors 
-            ON books.book_author_id = authors.author_id"
+            ON books.book_author_id = authors.author_id
+            JOIN categories 
+            ON books.book_category_id = categories.category_id"
         );
         $statement->execute();
         

@@ -1,5 +1,6 @@
 #leftbar {
     display: flex;
+    z-index: 600;
     flex-direction: column;
     align-items: center;
     & .left-items {
@@ -36,6 +37,7 @@
 #mainbar {
     display: flex;
     position: sticky; 
+    z-index: 650;
     top: 0; 
     z-index: 500;
     align-items: center;
@@ -70,6 +72,7 @@
 #pagebar {
     display: flex;
     position: fixed;
+    z-index: 350;
     z-index: 200;
     width: 100%;
     align-items: center;

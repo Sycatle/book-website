@@ -48,26 +48,31 @@ function initiateLight() {
   isDayTime = hours > 7 && hours < 19;
 
   if (getCookie("dark") != null) {
-    setLight(getCookie("dark"));
+    setLight(getCookie("dark"), true);
+    return;
   } else {
-    setLight(!isDayTime); 
+    setLight(!isDayTime, false); 
   }
 }
 
-function setLight(dark) {
+function setLight(dark, cookies) {
   var body = document.querySelector("body");
   var brandIcon = document.getElementById("brand-icon");
   var brandText = document.getElementById("brand-text");
+  var backgroundImage = document.getElementById("background-image");
+  var lightSwitchIcon = document.getElementById("light-switch-icon");
   
-  brandIcon.setAttribute("src", "./assets/img/" + (dark ? "dark" : "light") + "/brand_icon.svg");
-  brandText.setAttribute("src","./assets/img/" + (dark ? "dark" : "light") + "/brand_text.svg");
+  if (brandIcon != null) brandIcon.setAttribute("src", "./assets/img/" + (dark ? "dark" : "light") + "/brand_icon.svg");
+  if (brandText != null) brandText.setAttribute("src","./assets/img/" + (dark ? "dark" : "light") + "/brand_text.svg");
+  if (backgroundImage != null) backgroundImage.setAttribute("src","./assets/img/" + (dark ? "dark" : "light") + "/home_banner.webp");
+  if (lightSwitchIcon != null) lightSwitchIcon.setAttribute("src","./assets/img/" + (dark ? "sun.svg" : "moon.svg"));
   
   body.className = dark ? "dark-mode" : "light-mode";
   isDark = dark;
-  setCookie("dark", isDark);
+  if (cookies) setCookie("dark", isDark);
 }
 // TOGGLE DARK FUNCTION
 function toggleLight() {
   // SET ELEMENTS TO DARK OR LIGHT
-  setLight(!isDark);
+  setLight(!isDark, true);
 }

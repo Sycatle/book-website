@@ -118,5 +118,17 @@ main {
 }
 
 section {
-    margin: 50px 0 50px 0;
+    margin: 50px 0 0 0;
+    padding: 25px 0 100px 0;
+}
+
+#banner {
+    padding-top: 75px;;
+    height: 25vh;
+}
+
+#background-image {
+    z-index: -1;
+    position: fixed;
+    width: 100%;
 }

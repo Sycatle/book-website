@@ -89,12 +89,14 @@ class UserManager extends \sycatle\beblio\Manager {
     }
     
     function isMailTaken($email){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT user_username FROM users WHERE user_email=:user_email");
+        $statement= $this->getDataManager()->connectDatabase()->prepare(
+            "SELECT user_username FROM users WHERE user_email=:user_email"
+        );
 
         $statement->execute(array(':user_email'=>$email));
         $row=$statement->fetch(\PDO::FETCH_ASSOC);
 
-        return $row["user_email"]==$email;
+        return $row["user_email"]==$email; // Si le mail match avec un email de la BDD, true, sinon false
     }
 
     public function getUserRow($id) {
