@@ -8,6 +8,7 @@ class QuoteManager extends \sycatle\beblio\Manager {
         $statement= $this->getDataManager()->connectDatabase()->prepare(
             "SELECT * FROM quotes
             JOIN authors ON quotes.quote_author_id = authors.author_id
+            JOIN categories ON quotes.quote_category_id = categories.category_id
         ");
         $statement->execute();
         

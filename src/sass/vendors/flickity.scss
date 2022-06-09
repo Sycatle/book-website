@@ -7,11 +7,10 @@
 .book-cell {
   width: 100%;
   height: 300px;
-  margin-right: 20px;
+  margin-right: 10px;
   border-radius: 10px;
   display: flex;
   height: 250px;
-  margin-right: 1px;
 }
 
 @media screen and ( min-width: 768px ) {
@@ -23,12 +22,8 @@
 .quote-cell {
   width: 100%;
   height: 300px;
-  margin-right: 10px;
-  border-radius: 10px;
   display: flex;
   height: 250px;
-  margin-right: 1px;
-  
 }
 /*
  
