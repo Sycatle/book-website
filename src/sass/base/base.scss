@@ -113,8 +113,12 @@ main {
     transition-duration: 200ms !important;
 }
 
+.collapse {
+    display: none!important;
+}
+
 .show {
-    display: block !important;
+    display: flex!important;
 }
 
 section {

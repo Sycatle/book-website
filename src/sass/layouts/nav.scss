@@ -1,13 +1,14 @@
 #leftbar {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    height: 100%;
+    z-index: 500;
     align-items: center;
     & .left-items {
         margin-top: 5px;
         display: flex;
-        position: fixed;
         flex-direction: column;
-        height: 90%;
         &.bottom {
             margin-top: auto;
         }
@@ -16,29 +17,14 @@
     & .nav-text { 
         margin-left: 10px;
     }
-
-    @media (max-width: 995px) {
-        & .nav-text {
-            display: none;
-        }
-
-        & .brand-icon {
-            align-items: center;
-            margin-left: auto;
-        }
-
-        & .brand-text {
-            display: none;
-        }
-    }
 }
 
 #mainbar {
     display: flex;
-    position: sticky; 
-    z-index: 650;
     top: 0; 
-    z-index: 500;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
     align-items: center;
     flex-direction: row;
     .nav-item {
@@ -71,9 +57,9 @@
 #pagebar {
     display: flex;
     position: fixed;
-    z-index: 350;
-    z-index: 200;
+    top: relative;
     width: 100%;
+    z-index: 1000;
     align-items: center;
     flex-direction: row;
 }

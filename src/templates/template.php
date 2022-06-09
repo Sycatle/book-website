@@ -16,9 +16,11 @@ $user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?= $pageDescription ?>">
 
-  <!-- TAILWIND CSS START --> <!--
+  <!-- TAILWIND CSS START -->
+  <!--
   <script src="https://cdn.tailwindcss.com"></script>
-  --> <!-- TAILWIND CSS END -->
+  -->
+  <!-- TAILWIND CSS END -->
 
   <!-- BOOTSTRAP START -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -39,27 +41,20 @@ $user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']
   <!-- STYLE.CSS END -->
 </head>
 
-<body onload="loadPage();">
+<body>
+  
   <div class="main-content container-fluid">
-    <nav id="mainbar"> <?php include("layouts/mainbar.php"); ?></nav>
-    <div id="page-content" class="d-flex flex-row">
-
-      <?php if ($user != null) { ?>
-        <aside id="leftbar" class="col-1 col-lg-2 d-flex">
-          <?php include("layouts/leftbar.php"); ?>
-        </aside>
-      <?php } ?>
-
-      
-      <div class="col-11 col-lg-10">
-        <?php if ($user != null) { ?>
-          <nav id="pagebar" class="container-fluid d-flex flex-row">
-            <?php include("layouts/pagebar.php"); ?>
-          </nav>
-        <?php } ?>
+    <nav id="mainbar"> 
+      <?php include("layouts/mainbar.php"); ?>
+    </nav>
+    <div id="page-content" style="margin-top: 65px;">
+      <?php include("layouts/leftbar.php"); ?>
+      <div class="col-12">
+        <?php include("modals/post.php"); ?>
         <?= $content ?>
       </div>
     </div>
   </div>
 </body>
+
 </html>
