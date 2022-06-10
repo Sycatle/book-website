@@ -9,5 +9,5 @@ if (isset($_SESSION['id'])) {
     $user = new \sycatle\beblio\entity\User($_SESSION['id']);
     require("./src/templates/pages/home.php");
 } else {
-    require("./src/templates/main.php");
+    require("./src/templates/pages/main.php");
 }

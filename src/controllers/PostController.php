@@ -128,9 +128,11 @@ if (isset($_POST['post_book'])) {
     }
 }
 
+$user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']) : null;
+
 /* Si l'utilisateur est connecté, afficher le formulaire de post de contenu. Sinon, demander à l'utilisateur de se connecter
 puis de rediriger l'utilisateur vers le formulaire de post. */
-if(isset($_SESSION["user"])) {
+if ($user != null) {
 	require("./src/templates/pages/post.php");
 } else {
 	header("Location: ./?r=connect&&a=post");

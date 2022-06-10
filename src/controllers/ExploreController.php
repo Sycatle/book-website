@@ -5,14 +5,12 @@ session_start();
 require('./src/Manager.php');
 $manager = new \sycatle\beblio\Manager();
 
-$books = $manager->getBookManager()->getBooks();
+$user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']) : null;
 
-require("./src/templates/pages/explore.php");
-
-/* if(isset($_SESSION["user"])) {
-	require_once("./views/dashboard.php");
+if ($user != null) {
 	$books = $manager->getBookManager()->getBooks();
+	require("./src/templates/pages/explore.php");
 } else {
-	require_once("./views/welcome.php");
-} */
+	header("Location: .");
+}
 	

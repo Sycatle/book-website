@@ -5,4 +5,8 @@ session_start();
 require('./src/Manager.php');
 $manager = new \sycatle\beblio\Manager();
 
-require("./src/templates/pages/settings.php");
+if ($user != null) {
+    require("./src/templates/pages/settings.php");
+} else {
+    header("Location: .");
+}

@@ -22,4 +22,11 @@ session_start();
 require('./src/Manager.php');
 $manager = new \sycatle\beblio\Manager();
 
-require("./src/templates/pages/admin.php");
+$user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']) : null;
+
+if ($user != null && $user->hasPermission('access_admin')) {
+	require("./src/templates/pages/admin.php");
+} else {
+	header("Location: .");
+}
+

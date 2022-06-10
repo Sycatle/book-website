@@ -89,6 +89,14 @@ class User{
         return $this->joinDate;
     }
 
+    public function getAvatarUrl(){
+        return './uploads/users/avatars/'. $this->username . '.webp';
+    }
+
+    public function getBannerUrl(){
+        return './uploads/users/banners/'. $this->username . '.webp';
+    }
+
     public function hasPermission($permission){
         $userPermissions = $this->manager->getUserManager()->getPermissions($this->id);
         if ($userPermissions == null) return false;
