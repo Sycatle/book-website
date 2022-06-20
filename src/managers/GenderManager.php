@@ -1,31 +1,39 @@
 <?php 
 namespace sycatle\beblio\managers;
+
 require_once("./src/Manager.php");
+require_once("./src/entity/Gender.php");
+use sycatle\beblio\entity\Gender;
 
 class GenderManager extends \sycatle\beblio\Manager {
 
-    function getGenders(){
+    function getGender($gender_id){
+        return new Gender($gender_id);
+    }
+
+    function getGenders($limit = 10){
         $statement= $this->getDataManager()->connectDatabase()->prepare(
-            "SELECT * FROM categories"
+            "SELECT * FROM genders
+            LIMIT $limit"
         );
         $statement->execute();
         
         return $statement;
     }
 
-    function registerGender($title, $slug, $category, $description, $summary, $parution, $category_id, $book_cover) {
+    function registerGender($title, $slug, $gender, $description, $summary, $parution, $gender_id, $book_cover) {
         try {
             $statement = $this->getDataManager()->connectDatabase()->prepare(
-                "INSERT INTO category (title, slug, category, description, summary, parution, category_id) VALUES (:title, :slug, :category, :description, :summary, :parution, :category_id)"
+                "INSERT INTO gender (title, slug, gender, description, summary, parution, gender_id) VALUES (:title, :slug, :gender, :description, :summary, :parution, :gender_id)"
             );
             $statement->execute(array(
                 ':title' => $title,
                 ':slug' => $slug,
-                ':category' => $category,
+                ':gender' => $gender,
                 ':description'=> $description,
                 ':summary'=>$summary,
                 ':parution'=>$parution,
-                ':category_id'=>$category_id
+                ':gender_id'=>$gender_id
             ));
             move_uploaded_file($book_cover['tmp_name'], 'uploads/books/' . basename($slug.".webp"));
         } catch (\PDOException $e) {
@@ -35,12 +43,12 @@ class GenderManager extends \sycatle\beblio\Manager {
 
     public function getGenderData(String $key) {
         $statement= $this->getDataManager()->connectDatabase()->prepare(
-            "SELECT * FROM categories
+            "SELECT * FROM genders
 
-            WHERE category_slug=:category_slug"
+            WHERE gender_slug=:gender_slug"
         );
 
-        $statement->execute(array(":category_slug" => $key));
+        $statement->execute(array(":gender_slug" => $key));
         $row=$statement->fetch(\PDO::FETCH_ASSOC);
 
         return $row;

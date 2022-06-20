@@ -25,6 +25,8 @@ $manager = new \sycatle\beblio\Manager();
 $user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']) : null;
 
 if ($user != null && $user->hasPermission('access_admin')) {
+    $users = $manager->getUserManager()->getUsers();
+    
 	require("./src/templates/pages/admin.php");
 } else {
 	header("Location: .");

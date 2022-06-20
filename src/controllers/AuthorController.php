@@ -17,9 +17,9 @@ if (isset($_GET['slug'])) {
     $authorSlug = $authorData['author_slug'];
     $authorBirth = $authorData['author_birth'];
     $authorDescription = $authorData['author_description'];
-    $authorGender = $authorData['category_name'];
-    $authorGenderSlug = $authorData['category_slug'];
-    $authorGenderColor = $authorData['category_color'];
+    $authorGender = $authorData['gender_name'];
+    $authorGenderSlug = $authorData['gender_slug'];
+    $authorGenderColor = $authorData['gender_color'];
     $authorBiography = $authorData['author_biography'];
     
     require("./src/templates/views/author.php");

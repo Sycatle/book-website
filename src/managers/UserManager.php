@@ -4,7 +4,6 @@ namespace sycatle\beblio\managers;
 
 use sycatle\beblio\entity\User;
 use sycatle\beblio\Manager;
-use sycatle\beblio\managers\FormManager;
 
 require_once("./src/Manager.php");
 require_once("./src/entity/User.php");
@@ -49,15 +48,15 @@ class UserManager extends Manager{
             );
             $statement->execute(array(
                 ':user_username' => $identifier,
-                ':user_email' => $this->encrypt($identifier)
+                ':user_email' => $this->getFormManager()->encrypt($identifier)
             ));
             $row = $statement->fetch(
                 \PDO::FETCH_ASSOC
             );
 
             if ($statement->rowCount() > 0) {
-                if ($identifier == $row["user_username"] || $this->encrypt($identifier) == $row["user_email"]) {
-                    if ($this->encrypt($password) == $row["user_password"]) {
+                if ($identifier == $row["user_username"] || $this->getFormManager()->encrypt($identifier) == $row["user_email"]) {
+                    if ($this->getFormManager()->encrypt($password) == $row["user_password"]) {
                         $user = new User($row["user_id"]);
                         $user->setupSession();
                         return true;
@@ -79,8 +78,8 @@ class UserManager extends Manager{
                 ':user_firstname' => $firstname,
                 ':user_lastname' => $lastname,
                 ':user_username' => $username,
-                ':user_email' => $this->encrypt($email),
-                ':user_password' => $this->encrypt($password)
+                ':user_email' => $this->getFormManager()->encrypt($email),
+                ':user_password' => $this->getFormManager()->encrypt($password)
             ));
             return true;
         } catch (\PDOException $e) {

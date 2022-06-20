@@ -13,7 +13,7 @@ ob_start();
         <div class="quote-title col-9 mx-auto">
             <h1><?= $quoteText ?></h1><br>
             <p>Auteur: <a href="./?author=<?= $quoteAuthorSlug ?>"><?= $quoteAuthorName ?></a></p>
-            <p>Catégorie: <a href="./?category=<?= $quoteGenderSlug ?>"><?= $quoteGender ?></a></p>
+            <p>Catégorie: <a href="./?gender=<?= $quoteGenderSlug ?>"><?= $quoteGender ?></a></p>
         </div>
     </article>
 </section>

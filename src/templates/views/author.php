@@ -26,7 +26,7 @@ ob_start();
             <hr>
             <p><?= $authorBiography ?></p>
         </div>
-        <div class="book-informations container flex-column float-end">
+        <div class="book-informations col-lg-3 container flex-column float-end">
             <img src="./uploads/authors/<?= $authorSlug ?>.webp" height="200px">
             <div id="author-data"> 
             <a class="book-gender text-white d-flex" href="?r=gender&&slug=<?= $authorGenderSlug ?>" style="text-decoration:none;border-radius:15px;background-color:<?= $authorGenderColor ?>;">
@@ -46,10 +46,10 @@ ob_start();
 
     <article class="py-2">
         <h3 class="title">Les livres de <?= $authorName ?></h3>
-        <?php $booksByGender = $manager->getBookManager()->getBooksByAuthor($authorId);
-        while ($row = $booksByGender->fetch(PDO::FETCH_ASSOC)) { ?>
-            <a href="./?r=book&&slug=<?php echo $row['book_slug']; ?>" class="col-2"><img class="shadow-lg" src="./uploads/books/<?php echo $row['book_slug']; ?>.webp" height="220px" width="140px"></a>
-        <?php } ?>
+        <?php
+        $searchedBooks = $manager->getBookManager()->getBooksByAuthor($authorId);
+        include("./src/templates/contents/book_carousel.php");
+        ?>
     </article>
 </section>
 

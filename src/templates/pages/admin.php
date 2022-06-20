@@ -4,7 +4,7 @@ $canGoBack = false;
 
 ob_start();
 ?>
-<section id="admin-section">
+<section id="admin-section" class="container">
     <table>
         <tr>
             <th>Id</th>
@@ -12,7 +12,7 @@ ob_start();
             <th>First Name</th>
             <th>Last Name</th>
         </tr>
-        <?php $users = $manager->getUserManager()->getUsers(); while($row = $users->fetch(PDO::FETCH_ASSOC)) { ?>
+        <?php while($row = $users->fetch(PDO::FETCH_ASSOC)) { ?>
             <tr>
                 <th><?= $row['user_id'] ?></th>
                 <th><?= $row['user_username'] ?></th>

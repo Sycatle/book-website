@@ -11,15 +11,15 @@ class AuthorManager extends \sycatle\beblio\Manager {
         return $statement;
     }
 
-    public function getAuthorsByGender($category){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors WHERE author_category_id=:author_category_id");
-        $statement->execute(array(":author_category_id" => $category));
+    public function getAuthorsByGender($gender){
+        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors WHERE author_gender_id=:author_gender_id");
+        $statement->execute(array(":author_gender_id" => $gender));
         
         return $statement;
     }
 
     public function getCategories(){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM categories ORDER BY category_name");
+        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM genders ORDER BY gender_name");
         $statement->execute();
         
         return $statement;
@@ -32,13 +32,13 @@ class AuthorManager extends \sycatle\beblio\Manager {
     function registerAuthor($author_name, $author_name_slug, $author_birth, $author_gender, $author_description, $author_biography, $author_picture) {
         try {
             $statement = $this->getDataManager()->connectDatabase()->prepare(
-                "INSERT INTO authors (author_name, author_slug, author_birth, author_category_id, author_description, author_biography) VALUES (:author_name, :author_slug, :author_birth, :author_category_id, :author_description, :author_biography)"
+                "INSERT INTO authors (author_name, author_slug, author_birth, author_gender_id, author_description, author_biography) VALUES (:author_name, :author_slug, :author_birth, :author_gender_id, :author_description, :author_biography)"
             );
             $statement->execute(array(
                 ':author_name' => $author_name,
                 ':author_slug' => $author_name_slug,
                 ':author_birth' => $author_birth,
-                ':author_category_id'=> $author_gender,
+                ':author_gender_id'=> $author_gender,
                 ':author_description'=>$author_description,
                 ':author_biography'=>$author_biography
             ));
@@ -52,8 +52,8 @@ class AuthorManager extends \sycatle\beblio\Manager {
         $statement= $this->getDataManager()->connectDatabase()->prepare(
             "SELECT * FROM authors
 
-            JOIN categories 
-            ON authors.author_category_id = categories.category_id
+            JOIN genders 
+            ON authors.author_gender_id = genders.gender_id
 
             WHERE author_slug=:author_slug"
         );

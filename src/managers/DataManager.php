@@ -1,12 +1,14 @@
 <?php 
 namespace sycatle\beblio\managers;
+
+require_once("./src/Config.php");
+use sycatle\beblio\Config;
 require_once("./src/Manager.php");
-require("./src/Config.php");
+use sycatle\beblio\Manager;
 
-
-class DataManager extends \sycatle\beblio\Manager {
+class DataManager extends Manager {
     public function connectDatabase(){
-        $config = new \sycatle\beblio\Config();
+        $config = new Config();
         try {
             $database = new \PDO("mysql:host=" . $config->getDatabaseHost() . ";dbname=" . $config->getDatabaseName() . ";charset=utf8", $config->getDatabaseUser(), $config->getDatabasePassword());
             $database->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

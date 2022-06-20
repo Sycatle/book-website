@@ -12,8 +12,8 @@ if (isset($_GET['slug'])) {
     $quoteId = $quoteData['quote_id'];
     $quoteText = $quoteData['quote_text'];
     $quoteSlug = $quoteData['quote_slug'];
-    $quoteGender = $quoteData['category_name'];
-    $quoteGenderSlug = $quoteData['category_slug'];
+    $quoteGender = $quoteData['gender_name'];
+    $quoteGenderSlug = $quoteData['gender_slug'];
     $quoteAuthorName = $quoteData['author_name'];
     $quoteAuthorSlug = $quoteData['author_slug'];
     require("./src/templates/views/quote.php");

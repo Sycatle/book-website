@@ -1,6 +1,7 @@
 <?php
 namespace sycatle\beblio;
 require_once("managers/DataManager.php");
+require_once("managers/PostManager.php");
 require_once("managers/BookManager.php");
 require_once("managers/UserManager.php");
 require_once("managers/AuthorManager.php");
@@ -15,6 +16,10 @@ class Manager{
 
     public function getUserManager() {
         return new managers\UserManager();
+    }
+
+    public function getPostManager() {
+        return new managers\PostManager();
     }
 
     public function getBookManager() {
@@ -36,13 +41,4 @@ class Manager{
     public function getFormManager() {
         return new managers\FormManager();
     }
-
-    public function encrypt(String $data) : String{
-        return hash('sha256', $data);
-    }
-
-    public function decrypt(String $data) : String {
-        return hash('sha256', $data);
-    }
-
 }
