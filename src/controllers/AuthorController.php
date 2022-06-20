@@ -2,8 +2,11 @@
 session_start();
 
 require("./src/Manager.php");
+
 $manager = new \sycatle\beblio\Manager();
 $authorManager = $manager->getAuthorManager();
+
+$user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']) : null;
 
 if (isset($_GET['slug'])) {
     $authorData = $authorManager->getAuthorData($_GET['slug']);
@@ -16,7 +19,9 @@ if (isset($_GET['slug'])) {
     $authorDescription = $authorData['author_description'];
     $authorGender = $authorData['category_name'];
     $authorGenderSlug = $authorData['category_slug'];
+    $authorGenderColor = $authorData['category_color'];
     $authorBiography = $authorData['author_biography'];
+    
     require("./src/templates/views/author.php");
 } else {
     header("Location: .");

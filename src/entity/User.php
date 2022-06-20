@@ -1,5 +1,6 @@
 <?php
 namespace sycatle\beblio\entity;
+use sycatle\beblio\Manager;
 
 class User{
     private int $id;
@@ -14,10 +15,12 @@ class User{
     private $lastSeen;
 
     private $manager;
+    private $userManager;
 
     function __construct(int $id){
         $this->id = $id;
-        $this->manager = new \sycatle\beblio\Manager();
+        $this->manager = new Manager();
+        $this->userManager = $this->manager->getUserManager();
 
         $this->username = $this->getData("user_username");
         $this->firstname = $this->getData("user_firstname");
@@ -33,9 +36,9 @@ class User{
         $statement->execute(array(
             ':user_id'=>$this->id
         ));
-        $value=$statement->fetch(\PDO::FETCH_ASSOC);
+        $row=$statement->fetch(\PDO::FETCH_ASSOC);
 
-        return $value[$key];
+        return $row[$key];
     }
 
     public function setupSession(){
@@ -57,11 +60,11 @@ class User{
         return $this->username;
     }
 
-    public function getFirstName() {
+    public function getFirstname() {
         return $this->firstname;
     }
 
-    public function getLastName(){
+    public function getLastname(){
         return $this->lastname;
     }
 

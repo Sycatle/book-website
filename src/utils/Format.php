@@ -1,7 +1,14 @@
 <?php
-namespace sycatle\beblio\models\utils;
+namespace sycatle\beblio\utils;
 
 class Format{
+
+
+
+    public function safeFormat($form_value) {
+        return htmlspecialchars(trim(stripslashes($form_value)));
+    }
+
     public function format($data){
         return htmlspecialchars(stripslashes('sha256', $data));
     }

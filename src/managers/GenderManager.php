@@ -4,6 +4,15 @@ require_once("./src/Manager.php");
 
 class GenderManager extends \sycatle\beblio\Manager {
 
+    function getGenders(){
+        $statement= $this->getDataManager()->connectDatabase()->prepare(
+            "SELECT * FROM categories"
+        );
+        $statement->execute();
+        
+        return $statement;
+    }
+
     function registerGender($title, $slug, $category, $description, $summary, $parution, $category_id, $book_cover) {
         try {
             $statement = $this->getDataManager()->connectDatabase()->prepare(

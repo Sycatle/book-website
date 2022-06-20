@@ -2,8 +2,11 @@
 session_start();
 
 require("./src/Manager.php");
+
 $manager = new \sycatle\beblio\Manager();
 $bookManager = $manager->getBookManager();
+
+$user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']) : null;
 
 if (isset($_GET['slug'])) {
     $bookData = $bookManager->getBookData($_GET['slug']);
@@ -17,6 +20,7 @@ if (isset($_GET['slug'])) {
     $bookParution = $bookData['book_parution'];
     $bookGender = $bookData['category_name'];
     $bookGenderSlug = $bookData['category_slug'];
+    $bookGenderColor = $bookData['category_color'];
     $bookDescription = $bookData['book_description'];
     $bookSummary = $bookData['book_summary'];
     require("./src/templates/views/book.php");

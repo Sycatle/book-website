@@ -18,14 +18,34 @@ class BookManager extends \sycatle\beblio\Manager {
     }
 
     public function getBooksByGender($category){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM books WHERE book_category_id=:book_category_id");
+        $statement= $this->getDataManager()->connectDatabase()->prepare(
+            "SELECT * FROM books
+
+            JOIN authors 
+            ON books.book_author_id = authors.author_id
+
+            JOIN categories
+            ON books.book_category_id = categories.category_id
+
+            WHERE book_category_id=:book_category_id"
+        );
         $statement->execute(array(":book_category_id" => $category));
         
         return $statement;
     }
 
     public function getBooksByAuthor($author_id){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM books WHERE book_author_id=:book_author_id");
+        $statement= $this->getDataManager()->connectDatabase()->prepare(
+            "SELECT * FROM books
+
+            JOIN authors 
+            ON books.book_author_id = authors.author_id
+
+            JOIN categories
+            ON books.book_category_id = categories.category_id
+
+            WHERE book_author_id=:book_author_id"
+        );
         $statement->execute(array(":book_author_id" => $author_id));
         
         return $statement;

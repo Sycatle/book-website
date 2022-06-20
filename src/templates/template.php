@@ -47,14 +47,13 @@ $pageTypeName;
   <?php include($user != null ? "modals/post.php" : "modals/login.php"); ?>
   <div class="main-content container-fluid">
     <?php include("layouts/mainbar.php"); ?>
-    <div id="page-content" style="margin-top: 65px;">
+    <div style="margin-top: 65px;">
       <?php include("layouts/leftbar.php"); ?>
-      <div class="col-12">
         <!-- Affichage du contenu de la page -->
         <?= $content ?>
         <!-- Fin de l'affichage du contenu de la page -->
-      </div>
     </div>
+    <?php include("layouts/footer.php"); ?>
   </div>
 </body>
 

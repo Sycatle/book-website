@@ -2,46 +2,46 @@
 session_start();
 
 require("./src/Manager.php");
-
 $manager = new \sycatle\beblio\Manager();
-use \sycatle\beblio\entity\User;
+
 $userManager = $manager->getUserManager();
+$formManager = $manager->getFormManager();
+
+use \sycatle\beblio\entity\User;
 
 if (isset($_POST['login'])) {
 	if (isset($_POST['identifier']) && isset($_POST['password'])){
-		$identifier = htmlspecialchars(stripslashes(trim(($_POST['identifier']))));
-		$password = htmlspecialchars(stripslashes(trim(($_POST['password']))));
+		$identifier = $formManager->safeFormat($_POST['identifier']);
+		$password = $formManager->safeFormat($_POST['password']);
 
-		if($userManager->login($identifier, $password) != null) {
-			$user = new User($userManager->login($identifier, $password));
-			$user->setupSession();
+		if($userManager->loginUser($identifier, $password)) {
+			$errorMessage = "Connecté avec succès.";
 		} else {
-			die("Identifiants incorrects: " . $identifier . $password);
+			$errorMessage = "Identifiants incorrects, avez-vous oublié votre mot de passe?";
 		}
 	} else {
-		die("Vous devez remplir tous les champs du formulaire pour pouvoir vous connecter.");
+		$errorMessage = "Merci de remplir tous les champs du formulaire.";
 	}
 } else if (isset($_POST['register'])) {
 	if (isset($_POST["name"]) && isset($_POST["surname"]) && isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])) {
-		$name = htmlspecialchars(stripslashes(trim($_POST['name'])));
-		$surname = htmlspecialchars(stripslashes(trim($_POST['surname'])));
-		$username = htmlspecialchars(stripslashes(trim($_POST['username'])));
-		$email = htmlspecialchars(stripslashes(trim($_POST['email'])));
-		$password = htmlspecialchars(stripslashes(trim($_POST['password'])));
+		$name = $formManager->safeFormat($_POST['name']);
+		$surname = $formManager->safeFormat($_POST['surname']);
+		$username = $formManager->safeFormat($_POST['username']);
+		$email = $formManager->safeFormat($_POST['email']);
+		$password = $formManager->safeFormat($_POST['password']);
 	
-		if (!$userManager->isUsernameTaken($username)) {
-			if (!$userManager->isMailTaken($email)) {
-				if ($userManager->register($name, $surname, $username, $email, $password) != null) {
-					$user = new User($userManager->login($username, $password));
-					$user->setupSession();
+		if ($userManager->isUsernameAvailable($username)) {
+			if ($userManager->isMailAvailable($email)) {
+				if ($userManager->registerUser($name, $surname, $username, $email, $password)) {
+					$userManager->loginUser($username, $password);
 				} else {
-					die("Impossible de créer votre compte, veuillez ré-essayez plus tard.");
+					$errorMessage = "Erreur lors de la tentative de création du compte.";
 				}
 			} else {
-				die("L'adresse-mail '" . $email . "' n'est pas disponible.");
+				$errorMessage = "L'adresse mail que vous avez saisit ne semble pas disponible.";
 			}
 		} else {
-			die("Le nom d'utilisateur '" . $username . "' n'est pas disponible.");
+			$errorMessage = "L'adresse mail que vous avez saisit ne semble pas disponible.";
 		}
 	}
 }

@@ -26,7 +26,7 @@ class AuthorManager extends \sycatle\beblio\Manager {
     }
 
     public function getAuthor($id) {
-        return new \sycatle\beblio\objects\Author($id);
+        return new \sycatle\beblio\entity\Author($id);
     }
 
     function registerAuthor($author_name, $author_name_slug, $author_birth, $author_gender, $author_description, $author_biography, $author_picture) {
@@ -57,8 +57,6 @@ class AuthorManager extends \sycatle\beblio\Manager {
 
             WHERE author_slug=:author_slug"
         );
-/*         JOIN authors_id 
-        ON books.author_id = authors.author_id */
 
         $statement->execute(array(":author_slug" => $key));
         $row=$statement->fetch(\PDO::FETCH_ASSOC);

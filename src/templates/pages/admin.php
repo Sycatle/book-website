@@ -14,10 +14,10 @@ ob_start();
         </tr>
         <?php $users = $manager->getUserManager()->getUsers(); while($row = $users->fetch(PDO::FETCH_ASSOC)) { ?>
             <tr>
-                <th><?php echo $row['user_id']; ?></th>
-                <th><?php echo $row['user_username']; ?></th>
-                <th><?php echo $row['user_firstname']; ?></th>
-                <th><?php echo $row['user_lastname']; ?></th>
+                <th><?= $row['user_id'] ?></th>
+                <th><?= $row['user_username'] ?></th>
+                <th><?= $row['user_firstname'] ?></th>
+                <th><?= $row['user_lastname'] ?></th>
             </tr>
         <?php } ?>
     </table>
