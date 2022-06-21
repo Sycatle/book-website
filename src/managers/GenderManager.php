@@ -2,10 +2,11 @@
 namespace sycatle\beblio\managers;
 
 require_once("./src/Manager.php");
-require_once("./src/entity/Gender.php");
-use sycatle\beblio\entity\Gender;
+use sycatle\beblio\Manager;
+require_once("./src/entities/postables/Gender.php");
+use sycatle\beblio\entities\Gender;
 
-class GenderManager extends \sycatle\beblio\Manager {
+class GenderManager extends Manager {
 
     function getGender($gender_id){
         return new Gender($gender_id);

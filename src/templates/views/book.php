@@ -34,7 +34,7 @@ ob_start();
                     <span class="text-white d-flex p-1 mx-2"><img class="rounded-3" src="<?= $book->getAuthor()->getImageLink() ?>" height="30px" width="30px">
                     <?= $book->getAuthor()->getName() ?></span>
                 </a>
-                <a class="book-gender text-white d-flex" href="?r=gender&&slug=<?= $book->getGender()->getSlug() ?>" style="text-decoration:none;border-radius:15px;background-color:<?= $bookGenderColor ?>;">
+                <a class="book-gender text-white d-flex bebl-<?= $book->getGender()->getColor() ?>-bg" href="?r=gender&&slug=<?= $book->getGender()->getSlug() ?>">
                     <span class="text-white d-flex p-1 mx-2"><?= $book->getGender()->getName() ?></span>
                 </a>
                 <div class="book-date text-white d-flex" style="text-decoration:none;border-radius:15px;background-color:gray">

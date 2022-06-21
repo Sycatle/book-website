@@ -6,7 +6,7 @@ use sycatle\beblio\Manager;
 class FormManager extends Manager {
 
     public function safeFormat($form_value) : String {
-        return htmlspecialchars(trim(stripslashes($form_value)));
+        return htmlspecialchars(trim(stripslashes(strip_tags($form_value))));
     }
 
     public function toSlug($string) : String {

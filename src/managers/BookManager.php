@@ -2,48 +2,48 @@
 namespace sycatle\beblio\managers;
 
 require_once("./src/Manager.php");
+
+use JetBrains\PhpStorm\ArrayShape;
 use sycatle\beblio\Manager;
-require_once("./src/entity/Book.php");
-use sycatle\beblio\entity\Book;
+require_once("./src/entities/postables/Book.php");
+use sycatle\beblio\entities\Book;
 
 class BookManager extends Manager {
 
     public function getBooks($limit = 10){
-        $statement= $this->getDataManager()->connectDatabase()->prepare(
-            "SELECT * FROM books
+        $sqlRequest = 
+        "SELECT * FROM books
 
-            JOIN authors 
-            ON books.book_author_id = authors.author_id
+        JOIN authors 
+        ON books.book_author_id = authors.author_id
+        JOIN genders 
+        ON books.book_gender_id = genders.gender_id
+        /*JOIN posts 
+        ON books.book_post_id = posts.post_id
+        WHERE posts.post_visible = true */
 
-            JOIN genders 
-            ON books.book_gender_id = genders.gender_id
-
-            LIMIT $limit"
-        );
+        LIMIT $limit";
+        $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
         $statement->execute();
         
         return $statement;
     }
 
-    public function getBooksByGender($gender, $limit = 10){
-        $statement= $this->getDataManager()->connectDatabase()->prepare(
-            "SELECT * FROM books
-
-            JOIN authors 
-            ON books.book_author_id = authors.author_id
-
-            JOIN genders
-            ON books.book_gender_id = genders.gender_id
-
-            WHERE book_gender_id=:book_gender_id
-            
-            LIMIT $limit"
-        );
-        $statement->execute(array(
-            ":book_gender_id" => $gender
-        ));
-        
-        return $statement;
+    public function getBooksByGender($gender, $limit = 10) {
+        $statement = [];
+        try {
+            $sqlRequest =   "SELECT * FROM books
+                            JOIN authors ON books.book_author_id = authors.author_id
+                            JOIN genders ON books.book_gender_id = genders.gender_id
+                            WHERE book_gender_id=$gender
+                            LIMIT $limit";
+            $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
+            $statement->execute();
+        } catch (\PDOException $exception) {
+            die($exception->getMessage());
+        } finally {
+            return $statement;
+        }
     }
 
     public function getBooksByAuthor($author_id, $limit = 10){
@@ -63,13 +63,6 @@ class BookManager extends Manager {
         $statement->execute(array(
             ":book_author_id" => $author_id
         ));
-        
-        return $statement;
-    }
-
-    public function getCategories(){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM genders ORDER BY gender_name");
-        $statement->execute();
         
         return $statement;
     }

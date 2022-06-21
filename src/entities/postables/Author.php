@@ -1,12 +1,12 @@
 <?php
-namespace sycatle\beblio\entity;
+namespace sycatle\beblio\entities;
 
 require_once("./src/Manager.php");
 use sycatle\beblio\Manager;
-require_once("./src/entity/Post.php");
-use sycatle\beblio\entity\Post;
+require_once("./src/entities/Postable.php");
+use sycatle\beblio\entities\Postable;
 
-class Author extends Post {
+class Author extends Postable {
     private $manager;
 
     private $id;
@@ -20,24 +20,13 @@ class Author extends Post {
     function __construct(int $id){
         $this->id = $id;
         $this->manager = new Manager();
+        $this->postType = 'author';
 
-        $this->name = $this->getData("author_name");
-        $this->slug = $this->getData("author_slug");
-        $this->description = $this->getData("author_description");
-        $this->biography = $this->getData("author_biography");
-        $this->gender = $this->getData("author_gender_id");
-    }
-
-    public function getData($key) {
-        $statement= $this->manager->getDataManager()->connectDatabase()->prepare(
-            "SELECT " . $key . " FROM authors WHERE author_id=:author_id"
-        );
-        $statement->execute(array(
-            ':author_id'=>$this->id
-        ));
-        $value=$statement->fetch(\PDO::FETCH_ASSOC);
-
-        return $value[$key];
+        $this->name = $this->getData($this->postType, "author_name", $this->id);
+        $this->slug = $this->getData($this->postType, "author_slug", $this->id);
+        $this->description = $this->getData($this->postType, "author_description", $this->id);
+        $this->biography = $this->getData($this->postType, "author_biography", $this->id);
+        $this->gender = $this->getData($this->postType, "author_gender_id", $this->id);
     }
 
     /* GETTERS */
@@ -47,6 +36,7 @@ class Author extends Post {
     public function getDescription() { return $this->description; }
     public function getBiography() { return $this->summary; }
     public function getGender() { return new Gender($this->gender); }
+    public function getUrl() { return "./?r=author&&slug=" . $this->slug; }
     public function getImageLink(){ return "./uploads/authors/$this->slug.webp"; }
     public function getBooks() { /* UNFINISHED */ return $this->manager->getBookManager()->getBooksByAuthor($this->getId()); }
 

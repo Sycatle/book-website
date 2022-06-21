@@ -6,7 +6,7 @@ require("./src/Manager.php");
 $manager = new \sycatle\beblio\Manager();
 $authorManager = $manager->getAuthorManager();
 
-$user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']) : null;
+$user = isset($_SESSION['id']) ? new \sycatle\beblio\entities\User($_SESSION['id']) : null;
 
 if (isset($_GET['slug'])) {
     $authorData = $authorManager->getAuthorData($_GET['slug']);

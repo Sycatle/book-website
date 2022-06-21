@@ -10,7 +10,7 @@ $authorManager = $manager->getAuthorManager();
 $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
 $allowedMaxSize =  0.5*1000000; // Taille maximum du fichier: 0.5Mega-octets/500Kilo-octets
 
-$user = isset($_SESSION['id']) ? new \sycatle\beblio\entity\User($_SESSION['id']) : null;
+$user = isset($_SESSION['id']) ? new \sycatle\beblio\entities\User($_SESSION['id']) : null;
 
 if ($user != null) {
     if (isset($_POST['post_book'])) {

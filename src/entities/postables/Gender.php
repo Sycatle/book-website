@@ -1,12 +1,12 @@
 <?php
-namespace sycatle\beblio\entity;
+namespace sycatle\beblio\entities;
 
 require_once("./src/Manager.php");
 use sycatle\beblio\Manager;
-require_once("./src/entity/Post.php");
-use sycatle\beblio\entity\Post;
+require_once("./src/entities/Postable.php");
+use sycatle\beblio\entities\Postable;
 
-class Gender extends Post {
+class Gender extends Postable {
     private $manager;
 
     private $id;
@@ -16,23 +16,14 @@ class Gender extends Post {
     private $color;
 
     function __construct(int $id){
-        $this->id = $id;
         $this->manager = new Manager();
+        $this->postType = 'gender';
 
-        $this->name = $this->getData("gender_name");
-        $this->slug = $this->getData("gender_slug");
-        $this->description = $this->getData("gender_description");
-        $this->color = $this->getData("gender_color");
-    }
-
-    public function getData($key) {
-        $sqlRequest = "SELECT " . $key . " FROM genders WHERE gender_id=:gender_id";
-
-        $statement= $this->manager->getDataManager()->connectDatabase()->prepare($sqlRequest);
-        $statement->execute(array(':gender_id'=>$this->id));
-        $value=$statement->fetch(\PDO::FETCH_ASSOC);
-
-        return $value[$key];
+        $this->id = $id;
+        $this->name = $this->getData($this->postType, "gender_name", $this->id);
+        $this->slug = $this->getData($this->postType, "gender_slug", $this->id);
+        $this->description = $this->getData($this->postType, "gender_description", $this->id);
+        $this->color = $this->getData($this->postType, "gender_color", $this->id);
     }
 
     /* GETTERS */
@@ -41,6 +32,7 @@ class Gender extends Post {
     public function getSlug() { return $this->slug; }
     public function getDescription() { return $this->description; }
     public function getColor() { return $this->color; }
+    public function getUrl() { return "./?r=gender&&slug=" . $this->slug; }
 
     /* SETTERS */
     public function setName($name) { $this->name = $name; }

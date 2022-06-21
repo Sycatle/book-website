@@ -26,7 +26,7 @@ class AuthorManager extends \sycatle\beblio\Manager {
     }
 
     public function getAuthor($id) {
-        return new \sycatle\beblio\entity\Author($id);
+        return new \sycatle\beblio\entities\Author($id);
     }
 
     function registerAuthor($author_name, $author_name_slug, $author_birth, $author_gender, $author_description, $author_biography, $author_picture) {

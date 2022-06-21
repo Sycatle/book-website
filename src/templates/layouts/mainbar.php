@@ -12,9 +12,9 @@
         </div>
 
 
-        <div class="d-flex col-5 d-none d-lg-flex">
+        <div class="d-flex col-5 d-none d-md-flex">
             <?php if ($canGoBack) { ?>
-                <div class="my-auto mx-1 d-flex">
+                <div class="my-auto ml-auto d-flex">
                     <a href="." class="px-1" title="Retour"><img src="./assets/img/left-arrow.svg" height="25px" width="25px" alt="Retour"></a>
                 </div>
             <?php }

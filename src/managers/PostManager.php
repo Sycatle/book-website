@@ -1,15 +1,45 @@
 <?php 
 namespace sycatle\beblio\managers;
-use sycatle\beblio\entity\Post;
+use sycatle\beblio\entities\Postable;
+
 require_once("./src/Manager.php");
 use sycatle\beblio\Manager;
-require_once("./src/entity/user.php");
-use sycatle\beblio\entity\User;
+require_once("./src/entities/user.php");
+use sycatle\beblio\entities\User;
 
 class PostManager extends Manager {
 
+    public $postTypes = [
+        0 => 'book',
+        1 => 'author',
+        2 => 'quote',
+        3 => 'gender'
+    ];
+
+    function registerPost($post, $user) {
+        try {
+            $statement = $this->getDataManager()->connectDatabase()->prepare(
+                "INSERT INTO posts (post_type, post_user_id) VALUES (:post_type, :post_user)"
+            );
+            $statement->execute(array(
+                ':post_type'	=> $post->getPostType(),
+                ':post_user_id'	=> $user->getId()
+            ));
+        } catch (\PDOException $e) {
+            die($e->getMessage());
+        }
+    }
+
+    function updatePost($user) {
+        // TO DO
+    }
+
+    function removePost($postId) {
+        // TO DO
+    }
+
     public function getPost($id) {
-        return new Post($id);
+        return new Postable($id);
     }
 
     public function getPosts() {
@@ -56,27 +86,5 @@ class PostManager extends Manager {
         $row=$statement->fetch(\PDO::FETCH_ASSOC);
 
         return $row;
-    }
-
-    function createPost($postType, $postUserId) {
-        try {
-            $statement = $this->getDataManager()->connectDatabase()->prepare(
-                "INSERT INTO posts (post_type, post_user_id) VALUES (:post_type, :post_user)"
-            );
-            $statement->execute(array(
-                ':post_type'	=> $postType,
-                ':post_user_id'	=> $postUserId
-            ));
-        } catch (\PDOException $e) {
-            die($e->getMessage());
-        }
-    }
-
-    function updatePost($user) {
-        // TO DO
-    }
-
-    function removePost($postId) {
-        // TO DO
     }
 }

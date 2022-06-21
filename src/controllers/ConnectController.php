@@ -7,7 +7,7 @@ $manager = new \sycatle\beblio\Manager();
 $userManager = $manager->getUserManager();
 $formManager = $manager->getFormManager();
 
-use \sycatle\beblio\entity\User;
+use \sycatle\beblio\entities\User;
 
 if (isset($_POST['login'])) {
 	if (isset($_POST['identifier']) && isset($_POST['password'])){

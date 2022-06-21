@@ -3,7 +3,7 @@ session_start();
 
 require('./src/Manager.php');
 use sycatle\beblio\Manager;
-use sycatle\beblio\entity\User;
+use sycatle\beblio\entities\User;
 
 $manager = new Manager();
 

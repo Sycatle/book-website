@@ -29,7 +29,7 @@ ob_start();
         <div class="book-informations col-lg-3 container flex-column float-end">
             <img src="./uploads/authors/<?= $authorSlug ?>.webp" height="200px">
             <div id="author-data"> 
-            <a class="book-gender text-white d-flex" href="?r=gender&&slug=<?= $authorGenderSlug ?>" style="text-decoration:none;border-radius:15px;background-color:<?= $authorGenderColor ?>;">
+            <a class="book-gender text-white d-flex bebl-<?= $authorGenderColor ?>-bg" href="?r=gender&&slug=<?= $authorGenderSlug ?>">
                     <span class="text-white d-flex p-1 mx-2"><?= $authorGender ?></span>
                 </a>
                 <div class="author-birth text-white d-flex" style="text-decoration:none;border-radius:15px;background-color:gray">

@@ -23,4 +23,18 @@ class DataManager extends Manager {
         $database = null;
     }
 
+    public function getData($type, $key, $where) {
+        $sqlRequest = "SELECT ".$key." FROM ".$type."s WHERE ".$type."_id=".$where;
+
+        try {
+            $statement= $this->connectDatabase()->prepare($sqlRequest);
+            $statement->execute();
+            $row=$statement->fetch(\PDO::FETCH_ASSOC);
+
+            return $row[$key];
+        } catch (\PDOException $e) {
+            die($e->getMessage());
+        }
+    }
+
 }

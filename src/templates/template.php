@@ -16,12 +16,6 @@ $pageTypeName;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?= $pageDescription ?>">
 
-  <!-- TAILWIND CSS START -->
-  <!--
-  <script src="https://cdn.tailwindcss.com"></script>
-  -->
-  <!-- TAILWIND CSS END -->
-
   <!-- STYLE.CSS START -->
   <link rel="stylesheet" type="text/css" href="./dist/css/style.min.css" />
   <!-- STYLE.CSS END -->
@@ -49,9 +43,11 @@ $pageTypeName;
     <?php include("layouts/mainbar.php"); ?>
     <div style="margin-top: 65px;">
       <?php include("layouts/leftbar.php"); ?>
+
         <!-- Affichage du contenu de la page -->
         <?= $content ?>
         <!-- Fin de l'affichage du contenu de la page -->
+        
     </div>
     <?php include("layouts/footer.php"); ?>
   </div>

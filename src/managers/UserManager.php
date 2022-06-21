@@ -2,11 +2,11 @@
 
 namespace sycatle\beblio\managers;
 
-use sycatle\beblio\entity\User;
+use sycatle\beblio\entities\User;
 use sycatle\beblio\Manager;
 
 require_once("./src/Manager.php");
-require_once("./src/entity/User.php");
+require_once("./src/entities/User.php");
 
 class UserManager extends Manager{
     private $user;
@@ -119,13 +119,19 @@ class UserManager extends Manager{
     }
 
     public function getData($key, $id) {
-        $statement = $this->manager->getDataManager()->connectDatabase()->prepare(
-            "SELECT " . $key . " FROM users WHERE user_id=:user_id"
-        );
-        $statement->execute(array(
-            ':user_id' => $id
-        ));
-        $value = $statement->fetch(\PDO::FETCH_ASSOC);
+        $sqlRequest = "SELECT " . $key . " FROM users WHERE user_id=:user_id";
+
+        try {
+            $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
+            $statement->execute(array(
+                ':user_id'=>$id
+            ));
+            $row=$statement->fetch(\PDO::FETCH_ASSOC);
+
+            return $row[$key];
+        } catch (\PDOException $exception) {
+            die("Erreur lors de la tentative de récupération des données: " . $exception->getMessage());
+        }
     }
 
     public function getPermissions($id) {
