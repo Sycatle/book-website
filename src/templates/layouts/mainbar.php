@@ -1,10 +1,18 @@
 <!-- Initializing Main Header-->
 <nav id="mainbar">
     <div class="navbar container-fluid navbar-dark d-flex" aria-label="Main navigation">
-        <div class="d-flex col-3 me-auto">
-            <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <div class="d-flex">
+            <!-- <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                 <img src="assets/img/ham_menu.svg" alt="Menu" height="25px" width="25px" />
-            </a>
+            </a> -->
+            <button class="navbar-toggler ms-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-left align-middle me-2">
+                    <line x1="17" y1="10" x2="3" y2="10"></line>
+                    <line x1="21" y1="6" x2="3" y2="6"></line>
+                    <line x1="21" y1="14" x2="3" y2="14"></line>
+                    <line x1="17" y1="18" x2="3" y2="18"></line>
+                </svg>
+            </button>
             <a class="navbar-brand" href="." aria-label="Bebl.io">
                 <img id="brand-icon" src="./assets/img/dark/brand_icon.svg" height="40px">
                 <img id="brand-text" src="./assets/img/dark/brand_text.svg" height="40px">
@@ -12,22 +20,58 @@
         </div>
 
 
-        <div class="d-flex col-5 d-none d-md-flex">
+        <div class="d-flex col-5 mx-auto d-none d-md-flex">
             <?php if ($canGoBack) { ?>
                 <div class="my-auto ml-auto d-flex">
                     <a href="." class="px-1" title="Retour"><img src="./assets/img/left-arrow.svg" height="25px" width="25px" alt="Retour"></a>
                 </div>
             <?php }
             if ($user != null) { /* Affichage des modules uniquement si connecté. */ ?>
-            <form method="GET" action="/" class="search-area input-group mx-auto">
-                <input type="text" class="form-control" placeholder="Recherche par mot-clés.." required>
-                <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><img src="./assets/img/dark/search.png" height="20px"></button>
-            </form>
+                <form method="GET" action="/" class="search-area input-group mx-auto">
+                    <input type="text" class="form-control" placeholder="Recherche par mot-clés.." required>
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><img src="./assets/img/dark/search.png" height="20px"></button>
+                </form>
         </div>
 
-
+        <div class="btn-group ms-auto">
+            <a href="#" class="text-white text-decoration-none mx-3" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="usericon"><img class="avatar-thumbnail rounded-circle" src="<?= $user->getAvatarUrl() ?>" height="35" width="35"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end text-light">
+                <li><a class="dropdown-item" href="#">Thème</a></li>
+                <li>
+                    <a class="dropdown-item" href="./?r=settings">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders align-middle me-2">
+                            <line x1="4" y1="21" x2="4" y2="14"></line>
+                            <line x1="4" y1="10" x2="4" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12" y2="3"></line>
+                            <line x1="20" y1="21" x2="20" y2="16"></line>
+                            <line x1="20" y1="12" x2="20" y2="3"></line>
+                            <line x1="1" y1="14" x2="7" y2="14"></line>
+                            <line x1="9" y1="8" x2="15" y2="8"></line>
+                            <line x1="17" y1="16" x2="23" y2="16"></line>
+                        </svg>
+                        Réglages
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <a class="dropdown-item" href="./?r=disconnect">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out align-middle me-2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                        Déconnexion
+                    </a>
+                </li>
+            </ul>
+        </div>
         <div class="d-flex">
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <a class="nav-link" href="#" id="alertsDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="./assets/img/bell.svg" height="25px">
                 </a>
@@ -44,15 +88,15 @@
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="./?r=disconnect">Déconnexion</a></li>
                 </ul>
-            </div>
-            <?php } else { ?>
+            </div> -->
+        <?php } else { ?>
             <button class="btn btn-secondary" title="Connexion" data-bs-toggle="modal" data-bs-target="#connectModal">
                 Se connecter
             </button>
             <button class="btn btn-primary" title="Connexion" data-bs-toggle="modal" data-bs-target="#connectModal">
                 Créer mon compte
             </button>
-            <?php } ?>
+        <?php } ?>
         </div>
     </div>
 </nav>

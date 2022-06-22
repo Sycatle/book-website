@@ -1,4 +1,4 @@
-<div class="carousel quote-carousel" data-flickity='{ "autoPlay": 7000 }'>
+<div class="carousel quote-carousel" data-flickity='{ "autoPlay": 6000 }'>
     <?php while ($row = $searchedQuotes->fetch(PDO::FETCH_ASSOC)) { ?>
         <div class="quote-cell bebl-<?= $row['gender_color'] ?>-bg">
             <div class="quote-content mx-auto my-auto">

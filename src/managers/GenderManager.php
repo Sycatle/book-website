@@ -15,6 +15,7 @@ class GenderManager extends Manager {
     function getGenders($limit = 10){
         $statement= $this->getDataManager()->connectDatabase()->prepare(
             "SELECT * FROM genders
+            ORDER BY RAND ()
             LIMIT $limit"
         );
         $statement->execute();

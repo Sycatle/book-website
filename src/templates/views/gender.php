@@ -16,8 +16,9 @@ ob_start();
         </div>
     </article>
     <article class="my-2 py-5">
-        <h3 class="title"><?= $genderName ?></h3>
         <?php
+        $sliderTitle = "Livres de " . $genderName;
+        $sliderRate = 0;
         $searchedBooks = $manager->getBookManager()->getBooksByGender($genderId);
         include("./src/templates/contents/book_carousel.php");
         ?>

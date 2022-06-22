@@ -11,18 +11,16 @@ use sycatle\beblio\entities\Book;
 class BookManager extends Manager {
 
     public function getBooks($limit = 10){
-        $sqlRequest = 
-        "SELECT * FROM books
-
-        JOIN authors 
-        ON books.book_author_id = authors.author_id
-        JOIN genders 
-        ON books.book_gender_id = genders.gender_id
-        /*JOIN posts 
-        ON books.book_post_id = posts.post_id
-        WHERE posts.post_visible = true */
-
-        LIMIT $limit";
+        $sqlRequest ="SELECT * FROM books
+                    JOIN authors 
+                    ON books.book_author_id = authors.author_id
+                    JOIN genders 
+                    ON books.book_gender_id = genders.gender_id
+                    /*JOIN posts 
+                    ON books.book_post_id = posts.post_id
+                    WHERE posts.post_visible = true */
+                    ORDER BY RAND ()
+                    LIMIT $limit";
         $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
         $statement->execute();
         
@@ -36,6 +34,7 @@ class BookManager extends Manager {
                             JOIN authors ON books.book_author_id = authors.author_id
                             JOIN genders ON books.book_gender_id = genders.gender_id
                             WHERE book_gender_id=$gender
+                            ORDER BY RAND ()
                             LIMIT $limit";
             $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
             $statement->execute();
@@ -49,15 +48,10 @@ class BookManager extends Manager {
     public function getBooksByAuthor($author_id, $limit = 10){
         $statement= $this->getDataManager()->connectDatabase()->prepare(
             "SELECT * FROM books
-
-            JOIN authors 
-            ON books.book_author_id = authors.author_id
-
-            JOIN genders
-            ON books.book_gender_id = genders.gender_id
-
+            JOIN authors ON books.book_author_id = authors.author_id
+            JOIN genders ON books.book_gender_id = genders.gender_id
             WHERE book_author_id=:book_author_id
-            
+            ORDER BY RAND ()
             LIMIT $limit"
         );
         $statement->execute(array(

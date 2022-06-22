@@ -1,22 +1,30 @@
-#leftbar {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    height: 100%;
-    z-index: 500;
-    align-items: center;
-    & .left-items {
-        margin-top: 5px;
-        display: flex;
-        flex-direction: column;
-        &.bottom {
-            margin-top: auto;
-        }
-    }
+.sidebar-nav ul li a {
+    font-size: 26px;
+    text-decoration: none;
+    display: block;
+    padding: 6px 10px;
+    transition: 0.5s;
+}
+.sidebar-nav ul li a:hover {
+    background-color: #eeeeee;
+    border-radius: 4px;
+}
+.sidebar-nav .offcanvas {
+    width: 250px;
+    border: none;
+}
+.sidebar-nav .offcanvas ul li a span {
+    font-size: 18px;
+    position: relative;
+    transition: 0.5s;
+}
+.sidebar-nav .offcanvas.show ul li a:hover span {
+    padding-left: 10px;
+}
 
-    & .nav-text { 
-        margin-left: 10px;
-    }
+.sidebar-nav .offcanvas-header {
+    height: 66px;
+    padding: 0;
 }
 
 #mainbar {
@@ -24,9 +32,17 @@
     top: 0; 
     position: fixed;
     width: 100%;
+    height: 66px;
     z-index: 1000;
     align-items: center;
     flex-direction: row;
+    .dropdown-toggle::after {
+        position: relative;
+        top: 3px;
+    }
+    button {
+        border: none;
+    }
     .nav-item {
         display: flex;
         flex-direction: row;
@@ -34,10 +50,7 @@
         margin-top: 3px;
         margin-bottom: 3px;
     }
-    a {
-        color: white;
-        text-decoration: none;
-    }
+    
 }
 
 

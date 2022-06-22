@@ -1,4 +1,4 @@
-<div class="carousel book-carousel" data-flickity='{ "wrapAround": true, "autoPlay": 7000  }'>
+<div class="carousel book-carousel" data-flickity='{ "wrapAround": true, "autoPlay": 5000  }'>
     <?php while ($row = $searchedGenders->fetch(PDO::FETCH_ASSOC)) { ?>
 
         <div class="book-cell text-center align-items-center bebl-<?= $row['gender_color'] ?>-bg">

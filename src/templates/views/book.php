@@ -49,8 +49,9 @@ ob_start();
         <p><?= $book->getSummary() ?></p><br>
     </div>
     <article class="py-3">
-        <h3 class="title">Trouvez plus de livres de <?= $book->getAuthor()->getName() ?></h3>
         <?php
+        $sliderTitle = "Plus de livres de " . $book->getAuthor()->getName();
+        $sliderRate = 0;
         $searchedBooks = $bookManager->getBooksByAuthor($book->getAuthor()->getId());
         include("./src/templates/contents/book_carousel.php");
         ?>

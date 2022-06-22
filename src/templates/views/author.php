@@ -45,8 +45,9 @@ ob_start();
     </article>
 
     <article class="py-2">
-        <h3 class="title">Les livres de <?= $authorName ?></h3>
         <?php
+        $sliderTitle = "Les livres de " . $authorName;
+        $sliderRate = false;
         $searchedBooks = $manager->getBookManager()->getBooksByAuthor($authorId);
         include("./src/templates/contents/book_carousel.php");
         ?>

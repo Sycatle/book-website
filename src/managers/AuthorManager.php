@@ -1,6 +1,8 @@
 <?php 
 namespace sycatle\beblio\managers;
 require_once("./src/Manager.php");
+require_once("./src/entities/postables/Author.php");
+use sycatle\beblio\entities\Author;
 
 class AuthorManager extends \sycatle\beblio\Manager {
 
@@ -12,8 +14,8 @@ class AuthorManager extends \sycatle\beblio\Manager {
     }
 
     public function getAuthorsByGender($gender){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors WHERE author_gender_id=:author_gender_id");
-        $statement->execute(array(":author_gender_id" => $gender));
+        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors WHERE author_gender_id=$gender");
+        $statement->execute();
         
         return $statement;
     }
@@ -25,8 +27,8 @@ class AuthorManager extends \sycatle\beblio\Manager {
         return $statement;
     }
 
-    public function getAuthor($id) {
-        return new \sycatle\beblio\entities\Author($id);
+    public function getAuthorById($id) {
+        return new Author($id);
     }
 
     function registerAuthor($author_name, $author_name_slug, $author_birth, $author_gender, $author_description, $author_biography, $author_picture) {

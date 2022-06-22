@@ -10,8 +10,9 @@
         background-color: $bebl-black1;
     }
 
-    #leftbar {
-        background-color: rgb(10, 10, 10);
+    .sidebar-nav .offcanvas {
+        color: $dark-text-color;
+        background-color: rgb(5, 5, 5);
     }
 
     #mainbar {
@@ -40,6 +41,14 @@
     .content-wrapper, & .card, & input  {
         background-color: rgb(42, 42, 42);
     }
+
+    .form-control:focus {
+        color: $dark-text-color;
+        background-color: rgb(42, 42, 42);
+        border: none;
+        border-color: orangered;
+        border-bottom: 1px solid red;
+    }
 }
 
 .light-mode {
@@ -57,12 +66,11 @@
         box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05);
     }
 
-
-    #leftbar {
+    .sidebar-nav .offcanvas {
         color: $light-text-color;
-        background-color: #e2e2e2;
-        -webkit-box-shadow: 5px 5px 5px 3px rgba(0,0,0,0.05); 
-        box-shadow: 5px 5px 5px 3px rgba(0,0,0,0.05);
+        background-color: #e4e4e4;
+        -webkit-box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05); 
+        box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05);
     }
 
     #pagebar {
