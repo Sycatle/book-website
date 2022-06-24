@@ -1,8 +1,13 @@
 <?php
-$pageTitle = $book->getTitle();
+if ($book != null) {
+    $pageTitle = $book->getTitle();
+    $pageDescription = $book->getDescription();
+} else {
+    $pageTitle = "Ajout d'un livre";
+    $pageDescription = "Vous ne trouvez pas le livre que vous cherchez? Ajouter le !";
+}
 $pageTypeName = "Livres";
 $canGoBack = true;
-$pageDescription = $book->getDescription();
 
 ob_start();
 ?>

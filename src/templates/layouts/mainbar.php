@@ -23,13 +23,17 @@
         <div class="d-flex col-5 mx-auto d-none d-md-flex">
             <?php if ($canGoBack) { ?>
                 <div class="my-auto ml-auto d-flex">
-                    <a href="." class="px-1" title="Retour"><img src="./assets/img/left-arrow.svg" height="25px" width="25px" alt="Retour"></a>
+                    <a href="." class="px-1" title="Retour">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left align-middle me-2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </a>
                 </div>
             <?php }
             if ($user != null) { /* Affichage des modules uniquement si connecté. */ ?>
                 <form method="GET" action="/" class="search-area input-group mx-auto">
                     <input type="text" class="form-control" placeholder="Recherche par mot-clés.." required>
-                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><img src="./assets/img/dark/search.png" height="20px"></button>
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search align-middle me-2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
                 </form>
         </div>
 

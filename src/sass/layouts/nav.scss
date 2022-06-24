@@ -66,13 +66,3 @@
         cursor: pointer;
     }
 }
-
-#pagebar {
-    display: flex;
-    position: fixed;
-    top: relative;
-    width: 100%;
-    z-index: 1000;
-    align-items: center;
-    flex-direction: row;
-}

@@ -8,6 +8,7 @@ require_once("managers/AuthorManager.php");
 require_once("managers/GenderManager.php");
 require_once("managers/QuoteManager.php");
 require_once("managers/FormManager.php");
+require_once("managers/ImageManager.php");
 
 class Manager{
     public function getDataManager() {
@@ -40,5 +41,9 @@ class Manager{
 
     public function getFormManager() {
         return new managers\FormManager();
+    }
+
+    public function getImageManager($filename){
+        return new managers\ImageManager($filename);
     }
 }

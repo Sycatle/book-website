@@ -6,6 +6,23 @@ use sycatle\beblio\entities\Author;
 
 class AuthorManager extends \sycatle\beblio\Manager {
 
+    public function getAuthorById($id) {
+        return new Author($id);
+    }
+
+    public function getAuthorBySlug(String $slug) {
+        $statement= $this->getDataManager()->connectDatabase()->prepare(
+            "SELECT * FROM authors
+
+            WHERE author_slug='$slug'"
+        );
+
+        $statement->execute();
+        $row = $statement->fetch(\PDO::FETCH_ASSOC);
+
+        return new Author($row['author_id']);
+    }
+
     public function getAuthors(){
         $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors ORDER BY author_name");
         $statement->execute();
@@ -13,22 +30,11 @@ class AuthorManager extends \sycatle\beblio\Manager {
         return $statement;
     }
 
-    public function getAuthorsByGender($gender){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors WHERE author_gender_id=$gender");
+    public function getAuthorsByGender($gender, $limit = 15){
+        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors WHERE author_gender_id=$gender LIMIT $limit");
         $statement->execute();
         
         return $statement;
-    }
-
-    public function getCategories(){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM genders ORDER BY gender_name");
-        $statement->execute();
-        
-        return $statement;
-    }
-
-    public function getAuthorById($id) {
-        return new Author($id);
     }
 
     function registerAuthor($author_name, $author_name_slug, $author_birth, $author_gender, $author_description, $author_biography, $author_picture) {
@@ -50,20 +56,19 @@ class AuthorManager extends \sycatle\beblio\Manager {
         }
     }
 
-    public function getAuthorData(String $key) {
-        $statement= $this->getDataManager()->connectDatabase()->prepare(
-            "SELECT * FROM authors
+    function deleteAuthor(Author $author) {
+        try {
+            $statement = $this->getDataManager()->connectDatabase()->prepare(
+                "DELETE FROM authors WHERE author_slug = '$author->getSlug()'"
+            );
+            $statement->execute();
 
-            JOIN genders 
-            ON authors.author_gender_id = genders.gender_id
+            // $file_destination = '.\\uploads\\articles\\' . $articleSlug . '.webp';
 
-            WHERE author_slug=:author_slug"
-        );
-
-        $statement->execute(array(":author_slug" => $key));
-        $row=$statement->fetch(\PDO::FETCH_ASSOC);
-
-        return $row;
+            // /* Suspression de l'image dans le repertoire */
+            // @unlink($file_destination);
+        } catch (\PDOException $e) {
+            die($e->getMessage());
+        }
     }
-
 }

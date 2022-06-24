@@ -61,6 +61,17 @@ body {
     }
 }
 
+#banner {
+    .background-image {
+        z-index: -1;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
+}
+
 /* CITATIONS */
 
 .quotation,
@@ -122,20 +133,6 @@ body {
     font-size: 15px !important;
 }
 
-.fade {
-    transition-duration: 200ms !important;
-}
-
-.collapse {
-    display: none !important;
-}
-
 section {
-    padding: 75px 0 100px 0;
-}
-
-#background-image {
-    z-index: -1;
-    position: fixed;
-    width: 100%;
+    padding: 35px 0 100px 0;
 }

@@ -10,7 +10,7 @@
                     </p>
                     <hr />
                     <span class="book-author">
-                        <a href="./?=book&&slug=<?= $book['book_slug'] ?>">
+                        <a href="./?r=author&&slug=<?= $book['author_slug'] ?>">
                             <img class="rounded-3" src="./uploads/authors/<?= $book['author_slug'] ?>.webp" height="30px" width="30px"> 
                             <?= $book['author_name'] ?>
                         </a>

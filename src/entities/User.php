@@ -62,6 +62,10 @@ class User{
     public function disconnect() { $this->redirect('./?r=disconnect'); }
     public function redirect($location, $timer = 0){ header("refresh:$timer, location: " . $location); }
 
+    public function delete() {
+        $this->userManager->deleteUser($this->getUsername());
+    }
+
     /* CONDITIONS */
     public function hasPermission($permission){
         $userPermissions = $this->userManager->getPermissions($this->id);

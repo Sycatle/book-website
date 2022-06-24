@@ -17,8 +17,10 @@ ob_start(); ?>
     $sliderTitle = "Les livres en tendances";
     $sliderRate = 16000;
     $searchedBooks = $manager->getBookManager()->getBooks(9);
-    include("./src/templates/contents/book_carousel.php"); 
+    include("./src/templates/contents/book_carousel.php");
     ?>
+
+
 
     <div class="sliding-section mt-5">
         <p class="title">Trouver par genre</p>

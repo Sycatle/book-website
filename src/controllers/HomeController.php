@@ -6,10 +6,9 @@ use sycatle\beblio\Manager;
 use sycatle\beblio\entities\User;
 
 $manager = new Manager();
+$user = isset($_SESSION['id']) ? new User($_SESSION['id']) : null;
 
-if (isset($_SESSION['id'])) {
-    $user = new User($_SESSION['id']);
-
+if ($user != null) {
     require("./src/templates/pages/home.php");
 } else {
     require("./src/templates/pages/main.php");

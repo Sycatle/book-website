@@ -65,6 +65,18 @@ class BookManager extends Manager {
         return new Book($id);
     }
 
+    public function getBookBySlug($slug) {
+        $statement= $this->getDataManager()->connectDatabase()->prepare(
+            "SELECT book_id FROM books
+
+            WHERE book_slug='$slug'"
+        );
+        $statement->execute();
+        $row=$statement->fetch(\PDO::FETCH_ASSOC);
+
+        return new Book($row['book_id']);
+    }
+
     function registerBook($title, $slug, $author_id, $description, $summary, $parution, $gender_id, $book_cover) {
         try {
             $statement = $this->getDataManager()->connectDatabase()->prepare(

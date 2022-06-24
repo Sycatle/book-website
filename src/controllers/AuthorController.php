@@ -9,7 +9,7 @@ $authorManager = $manager->getAuthorManager();
 $user = isset($_SESSION['id']) ? new \sycatle\beblio\entities\User($_SESSION['id']) : null;
 
 if (isset($_GET['slug'])) {
-    $author = $authorManager->getAuthorById($authorManager->getAuthorData($_GET['slug'])['author_id']);
+    $author = $authorManager->getAuthorBySlug($_GET['slug']);
     if ($author == null) header("Location: ./?error=404");
     
     require("./src/templates/views/author.php");
