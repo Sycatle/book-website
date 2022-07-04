@@ -4,27 +4,36 @@ $canGoBack = false;
 
 ob_start(); ?>
 
-<div id="banner" class="shapedividers_com-6318 ">
-    <?php
+<div id="banner" class="top-separator" style="background-image: url('./assets/img/home_banner.webp');">
+    <?php /*
     $searchedQuotes = $manager->getQuoteManager()->getQuotes();
     include("./src/templates/contents/quote_carousel.php");
-    ?>
+    */ ?>
 </div>
 
-<section id="feed-section" class="container-fluid">
-    
-    <?php
-    $sliderTitle = "Les livres en tendances";
-    $sliderRate = 16000;
-    $searchedBooks = $manager->getBookManager()->getBooks(9);
-    include("./src/templates/contents/book_carousel.php");
-    ?>
-
-
-
-    <div class="sliding-section mt-5">
-        <p class="title">Trouver par genre</p>
+<section class="container">
+    <div>
         <?php
+        $sliderTitle = "En tendances";
+        $sliderRate = 16000;
+        $searchedBooks = $manager->getBookManager()->getBooksSortedByViews(10);
+        include("./src/templates/contents/book_carousel.php");
+        ?>
+    </div>
+
+    <div class="my-5">
+        <?php
+        $sliderTitle = "En tendances";
+        $sliderRate = 5000;
+        $searchedAuthors = $manager->getAuthorManager()->getAuthorsSortedByViews(10);
+        include("./src/templates/contents/author_carousel.php");
+        ?>
+    </div>
+
+    <div class="my-5">
+        <?php
+        $sliderTitle = "Genres";
+        $sliderRate = 5000;
         $searchedGenders = $manager->getGenderManager()->getGenders(9);
         include("./src/templates/contents/gender_carousel.php");
         ?>

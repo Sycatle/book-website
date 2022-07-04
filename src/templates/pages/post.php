@@ -1,14 +1,13 @@
 <?php
-$pageTitle = "Poster";
+$pageTitle = "Poster du contenu";
 $canGoBack = true;
 
 ob_start();
 ?>
 <section id="post-section" class="container">
-
     <h2 class="mx-auto py-5 text-center">Vous souhaitez poster un(e)..</h2>
 
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <ul class="nav nav-pills" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
                 <img src="./assets/img/book.png" draggable="false">
@@ -35,19 +34,19 @@ ob_start();
                 <input type="text" name="book_name" class="form-control" placeholder="Comment s'appelle le livre que vous souhaitez poster ?" required>
                 <label>Auteur(e) du livre:</label>
                 <select name="book_author" class="form-control" required>
-                    <?php $authors = $manager->getAuthorManager()->getAuthors();
+                    <?php /* $authors = $manager->getAuthorManager()->getAuthors();
                     while ($row = $authors->fetch(PDO::FETCH_ASSOC)) { ?>
                         <option value="<?php echo $row['author_id']; ?>"><?php echo $row['author_name']; ?></option>
-                    <?php } ?>
+                    <?php } */ ?>
                 </select>
                 <label>Année de parution:</label>
                 <input type="number" min="0" max="2022" name="book_parution" class="form-control" placeholder="En quelle année est paru ce livre?" value="dd-mm-yyyy" required>
                 <label>Genre(s) littéraire(s) du livre:</label>
                 <select name="book_gender" class="form-control" required>
-                    <?php $genders = $manager->getBookManager()->getCategories();
+                    <?php /* $genders = $manager->getBookManager()->getCategories();
                     while ($row = $genders->fetch(PDO::FETCH_ASSOC)) { ?>
                         <option value="<?php echo $row['gender_id']; ?>"><?php echo $row['gender_name']; ?></option>
-                    <?php } ?>
+                    <?php } */ ?>
                 </select>
                 <label>Nombre de page(s) du livre:</label>
                 <input type="number" name="book_pages" class="form-control" placeholder="Combien de pages?" required>
@@ -68,24 +67,24 @@ ob_start();
                 <input type="text" name="quote_name" class="form-control" placeholder="Quelle est la citation que vous souhaitez poster ?" required>
                 <label>Auteur(e) de la citation:</label>
                 <select name="quote_author" class="form-control" required>
-                    <?php $authors = $manager->getAuthorManager()->getAuthors();
+                    <?php /* $authors = $manager->getAuthorManager()->getAuthors();
                     while ($row = $authors->fetch(PDO::FETCH_ASSOC)) { ?>
                         <option value="<?php echo $row['author_id']; ?>"><?php echo $row['author_name']; ?></option>
-                    <?php } ?>
+                    <?php } */ ?>
                 </select><label>Genre(s) littéraire(s) de la citation:</label>
                 <select name="quote_gender" class="form-control" required>
-                    <?php $genders = $manager->getBookManager()->getCategories();
+                    <?php /* $genders = $manager->getBookManager()->getCategories();
                     while ($row = $genders->fetch(PDO::FETCH_ASSOC)) { ?>
                         <option value="<?php echo $row['gender_id']; ?>"><?php echo $row['gender_name']; ?></option>
-                    <?php } ?>
+                    <?php } */?>
                 </select>
                 <label>D'où vient la citation?:</label>
                 <select name="quote_from" class="form-control" required>
-                    <?php $books = $manager->getBookManager()->getBooks();
+                    <?php /* $books = $manager->getBookManager()->getBooks();
                     while ($row = $books->fetch(PDO::FETCH_ASSOC)) { ?>
 
                         <option value="<?php echo $row['book_id']; ?>"><?php echo $row['book_title']; ?></option>
-                    <?php } ?>
+                    <?php } */ ?>
                 </select>
 
                 <button type="submit" name="post_quote" class="btn btn-primary mx-auto my-3">
@@ -100,10 +99,10 @@ ob_start();
                 <input type="date" name="author_birth" class="form-control" placeholder="Quelle est la date de naissance de l'auteur(e)?" required>
                 <label>Genre(s) littéraire(s) de l'auteur(e):</label>
                 <select name="author_gender" class="form-control" required>
-                    <?php $genders = $manager->getBookManager()->getCategories();
+                    <?php /* $genders = $manager->getBookManager()->getCategories();
                     while ($row = $genders->fetch(PDO::FETCH_ASSOC)) { ?>
                         <option value="<?php echo $row['gender_id']; ?>"><?php echo $row['gender_name']; ?></option>
-                    <?php } ?>
+                    <?php } */ ?>
                 </select>
                 <label>Description de l'auteur(e):</label>
                 <input type="text" name="author_description" class="form-control" placeholder="Insérer une description courte de l'auteur(e)." required>

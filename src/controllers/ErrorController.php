@@ -1,5 +1,5 @@
 <?php
-session_start();
+if (!isset($_SESSION)) session_start();
 
 require("./models/Manager.php");
 $manager = new \sycatle\beblio\Manager();
@@ -9,3 +9,4 @@ if (isset($_GET['error'])) {
 } else {
     header("Location: .");
 }
+?>

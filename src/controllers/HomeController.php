@@ -1,5 +1,5 @@
 <?php
-session_start();
+if (!isset($_SESSION)) session_start();
 
 require('./src/Manager.php');
 use sycatle\beblio\Manager;
@@ -13,3 +13,4 @@ if ($user != null) {
 } else {
     require("./src/templates/pages/main.php");
 }
+?>

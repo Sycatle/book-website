@@ -1,7 +1,7 @@
 <?php
 // Initialize the session.
 // If you are using session_name("something"), don't forget it now!
-session_start();
+if (!isset($_SESSION)) session_start();
 
 // Unset all of the session variables.
 $_SESSION = array();
@@ -21,3 +21,5 @@ session_destroy();
 
 // Redirect to main page.
 header("Location: .");
+
+?>

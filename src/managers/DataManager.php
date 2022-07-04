@@ -24,7 +24,7 @@ class DataManager extends Manager {
     }
 
     public function getData($type, $key, $where) {
-        $sqlRequest = "SELECT ".$key." FROM ".$type."s WHERE ".$type."_id=".$where;
+        $sqlRequest = $this->getFormManager()->safeFormat("SELECT ".$key." FROM ".$type."s WHERE ".$type."_id=".$where);
 
         try {
             $statement= $this->connectDatabase()->prepare($sqlRequest);
@@ -32,6 +32,17 @@ class DataManager extends Manager {
             $row=$statement->fetch(\PDO::FETCH_ASSOC);
 
             return $row[$key];
+        } catch (\PDOException $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function setData($type, $key, $value, $where) {
+        $sqlRequest = $this->getFormManager()->safeFormat("UPDATE ".$type."s SET $key = $value WHERE ".$type."s.".$type."_id = $where");
+
+        try {
+            $statement= $this->connectDatabase()->prepare($sqlRequest);
+            $statement->execute();
         } catch (\PDOException $e) {
             die($e->getMessage());
         }

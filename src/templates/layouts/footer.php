@@ -1,4 +1,4 @@
-<footer class="mt-5 py-5">
+<footer class="mt-5 pt-5">
     <div class="container ">
 		<div id="light-switch" title="Changer le thème">
             <img id="light-switch-icon" src="./assets/img/dark/moon.png" height="20px">
@@ -43,18 +43,17 @@
 	                    </svg>
 	                </a>
 	            </div>
-
 	        </div>
 	        <div class="col-lg-2 offset-lg-1">
 	            <div class="lc-block mb-4">
 	                <div editable="rich">
-	                    <h4>Get Started</h4>
+	                    <h4>Démarrer</h4>
 	                </div>
 	            </div>
 	            <!-- /lc-block -->
 	            <div class="lc-block small">
 	                <div editable="rich">
-	                    <p>Tutorial</p>
+	                    <p>Tutoriels</p>
 	                    <p>Resources
 	                        <br>
 	                    </p>
@@ -67,45 +66,28 @@
 	        <div class="col-lg-2 offset-lg-1">
 	            <div class="lc-block mb-4">
 	                <div editable="rich">
-	                    <h4>About us</h4>
+	                    <h4>Qui sommes-nous?</h4>
 	                </div>
 	            </div>
 	            <!-- /lc-block -->
 	            <div class="lc-block small">
 	                <div editable="rich">
-	                    <p>Story</p>
-	                    <p>Work with us</p>
+	                    <p>Histoire</p>
+	                    <p>Partenariat</p>
 	                    <p>Blog</p>
 	                    <p>News</p>
 	                </div>
 	            </div>
 	            <!-- /lc-block -->
 	        </div>
-	        <div class="col-lg-2 offset-lg-1">
-	            <div class="lc-block mb-4">
-	                <div editable="rich">
-	                    <h4>Downloads</h4>
-	                </div>
-	            </div>
-	            <!-- /lc-block -->
-	            <div class="lc-block small">
-	                <div editable="rich">
-	                    <p>Vertex 1.2</p>
-	                    <p>Templates</p>
-	                    <p>Sounds</p>
-	                    <p>Gradients</p>
-	                </div>
-	            </div>
-	            <!-- /lc-block -->
-	        </div>
 	    </div>
 	</div>
-	<div class="py-5 container">
+	<div class="pt-5 container">
 	    <div class="row">
 	        <div class="col-6 small">
 	            <div class="lc-block">
 	                <div editable="rich" >
-	                    <p>Copyright 2022 © <a class="text-decoration-none" href="https://sycatle.dev">sycatle.dev</a></p>
+	                    <p>Copyright 2022 © <a class="text-decoration-none" target="_blank" href="https://sycatle.dev">sycatle.dev</a></p>
 	                </div>
 	            </div>
 	            <!-- /lc-block -->

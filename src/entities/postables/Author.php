@@ -16,6 +16,7 @@ class Author extends Postable {
     private $description;
     private $biography;
     private $birth;
+    private $authorViews;
 
     function __construct(int $id){
         $this->id = $id;
@@ -28,6 +29,13 @@ class Author extends Postable {
         $this->biography = $this->getData($this->postType, "author_biography", $this->id);
         $this->gender = $this->getData($this->postType, "author_gender_id", $this->id);
         $this->birthDate = $this->getData($this->postType, "author_birth", $this->id);
+        $this->authorViews = $this->getData($this->postType, "author_views", $this->id);
+    }
+
+    public function incrementView(){
+        $i = $this->getViews();
+        $i++;
+        $this->setData($this->postType, "author_views", $i ,$this->getId()); 
     }
 
     /* GETTERS */
@@ -41,6 +49,7 @@ class Author extends Postable {
     public function getUrl() { return "./?r=author&&slug=" . $this->slug; }
     public function getImageLink(){ return "./uploads/authors/$this->slug.webp"; }
     public function getBooks() { return $this->manager->getBookManager()->getBooksByAuthor($this->getId()); }
+    public function getViews() { return $this->authorViews; }
 
     /* SETTERS */
     public function setName($name) { $this->name = $name; }
@@ -48,4 +57,5 @@ class Author extends Postable {
     public function setDescription($description) { $this->description = $description; }
     public function setBiography($biography) { $this->biography = $biography; }
     public function setGender($gender_id) { $this->gender = $gender_id; }
+    public function setViews($views) { $this->views = $views; }
 }

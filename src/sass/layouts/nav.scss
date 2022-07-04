@@ -6,7 +6,7 @@
     transition: 0.5s;
 }
 .sidebar-nav ul li a:hover {
-    background-color: #eeeeee;
+    background-color: hsla(0, 0%, 50%, 0.15);
     border-radius: 4px;
 }
 .sidebar-nav .offcanvas {
@@ -25,6 +25,12 @@
 .sidebar-nav .offcanvas-header {
     height: 66px;
     padding: 0;
+}
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none;
 }
 
 #mainbar {
@@ -51,18 +57,4 @@
         margin-bottom: 3px;
     }
     
-}
-
-
-
-.slot {
-    text-decoration: none;
-    padding: 10px 5px 10px 5px;
-    border-radius: 25px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    transition-duration: 300ms;
-    :hover {
-        cursor: pointer;
-    }
 }

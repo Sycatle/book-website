@@ -49,17 +49,19 @@ function setLight(dark, cookies) {
       "src",
       "./assets/img/" + (dark ? "dark" : "light") + "/home_banner.webp"
     );
-  if (lightSwitchIcon != null)
+  if (lightSwitchIcon != null) {
     lightSwitchIcon.setAttribute(
       "src",
       "./assets/img/" + (dark ? "sun.svg" : "moon.svg")
     );
+    lightSwitchIcon.addEventListener("click", () => {toggleLight()})
+  }
 
   body.className = dark ? "dark-mode" : "light-mode";
   isDark = dark;
   if (cookies) setCookie("dark", isDark);
 
-  lightSwitchIcon.addEventListener("click", () => {toggleLight();});
+  
 }
 // TOGGLE DARK FUNCTION
 function toggleLight() {

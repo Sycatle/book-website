@@ -1,5 +1,5 @@
 <?php
-session_start();
+if (!isset($_SESSION)) session_start();
 
 require("./src/Manager.php");
 $manager = new \sycatle\beblio\Manager();
@@ -139,3 +139,4 @@ if ($user != null) {
 	header("Location: ./?r=connect&&a=post");
 }
 	
+?>

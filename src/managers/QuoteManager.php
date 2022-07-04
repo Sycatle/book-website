@@ -49,8 +49,31 @@ class QuoteManager extends Manager {
         return $row;
     }
 
+    public function getQuotesByAuthor($author, $limit = 15){
+        $sqlRequest = "SELECT * FROM quotes
+
+        JOIN authors ON quotes.quote_author_id = authors.author_id
+        JOIN genders ON quotes.quote_gender_id = genders.gender_id
+        
+        WHERE quote_author_id=:quote_author_id
+        ORDER BY RAND ()
+        LIMIT $limit";
+
+        $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
+        $statement->execute(array(":quote_author_id" => $author));
+        
+        return $statement;
+    }
+
     public function getQuotesByGender($gender, $limit = 15){
-        $sqlRequest = "SELECT * FROM quotes WHERE quote_gender_id=:quote_gender_id ORDER BY RAND () LIMIT $limit";
+        $sqlRequest = "SELECT * FROM quotes
+
+        JOIN authors ON quotes.quote_author_id = authors.author_id
+        JOIN genders ON quotes.quote_gender_id = genders.gender_id
+
+        WHERE quote_gender_id=:quote_gender_id
+        ORDER BY RAND ()
+        LIMIT $limit";
 
         $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
         $statement->execute(array(":quote_gender_id" => $gender));

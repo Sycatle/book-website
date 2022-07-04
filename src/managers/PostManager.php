@@ -4,7 +4,7 @@ use sycatle\beblio\entities\Postable;
 
 require_once("./src/Manager.php");
 use sycatle\beblio\Manager;
-require_once("./src/entities/user.php");
+require_once("./src/entities/User.php");
 use sycatle\beblio\entities\User;
 
 class PostManager extends Manager {

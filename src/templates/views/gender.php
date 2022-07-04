@@ -8,21 +8,29 @@ ob_start();
 ?>
 
 
-<section id="gender-section">
-    <article class="card d-flex">
-        <div class="gender-title mx-auto">
-            <h1><?= $genderName ?></h1>
-            <p><?= $genderDescription ?></p>
-        </div>
-    </article>
-    <article class="my-2 py-5">
+<div id="banner" class="top-separator">
+    <?php
+    $searchedQuotes = $manager->getQuoteManager()->getQuotesByGender($genderId);
+    include("./src/templates/contents/quote_carousel.php");
+    ?>
+</div>
+<section class="container">
+    <div id="">
         <?php
-        $sliderTitle = "Livres de " . $genderName;
+        $sliderTitle = "De " . $genderName;
         $sliderRate = 0;
         $searchedBooks = $manager->getBookManager()->getBooksByGender($genderId);
         include("./src/templates/contents/book_carousel.php");
         ?>
-    </article>
+    </div>
+    <div class="mt-5">
+        <?php
+        $sliderTitle = "De " . $genderName;
+        $sliderRate = 0;
+        $searchedAuthors = $manager->getAuthorManager()->getAuthorsByGender($genderId);
+        include("./src/templates/contents/author_carousel.php");
+        ?>
+    </div>
 </section>
 
 <?php

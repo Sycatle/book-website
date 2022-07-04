@@ -18,7 +18,7 @@
 
 
 /* IMPORTING COMPONENTS */
-@import "./components/card.scss";
+@import "./components/card";
 @import "./components/quotations";
 /* END COMPONENTS */
 
@@ -34,6 +34,7 @@
 /* --- SETTING UP VENDORS --- */
 
 /* IMPORTING FLICKITY */
+@import "./vendors/bootstrap";
 @import "./vendors/flickity";
 /* END FLICKITY */
 
@@ -44,6 +45,7 @@
 
 /* IMPORTING USER-PROFILE */
 @import "./pages/user-profile";
+@import "./pages/register";
 /* END USER-PROFILE */
 
 /* --- SETTING UP PAGES --- */

@@ -1,13 +1,13 @@
 @import "../utils/variables";
- 
+
 /* DARK/LIGHT MODE VARIATIONS */
 
 .dark-mode {
     color: $dark-text-color;
-    background-color: $bebl-black1;
+    background-color: $bebl-black3;
 
     section {
-        background-color: $bebl-black1;
+        background-color: $bebl-black3;
     }
 
     a {
@@ -29,7 +29,10 @@
         background-color: rgb(5, 5, 5);
     }
 
-    .content-wrapper, & .card, & input  {
+    .content-wrapper,
+    & .card,
+    & input,
+    .book-cell, .author-cell, .gender-cell {
         background-color: rgb(42, 42, 42);
     }
 
@@ -43,7 +46,11 @@
 
     .modal-content, .dropdown-menu {
         color: $dark-text-color;
-        background-color: rgb(42, 42, 42);
+        background-color: rgb(22, 22, 22);
+    }
+
+    .top-separator svg path {
+        fill: rgb(42, 42, 42);
     }
 }
 
@@ -58,15 +65,15 @@
     #mainbar {
         color: $light-text-color;
         background-color: #e4e4e4;
-        -webkit-box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05); 
-        box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05);
+        -webkit-box-shadow: 5px 5px 6px 3px rgba(0, 0, 0, 0.05);
+        box-shadow: 5px 5px 6px 3px rgba(0, 0, 0, 0.05);
     }
 
     .sidebar-nav .offcanvas {
         color: $light-text-color;
         background-color: #e4e4e4;
-        -webkit-box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05); 
-        box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.05);
+        -webkit-box-shadow: 5px 5px 6px 3px rgba(0, 0, 0, 0.05);
+        box-shadow: 5px 5px 6px 3px rgba(0, 0, 0, 0.05);
     }
 
     a {
@@ -78,13 +85,22 @@
         color: $light-text-color;
         background-color: #e4e4e4;
     }
-    .content-wrapper, & .card, & input  {
+
+    .content-wrapper,
+    & .card,
+    & input,
+    .book-cell, .author-cell, .gender-cell  {
         background-color: #dfdfdf;
     }
 
-    .modal-content, .dropdown-menu {
+    .modal-content,
+    .dropdown-menu {
         color: $light-text-color;
         background-color: #e4e4e4;
+    }
+
+    .top-separator svg path {
+        fill: #e4e4e4;
     }
 }
 
@@ -104,13 +120,16 @@ body {
     font-family: $text-font-family;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: $title-font-family;
     font-weight: 500;
 }
 
-.quotation h1, .quotation p {
-    font-family: $quote-font-family!important;
+.quotation h1,
+.quotation p {
+    font-family: $quote-font-family !important;
 }
 
 #notification-wrapper {
@@ -119,4 +138,37 @@ h1, h2, h3 {
 
 .notification-content {
     color: black !important;
+}
+
+
+
+
+
+
+
+
+.top-separator {
+    overflow: hidden;
+    position: relative;
+}
+
+.top-separator::before {
+    content: '';
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    bottom: -0.1vw;
+    left: -0.1vw;
+    right: -0.1vw;
+    top: -0.1vw;
+    background-size: 166% 99px;
+    background-position: 50% 0%;
+    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.278 3.62" preserveAspectRatio="none"><path d="M35.278.092S8.238.267 0 3.62V.092z" opacity=".2" fill="%23000000"/><path d="M35.278.092S8.238.246 0 3.194V.092z" opacity=".2" fill="%23000000"/><path d="M35.278.092S8.238.223 0 2.738V.092zM35.278.092H0V0h35.278z" fill="%23000000"/></svg>');
+}
+
+@media (min-width:2100px) {
+    .top-separator::before {
+        background-size: 166% calc(2vw + 99px);
+    }
 }

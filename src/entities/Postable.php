@@ -33,8 +33,10 @@ class Postable {
         return $this->dataManager->getData($type, $key, $where);
     }
 
-    public function setData($type, $key, $value) {
-        /* TO DO */
+    public function setData($type, $key, $value, $where) {
+        $this->manager = new Manager();
+        $this->dataManager = $this->manager->getDataManager();
+        return $this->dataManager->setData($type, $key, $value, $where);
     }
 
     /* GETTERS */

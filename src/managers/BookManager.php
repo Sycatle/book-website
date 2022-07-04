@@ -61,6 +61,20 @@ class BookManager extends Manager {
         return $statement;
     }
 
+    public function getBooksSortedByViews($limit = 10){
+        $sqlRequest ="SELECT * FROM books
+                    JOIN authors 
+                    ON books.book_author_id = authors.author_id
+                    JOIN genders 
+                    ON books.book_gender_id = genders.gender_id
+                    ORDER BY books.book_views DESC
+                    LIMIT $limit";
+        $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
+        $statement->execute();
+        
+        return $statement;
+    }
+
     public function getBookById($id) {
         return new Book($id);
     }

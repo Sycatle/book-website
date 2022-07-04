@@ -5,9 +5,17 @@ $canGoBack = true;
 $pageTypeName = "Auteurs";
 $pageDescription = $author->getDescription();
 
+$author->incrementView();
+
 ob_start();
 ?>
 
+<div id="banner" class="top-separator">
+    <?php
+    $searchedQuotes = $manager->getQuoteManager()->getQuotesByAuthor($author->getId());
+    include("./src/templates/contents/quote_carousel.php");
+    ?>
+</div>
 
 <section id="author-section" class="container">
     <p>
@@ -38,6 +46,10 @@ ob_start();
             </div>
         </div>
     </article>
+    <span class="text-muted">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye align-middle me-2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        <?= $author->getViews(); ?> Vues
+    </span>
 
     <article class="author-summary-wrapper py-2">
         <h3>Biographie</h3>
@@ -46,8 +58,8 @@ ob_start();
 
     <article class="py-2">
         <?php
-        $sliderTitle = "Les livres de " . $author->getName();
-        $sliderRate = false;
+        $sliderTitle = "Par " . $author->getName();
+        $sliderRate = 0;
         $searchedBooks = $author->getBooks();
         include("./src/templates/contents/book_carousel.php");
         ?>

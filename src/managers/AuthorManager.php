@@ -23,15 +23,44 @@ class AuthorManager extends \sycatle\beblio\Manager {
         return new Author($row['author_id']);
     }
 
-    public function getAuthors(){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors ORDER BY author_name");
+    public function getAuthors($limit = 15){
+        $sqlRequest = "SELECT * FROM authors 
+            
+        JOIN genders ON authors.author_gender_id = genders.gender_id
+
+        ORDER BY RAND () 
+        LIMIT $limit";
+
+        $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
         $statement->execute();
         
         return $statement;
     }
 
     public function getAuthorsByGender($gender, $limit = 15){
-        $statement= $this->getDataManager()->connectDatabase()->prepare("SELECT * FROM authors WHERE author_gender_id=$gender LIMIT $limit");
+        $sqlRequest = "SELECT * FROM authors
+
+        JOIN genders ON authors.author_gender_id = genders.gender_id
+        
+        WHERE author_gender_id=$gender
+
+        LIMIT $limit";
+
+        $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
+        $statement->execute();
+        
+        return $statement;
+    }
+
+    public function getAuthorsSortedByViews($limit = 10){
+        $sqlRequest ="SELECT * FROM authors
+
+                    JOIN genders 
+                    ON authors.author_gender_id = genders.gender_id
+
+                    ORDER BY authors.author_views DESC
+                    LIMIT $limit";
+        $statement= $this->getDataManager()->connectDatabase()->prepare($sqlRequest);
         $statement->execute();
         
         return $statement;

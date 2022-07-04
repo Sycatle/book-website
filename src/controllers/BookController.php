@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php if (!isset($_SESSION)) session_start();
 
 require("./src/Manager.php");
 
@@ -15,3 +14,4 @@ if (isset($_GET['slug']) || isset($_GET['id'])) {
 } else {
     header("Location: .");
 }
+?>
