@@ -26,6 +26,7 @@
 
 /* IMPORTING BASE */
 @import "./base/base";
+@import "./base/typography";
 /* END BASE */
 
 /* --- SETTING UP BASE --- */
@@ -44,8 +45,9 @@
 /* --- SETTING UP PAGES --- */
 
 /* IMPORTING USER-PROFILE */
-@import "./pages/user-profile";
-@import "./pages/register";
+@import "./pages/book-page";
+@import "./pages/author-page";
+
 /* END USER-PROFILE */
 
 /* --- SETTING UP PAGES --- */

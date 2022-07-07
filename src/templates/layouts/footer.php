@@ -12,7 +12,7 @@
 	            </div>
 	            <div class="lc-block small">
 	                <div editable="rich">
-	                    <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper matti pibus leo.</p>
+	                    <p>Trouvez les livres, les citations et les auteurs qui vous correspondent.</p>
 	                </div>
 	            </div>
 	            <!-- /lc-block -->

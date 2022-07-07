@@ -64,33 +64,13 @@
                 </li>
             </ul>
         </div>
-        <div class="d-flex">
-            <!-- <div class="dropdown">
-                <a class="nav-link" href="#" id="alertsDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="./assets/img/bell.svg" height="25px">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="alertsDropdownMenu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <a class="nav-link" href="#" id="userDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img class="avatar-thumbnail rounded-3" src="<?= $user->getAvatarUrl() ?>" height="30px">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="userDropdownMenu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="./?r=disconnect">Déconnexion</a></li>
-                </ul>
-            </div> -->
         <?php } else { ?>
-            <button class="btn btn-secondary" title="Connexion" data-bs-toggle="modal" data-bs-target="#connectModal">
-                Se connecter
-            </button>
-            <button class="btn btn-primary" title="Connexion" data-bs-toggle="modal" data-bs-target="#connectModal">
-                Créer mon compte
-            </button>
+        <button class="btn btn-secondary" title="Connexion" data-bs-toggle="modal" data-bs-target="#connectModal">
+            Se connecter
+        </button>
+        <button class="btn btn-primary" title="Connexion" data-bs-toggle="modal" data-bs-target="#connectModal">
+            Créer mon compte
+        </button>
         <?php } ?>
-        </div>
     </div>
 </nav>

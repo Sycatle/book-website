@@ -27,7 +27,7 @@ $user = isset($_SESSION['id']) ? new User($_SESSION['id']) : null;
 
 // Si l'utilisateur n'est pas connecté, afficher le formulaire de connection. Sinon, retourner au routeur index.php.
 if ($user == null) {
-	require("./src/templates/pages/signin.php");
+	require("./src/templates/pages/login.php");
 } else {
 	//echo("Aucune session détectée.");
 	header("Location: ." . (isset($_GET["a"]) ? "/?r=" . $_GET["a"] : ""));

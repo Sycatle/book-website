@@ -59,9 +59,8 @@ function setLight(dark, cookies) {
 
   body.className = dark ? "dark-mode" : "light-mode";
   isDark = dark;
-  if (cookies) setCookie("dark", isDark);
-
   
+  if (cookies) setCookie("dark", isDark);
 }
 // TOGGLE DARK FUNCTION
 function toggleLight() {

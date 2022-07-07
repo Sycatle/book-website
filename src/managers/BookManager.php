@@ -94,17 +94,9 @@ class BookManager extends Manager {
     function registerBook($title, $slug, $author_id, $description, $summary, $parution, $gender_id, $book_cover) {
         try {
             $statement = $this->getDataManager()->connectDatabase()->prepare(
-                "INSERT INTO books (book_title, book_slug, book_author, book_description, book_summary, book_parution, book_gender_id) VALUES (:book_title, :book_slug, :book_author, :book_description, :book_summary, :book_parution, :book_gender_id)"
+                "INSERT INTO books (book_title, book_slug, book_author_id, book_description, book_summary, book_parution, book_gender_id) VALUES ('$title', '$slug', '$author_id', '$description', '$summary', '$parution', '$gender_id')"
             );
-            $statement->execute(array(
-                ':book_title' => $title,
-                ':book_slug' => $slug,
-                ':book_author_id' => $author_id,
-                ':book_description'=> $description,
-                ':book_summary'=>$summary,
-                ':book_parution'=>$parution,
-                ':book_gender_id'=>$gender_id
-            ));
+            $statement->execute();
             move_uploaded_file($book_cover['tmp_name'], 'uploads/books/' . basename($slug.".webp"));
         } catch (\PDOException $e) {
             die($e->getMessage());

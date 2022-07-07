@@ -8,14 +8,14 @@ ob_start();
     <h3>Réglages</h3>
     <div class="card row rounded-3 my-3 h-100">
         <div class="d-flex">
-            <nav class="nav flex-column nav-pills me-3 col-3 justify-content-center mx-auto h-100" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <nav class="nav flex-column nav-pills me-3 col-lg-3 justify-content-center mx-auto h-100" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <button class="nav-link active" id="v-pills-account-tab" data-bs-toggle="pill" data-bs-target="#v-pills-account" type="button" role="tab" aria-controls="v-pills-account" aria-selected="true">Compte</button>
                 <button class="nav-link" id="v-pills-security-tab" data-bs-toggle="pill" data-bs-target="#v-pills-security" type="button" role="tab" aria-controls="v-pills-security" aria-selected="false">Sécurité & Confidentialité</button>
                 <button class="nav-link" id="v-pills-preferences-tab" data-bs-toggle="pill" data-bs-target="#v-pills-preferences" type="button" role="tab" aria-controls="v-pills-preferences" aria-selected="false">Préférences</button>
                 <hr>
                 <button class="nav-link" data-bs-toggle="modal" data-bs-target="#disconnectModal">Déconnexion</button>
             </nav>
-            <div class="tab-content col-9" id="v-pills-tabContent">
+            <div class="tab-content col-lg-9" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-account" role="tabpanel" aria-labelledby="v-pills-account-tab">
                     <?php
                     include("./src/templates/modals/settings/username.php");

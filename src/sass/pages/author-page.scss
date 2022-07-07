@@ -1,0 +1,40 @@
+#author-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.author-main-cover {
+    display: flex;
+    width: 200px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.author-main-infos {
+    display: flex;
+    flex-direction: column;
+
+    width: 75%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.author-main-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+

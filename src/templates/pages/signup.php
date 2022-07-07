@@ -10,7 +10,7 @@ $noFooter = true;
 ob_start();
 ?>
 
-<section class="container">
+<div class="container">
 	<div class="col-lg-6 card rounded-3 mx-auto">
 		<div id="brand" class="d-flex mx-auto mt-5">
 			<img src="./assets/img/dark/brand_icon.svg" height="65px">
@@ -55,12 +55,12 @@ ob_start();
 			</div>
 
 			<div class="form-button d-flex mt-4">
-				<a href="./?r=signin" class="text-muted me-auto">J'ai déjà un compte</a>
+				<a href="./?r=login" class="text-muted me-auto">J'ai déjà un compte</a>
 				<button type="submit" name="register" class="btn btn-primary ms-auto">Accéder</button>
 			</div>
 		</form>
 	</div>
-</section>
+</div>
 
 <?php
 $content = ob_get_clean();

@@ -1,0 +1,40 @@
+#book-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.book-main-cover {
+    display: flex;
+    width: 200px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.book-main-infos {
+    display: flex;
+    flex-direction: column;
+
+    width: 75%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.book-main-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+

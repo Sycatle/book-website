@@ -40,8 +40,7 @@ $pageJavascripts = array(
 
 </head>
 
-<body>
-  <?php include($user != null ? "modals/post.php" : "modals/login.php"); ?>
+<body class="dark-mode">
     <?php if (!isset($noHeader)) { include("layouts/mainbar.php"); } ?>
     <div id="main-content" class="container-fluid" style="margin-top: 65px;">
       <?php if (!isset($noSidebar)) { include("layouts/leftbar.php"); } ?>

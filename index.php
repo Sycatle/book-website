@@ -43,7 +43,7 @@ if (isset($_GET['r'])) {
     switch ($getter) {
         case 'admin': require("./src/controllers/AdminController.php");exit();
 
-        case 'signin': require("./src/controllers/SignInController.php"); exit();
+        case 'login': require("./src/controllers/LoginController.php"); exit();
         case 'signup': require("./src/controllers/SignUpController.php"); exit();
         case 'logout': require("./src/controllers/LogoutController.php");exit();
 

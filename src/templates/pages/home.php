@@ -1,5 +1,6 @@
 <?php
 $pageTitle = "Accueil";
+$pageDescription = "Trouvez les livres, les citations et les auteurs qui vous correspondent.";
 $canGoBack = false;
 
 ob_start(); ?>
@@ -14,7 +15,7 @@ ob_start(); ?>
 <section class="container">
     <div>
         <?php
-        $sliderTitle = "En tendances";
+        $sliderTitle = "Les plus vus";
         $sliderRate = 16000;
         $searchedBooks = $manager->getBookManager()->getBooksSortedByViews(10);
         include("./src/templates/contents/book_carousel.php");
@@ -23,7 +24,7 @@ ob_start(); ?>
 
     <div class="my-5">
         <?php
-        $sliderTitle = "En tendances";
+        $sliderTitle = "Les plus vus";
         $sliderRate = 5000;
         $searchedAuthors = $manager->getAuthorManager()->getAuthorsSortedByViews(10);
         include("./src/templates/contents/author_carousel.php");
