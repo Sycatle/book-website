@@ -17,7 +17,7 @@
 
             <div class="author-main-infos">
                 <h3 class="author-title"><?= $author->getName() ?></h3>
-                <a href="?r=gender&&slug=<?= $author->getGender()->getSlug() ?>">
+                <a href="?r=gender&slug=<?= $author->getGender()->getSlug() ?>">
                     <?= $author->getGender()->getName() ?>
                 </a>
             </div>

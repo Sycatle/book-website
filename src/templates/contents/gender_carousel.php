@@ -7,7 +7,7 @@
         <?php while ($row = $searchedGenders->fetch(PDO::FETCH_ASSOC)) { ?>
 
             <div class="gender-cell text-center bebl-<?= $row['gender_color'] ?>-bg">
-                <a class="w-100 h-100" href="./?r=gender&&slug=<?= $row['gender_slug'] ?>">
+                <a class="w-100 h-100" href="./?r=gender&slug=<?= $row['gender_slug'] ?>">
                     <h2 class="w-100 h-100 d-flex justify-content-center align-items-center"><?= $row['gender_name']; ?></h2>
                 </a>
             </div>

@@ -6,11 +6,11 @@
     <div class="carousel book-carousel" height="200px" data-flickity='{ "wrapAround": true, "cellAlign": "left", "dragThreshold": "30", "pageDots": false, "resize": true, "autoPlay": <?= $sliderRate ?>  }'>
         <?php foreach ($searchedBooks as $book) {  ?>
             <div class="book-cell d-flex">
-                <a href="./?r=book&&slug=<?= $book['book_slug'] ?>"><img class="cell-image" src="./uploads/books/<?= $book['book_slug'] ?>.webp"></a>
+                <a href="./?r=book&slug=<?= $book['book_slug'] ?>"><img class="cell-image" src="./uploads/books/<?= $book['book_slug'] ?>.webp"></a>
                 <div class="cell-content w-100">
                     <div class="cell-header d-flex my-2 row">
                         <p class="cell-title col-10 d-flex my-auto">
-                            <a href="./?r=book&&slug=<?= $book['book_slug'] ?>"><?= $book['book_title'] ?></a>
+                            <a href="./?r=book&slug=<?= $book['book_slug'] ?>"><?= $book['book_title'] ?></a>
                         </p>
                         <div class="btn-group col-2">
                             <button class="btn-more" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
@@ -29,7 +29,7 @@
                                         Ajouter à une liste
                                     </a>
                                 </li>
-                                <li><a class="dropdown-item" href="./?r=author&&slug=<?= $book['author_slug'] ?>">
+                                <li><a class="dropdown-item" href="./?r=author&slug=<?= $book['author_slug'] ?>">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check align-middle me-2">
                                             <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                             <circle cx="8.5" cy="7" r="4"></circle>
@@ -38,7 +38,7 @@
                                         Accéder à l'auteur
                                     </a>
                                 </li>
-                                <li><a class="dropdown-item" href="./?r=gender&&slug=<?= $book['gender_slug'] ?>">
+                                <li><a class="dropdown-item" href="./?r=gender&slug=<?= $book['gender_slug'] ?>">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag align-middle me-2">
                                             <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
                                             <line x1="7" y1="7" x2="7.01" y2="7"></line>
@@ -46,7 +46,7 @@
                                         Accéder au genre
                                     </a>
                                 </li>
-                                <li><a class="dropdown-item disabled" href="./?r=book&&slug=<?php echo $book['book_slug'] ?>&&a=share">
+                                <li><a class="dropdown-item disabled" href="./?r=book&slug=<?php echo $book['book_slug'] ?>&&a=share">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share align-middle me-2">
                                             <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
                                             <polyline points="16 6 12 2 8 6"></polyline>
@@ -55,7 +55,7 @@
                                         Partager
                                     </a>
                                 </li>
-                                <li><a class="dropdown-item disabled" href="./?r=book&&slug=<?php echo $book['book_slug'] ?>&&a=share">
+                                <li><a class="dropdown-item disabled" href="./?r=book&slug=<?php echo $book['book_slug'] ?>&&a=share">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send align-middle me-2">
                                             <line x1="22" y1="2" x2="11" y2="13"></line>
                                             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -69,12 +69,12 @@
                     </div>
                     <div class="d-flex flex-column">
                         <div class="book-author my-2">
-                            <a href="./?r=author&&slug=<?= $book['author_slug'] ?>">
+                            <a href="./?r=author&slug=<?= $book['author_slug'] ?>">
                                 Par <?= $book['author_name'] ?>
                             </a>
                         </div>
                         <div class="book-gender my-2">
-                            <a class="p-1 rounded-pill bebl-<?= $book['gender_color'] ?>-bg" href="./?r=gender&&slug=<?= $book['gender_slug'] ?>">
+                            <a class="p-1 rounded-pill bebl-<?= $book['gender_color'] ?>-bg" href="./?r=gender&slug=<?= $book['gender_slug'] ?>">
                                 <?= $book['gender_name'] ?>
                             </a>
                         </div>
@@ -85,7 +85,7 @@
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                             </svg>
                         </a>
-                        <a href="./?r=book&&slug=<?= $book['book_slug'] ?>" class="btn-access mx-1">
+                        <a href="./?r=book&slug=<?= $book['book_slug'] ?>" class="btn-access mx-1">
                             Accéder
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right align-middle"><polyline points="9 18 15 12 9 6"></polyline></svg>
                         </a>

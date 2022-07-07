@@ -41,7 +41,7 @@ if ($user != null) {
                                             if (in_array($extension, $allowedExtensions)) { 
                                                 if ($book_cover['size'] <= $allowedMaxSize) { 
                                                     $bookManager->registerBook($book_name, $book_name_slug, $book_author, $book_description, $book_summary, $book_parution, $book_gender, $book_cover);
-                                                    header("Location: ./?r=book&&slug=".$book_name_slug);
+                                                    header("Location: ./?r=book&slug=".$book_name_slug);
                                                 } else {
                                                     $errorMessage = "La taille de votre image ne doit pas dépasser " . $allowedMaxSize/1000000 . "mégaoctets.";
                                                 }

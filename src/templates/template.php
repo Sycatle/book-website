@@ -12,8 +12,8 @@ $pageCss = array(
 );
 $pageJavascripts = array(
   "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
-  "https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js",
-  "./dist/js/scripts.min.js"
+  "https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js"/*,
+  "./dist/js/scripts.min.js"*/
 );
 
 ?>

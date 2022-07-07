@@ -46,7 +46,7 @@ class Author extends Postable {
     public function getBiography() { return $this->biography; }
     public function getGender() { return new Gender($this->gender); }
     public function getBirth() { return $this->birth; }
-    public function getUrl() { return "./?r=author&&slug=" . $this->slug; }
+    public function getUrl() { return "./?r=author&slug=" . $this->slug; }
     public function getImageLink(){ return "./uploads/authors/$this->slug.webp"; }
     public function getBooks() { return $this->manager->getBookManager()->getBooksByAuthor($this->getId()); }
     public function getViews() { return $this->authorViews; }

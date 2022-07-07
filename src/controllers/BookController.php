@@ -10,7 +10,7 @@ $user = isset($_SESSION['id']) ? new \sycatle\beblio\entities\User($_SESSION['id
 if (isset($_GET['slug']) || isset($_GET['id'])) {
     $book = isset($_GET['id']) ? $bookManager->getBookById($_GET['id']) : $bookManager->getBookBySlug($_GET['slug']);
 
-    if ($book != null) {
+    if ($book != null && $book->getId() != null) {
         $pageTitle = $book->getTitle();
         $pageDescription = $book->getDescription();
         $pageTypeName = "Livres";
@@ -20,7 +20,7 @@ if (isset($_GET['slug']) || isset($_GET['id'])) {
 
         require("./src/templates/views/book.php");
     } else {
-        header("Location: .");
+        header("Location: ./?error=404");
     }
 } else {
     header("Location: .");

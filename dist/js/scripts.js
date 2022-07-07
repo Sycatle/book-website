@@ -16,14 +16,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 var isDark;
 
 function initiateLight() {
-  const hours = new Date().getHours();
-  isDayTime = hours > 7 && hours < 19;
-
   if (getCookie("dark") != null) {
     setLight(getCookie("dark"), true);
     return;
   } else {
-    setLight(!isDayTime, false);
+    setLight(false, false);
   }
 }
 

@@ -55,7 +55,7 @@ class Book extends Postable {
     public function getSummary() { return $this->summary; }
     public function getParutionDate() { return $this->parutionDate; }
     public function getGender() { return new Gender($this->genderId); }
-    public function getUrl() { return "./?r=book&&slug=" . $this->slug; }
+    public function getUrl() { return "./?r=book&slug=" . $this->slug; }
     public function getCoverLink(){ return "./uploads/books/$this->slug.webp"; }
     public function getViews() { return $this->bookViews; }
 

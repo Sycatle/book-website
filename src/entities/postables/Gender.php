@@ -32,7 +32,7 @@ class Gender extends Postable {
     public function getSlug() { return $this->slug; }
     public function getDescription() { return $this->description; }
     public function getColor() { return $this->color; }
-    public function getUrl() { return "./?r=gender&&slug=" . $this->slug; }
+    public function getUrl() { return "./?r=gender&slug=" . $this->slug; }
 
     /* SETTERS */
     public function setName($name) { $this->name = $name; }

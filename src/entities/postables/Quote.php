@@ -35,7 +35,7 @@ class Quote extends Postable {
     public function getDescription() { return $this->description; }
     public function getBiography() { return $this->summary; }
     public function getGender() { return new Gender($this->gender); }
-    public function getUrl() { return "./?r=quote&&slug=" . $this->slug; }
+    public function getUrl() { return "./?r=quote&slug=" . $this->slug; }
 
     /* SETTERS */
     public function setName($name) { $this->name = $name; }

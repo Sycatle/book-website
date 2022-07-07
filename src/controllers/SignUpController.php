@@ -49,7 +49,6 @@ $user = isset($_SESSION['id']) ? new User($_SESSION['id']) : null;
 if ($user == null) {
 	require("./src/templates/pages/signup.php");
 } else {
-	//echo("Aucune session détectée.");
-	header("Location: ." . (isset($_GET["a"]) ? "/?r=" . $_GET["a"] : ""));
+	header("Location: .");
 }
 ?>

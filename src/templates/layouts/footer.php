@@ -1,9 +1,9 @@
 <footer class="mt-5 pt-5">
     <div class="container ">
-		<div id="light-switch" title="Changer le thème">
+		<!-- <div id="light-switch" title="Changer le thème">
             <img id="light-switch-icon" src="./assets/img/dark/moon.png" height="20px">
         </div>
-		<hr>
+		<hr> -->
 	    <div class="row">
 	        <div class="col-lg-3">
 	            <div class="lc-block mb-4">
