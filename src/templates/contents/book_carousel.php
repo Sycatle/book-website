@@ -3,7 +3,7 @@
         <p class="text-muted">NOTRE SELECTION DE LIVRES</p>
         <h3 class="title"><?= $sliderTitle ?></h3>
     </div>
-    <div class="carousel book-carousel" height="200px" data-flickity='{ "wrapAround": true, "cellAlign": "left", "dragThreshold": "30", "pageDots": false, "resize": true, "autoPlay": <?= $sliderRate ?>  }'>
+    <div class="carousel book-carousel row" height="200px" data-flickity='{ "wrapAround": true, "cellAlign": "left", "dragThreshold": "30", "pageDots": false, "resize": true, "autoPlay": <?= $sliderRate ?>  }'>
         <?php foreach ($searchedBooks as $book) {  ?>
             <div class="book-cell d-flex">
                 <a href="./?r=book&slug=<?= $book['book_slug'] ?>"><img class="cell-image" src="./uploads/books/<?= $book['book_slug'] ?>.webp"></a>

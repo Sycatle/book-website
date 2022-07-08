@@ -1,6 +1,7 @@
 <?php
-$pageTitle = "Inscription";
-$pageTypeName = "Inscription";
+$pageTitle = "Créer son compte";
+$pageTypeName = "Créer son compte";
+$pageDescription = "Rejoignez l'aventure et créez votre compte sur bebl.io dès maintenant !";
 $canGoBack = true;
 
 $noHeader = true;
@@ -13,8 +14,8 @@ ob_start();
 <div class="container">
 	<div class="col-lg-6 card rounded-3 mx-auto">
 		<div id="brand" class="d-flex mx-auto mt-5">
-			<img src="./assets/img/dark/brand_icon.svg" height="65px">
-			<img src="./assets/img/dark/brand_text.svg" height="65px">
+			<img src="./assets/img/dark/brand_icon.svg" height="65px" alt="logo">
+			<img src="./assets/img/dark/brand_text.svg" height="65px" alt="bebl.io">
 		</div>
 
 		<form class="form-group mx-auto my-5 w-75" method="POST" name="register" enctype="multipart/form-data">

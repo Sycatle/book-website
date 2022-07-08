@@ -3,7 +3,7 @@
         <p class="text-muted">NOTRE SELECTION D'AUTEURS</p>
         <h3 class="title"><?= $sliderTitle ?></h3>
     </div>
-    <div class="carousel author-carousel" height="200px" data-flickity='{ "wrapAround": true, "cellAlign": "left", "dragThreshold": "30", "pageDots": false, "resize": true, "autoPlay": <?= $sliderRate ?>  }'>
+    <div class="carousel author-carousel row" height="200px" data-flickity='{ "wrapAround": true, "cellAlign": "left", "dragThreshold": "30", "pageDots": false, "resize": true, "autoPlay": <?= $sliderRate ?>  }'>
         <?php foreach ($searchedAuthors as $author) {  ?>
             <div class="author-cell d-flex">
                 <a href="./?r=author&slug=<?= $author['author_slug'] ?>"><img class="cell-image" src="./uploads/authors/<?= $author['author_slug'] ?>.webp"></a>

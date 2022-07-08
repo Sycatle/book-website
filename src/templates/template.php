@@ -19,7 +19,7 @@ $pageJavascripts = array(
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
   <title><?= (isset($pageTitle) ? $pageTitle . " | " : "") . "bebl.io" ?></title>
@@ -28,7 +28,25 @@ $pageJavascripts = array(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?= $pageDescription ?>">
   <meta name="author" content="sycatle.dev">
-	<meta name="keywords" content="bebl.io, biblio, livres, auteurs">
+	<meta name="keywords" content="bebl, io, beblio, biblio, livres, auteurs, citations, note, culture">
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bebl.io">
+  <meta name="twitter:description" content="<?= $pageDescription ?>">
+  <meta name="twitter:site" content="@bebl_dot_io">
+  <meta name="twitter:creator" content="@sycatle">
+  <meta name="twitter:image" content="https://www.bebl.io/assets/img/light/brand.svg">
+
+  <!-- Open Graph general (Facebook, Pinterest)-->
+  <meta property="og:title" content="Bebl.io">
+  <meta property="og:description" content="<?= $pageDescription ?>">
+  <meta property="og:url" content="https://www.bebl.io">
+  <meta property="og:site_name" content="Beblio">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.bebl.io/assets/img/light/brand.svg">
 
   <?php
   foreach ($pageCss as $css) { ?>
