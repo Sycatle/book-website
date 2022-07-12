@@ -12,8 +12,8 @@ $pageCss = array(
 );
 $pageJavascripts = array(
   "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
-  "https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js"/*,
-  "./dist/js/scripts.min.js"*/
+  "https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js",
+  "./dist/js/app.js"
 );
 
 ?>
@@ -50,17 +50,17 @@ $pageJavascripts = array(
 
   <?php
   foreach ($pageCss as $css) { ?>
-    <link rel="stylesheet" href="<?= $css ?>">
+    <link  type="text/css" rel="stylesheet" href="<?= $css ?>">
   <?php } 
   foreach ($pageJavascripts as $js) { ?>
-    <script src="<?= $js ?>"></script>
+    <script type="text/javascript" src="<?= $js ?>"></script>
   <?php } ?>
 
 </head>
 
 <body class="dark-mode">
     <?php if (!isset($noHeader)) { include("layouts/mainbar.php"); } ?>
-    <div id="main-content" class="container-fluid" style="margin-top: 65px;">
+    <div id="main-content" style="margin-top: 65px;">
       <?php if (!isset($noSidebar)) { include("layouts/leftbar.php"); } ?>
         <!-- Affichage du contenu de la page -->
         <?= $content ?>

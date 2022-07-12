@@ -3,12 +3,11 @@
 // Données relatives à chaques charousels
 .book-cell, .author-cell, .gender-cell {
   width: 95%;
-  height: 200px;
+  height: 210px;
   margin-left: 12px;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  height: 250px;
   .book-content, .author-content, .gender-content {
     box-shadow: 0 16px 40px 20 #7090B0;
     :hover{
@@ -29,7 +28,7 @@
 @media screen and (min-width: 1150px) {
 
   .book-cell, .author-cell, .gender-cell {
-    width: 40%;
+    width: 45%;
   }
 }
 // Affiche automatiquement le bouton more sur mobile pour un soucis d'accessibilité.
@@ -56,12 +55,12 @@
 
 .author-cell .cell-image {
   border-radius: 66%;
-  height: 150px;
-  width: 150px;
+  height: 125px;
+  width: 125px;
 }
 
 .book-cell .cell-image {
-  width: 150px;
+  width: 125px;
 }
 
 .cell-image {

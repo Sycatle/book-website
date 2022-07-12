@@ -63,7 +63,7 @@ body {
 #banner {
     height: 13rem;
     background-attachment: fixed;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -150,4 +150,8 @@ section {
     border-radius: 10px;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #555;
+}
+
+.avatar-thumbnail {
+    border: 2px solid lightgray;
 }

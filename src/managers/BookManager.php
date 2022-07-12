@@ -3,7 +3,6 @@ namespace sycatle\beblio\managers;
 
 require_once("./src/Manager.php");
 
-use JetBrains\PhpStorm\ArrayShape;
 use sycatle\beblio\Manager;
 require_once("./src/entities/postables/Book.php");
 use sycatle\beblio\entities\Book;

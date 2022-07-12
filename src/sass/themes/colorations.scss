@@ -56,32 +56,60 @@
 }
 
 
+/* COLOR */
+.bebl-red-color {
+    color: rgb(255, 85, 85)!important;
+}
+
+.bebl-orange-color {
+    color: rgb(205, 105, 75)!important;
+}
+
+.bebl-turquoise-color {
+    color: rgb(83, 222, 222)!important;
+}
+
+.bebl-yellow-color {
+    color: rgb(255, 176, 73)!important;}
+
+.bebl-purple-color {
+    color: rgb(183, 116, 252)!important;
+}
+
+.bebl-lime-color {
+    color: rgb(172, 249, 95)!important;
+}
+
+.bebl-bluesky-color {
+    color: rgb(101,203,255)!important;
+}
+
 /* BORDER */
 .bebl-red-border {
-    border: 2px solid rgb(255, 85, 85);
+    border: rgb(255, 85, 85);
 }
 
 .bebl-orange-border {
-    border: 2px solid rgb(205, 105, 75);
+    border: rgb(205, 105, 75);
 }
 
 .bebl-turquoise-border {
-    border: 2px solid rgb(83, 222, 222);
+    border: rgb(83, 222, 222);
 }
 
 .bebl-yellow-border {
-    border: 2px solid rgb(255, 176, 73);}
+    border: rgb(255, 176, 73);}
 
 .bebl-purple-border {
-    border: 2px solid rgb(183, 116, 252);
+    border: rgb(183, 116, 252);
 }
 
 .bebl-lime-border {
-    border: 2px solid rgb(172, 249, 95);
+    border: rgb(172, 249, 95);
 }
 
 .bebl-bluesky-border {
-    border: 2px solid rgb(101,203,255);
+    border: rgb(101,203,255);
 }
 
 

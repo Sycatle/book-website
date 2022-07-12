@@ -11,10 +11,6 @@
                     <line x1="21" y1="18" x2="7" y2="18"></line>
                 </svg>
             </button>
-            <a class="navbar-brand" href="." aria-label="Bebl.io">
-                <img id="brand-icon" src="./assets/img/dark/brand_icon.svg" height="40px">
-                <img id="brand-text" src="./assets/img/dark/brand_text.svg" height="40px">
-            </a>
         </div>
         <hr>
         <div class="offcanvas-body">
