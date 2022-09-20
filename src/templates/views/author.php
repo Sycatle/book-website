@@ -2,7 +2,7 @@
 
 <div class="container">
     <p>
-        <a class="text-decoration-none" href='./?r=authors'>
+        <a class="text-decoration-none" href="./?r=authors'>
             <?= $pageTypeName ?>
         </a>
         >

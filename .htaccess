@@ -1,6 +1,199 @@
 RewriteEngine on
+Options +FollowSymlinks
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . index.php [L]
+
+
+#REDIRECTION VERS HTTPS
+#RewriteCond %{REQUEST_SCHEME} =http
+#RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteRule ^book/([a-z].+)  index.php/?r=book&&slug=$1 [L]
+RewriteRule ^book/([0-9]+)  index.php/?r=book&&id=$1 [L]
+
+RewriteRule ^author/([a-z].+)  index.php/?r=author&&slug=$1 [L]
+RewriteRule ^author/([0-9]+)  index.php/?r=author&&id=$1 [L]
+
+RewriteRule ^gender/([a-z].+)  index.php/?r=gender&&slug=$1 [L]
+RewriteRule ^gender/([0-9]+)  index.php/?r=gender&&id=$1 [L]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RewriteRule ^mentions-legales$  mentions.php  [L]
+RewriteRule ^louer-mon-bien$  form_location.php  [L]
+RewriteRule ^vendre-mon-bien$  form_vente.php  [L]
+RewriteRule ^contactez-nous$  contact.php  [L]
+RewriteRule ^estimations$  estimation.php  [L]
+RewriteRule ^estimation$  estimation.php  [L]
+RewriteRule ^gestions$  gestion.php  [L]
+RewriteRule ^gestion$  gestion.php  [L]
+RewriteRule ^nos-agences$  agence.php  [L]
+RewriteRule ^agence$  agence.php  [L]
+RewriteRule ^equipe$  equipe.php  [L]
+RewriteRule ^locations/(.+)$  location.php?offre=location  [L]
+RewriteRule ^locations$  location.php?offre=location  [L]
+RewriteRule ^locations2$  location2.php?offre=location  [L]
+RewriteRule ^location-maison-la-ferte-bernard$  location.php?offre=location&recherche_type_bien[]=maison  [L]
+RewriteRule ^location-appartement-la-ferte-bernard$  location.php?offre=location&recherche_type_bien[]=appartement  [L]
+RewriteRule ^location-studio-la-ferte-bernard$  location.php?offre=location&recherche_type_bien[]=studio  [L]
+RewriteRule ^location-local-la-ferte-bernard$  location.php?offre=location&recherche_type_bien[]=local  [L]
+RewriteRule ^location-local-commercial-la-ferte-bernard$  location.php?offre=location&recherche_type_bien[]=local  [L]
+RewriteRule ^location-meuble-la-ferte-bernard$  location.php?offre=location&recherche_type_bien[]=meuble  [L]
+RewriteRule ^ventes/page-(.+)  immobilier.php?recherche_offre=achat&page=$1  [L]
+RewriteRule ^ventes/(.+)$  immobilier.php?recherche_offre=achat  [L]
+RewriteRule ^ventes-la-ferte-bernard-et-agglomeration/(.+)$  immobilier.php?recherche_offre=achat&recherche_commune=ferte-aglo&recherche_tri=DISTANCE_ASC  [L]
+RewriteRule ^vente-autour-de-la-ferte-bernard/(.+)$  immobilier.php?recherche_offre=achat&recherche_commune=autour-ferte&recherche_tri=DISTANCE_ASC  [L]
+RewriteRule ^ventes-autres-secteurs/(.+)$  immobilier.php?recherche_offre=achat&recherche_commune=autres-secteurs&recherche_tri=DISTANCE_ASC  [L]
+RewriteRule ^ventes$  immobilier.php?recherche_offre=achat  [L]
+RewriteRule ^ventes-la-ferte-bernard-et-agglomeration$  immobilier.php?recherche_offre=achat&recherche_commune=ferte-aglo&recherche_tri=DISTANCE_ASC  [L]
+RewriteRule ^vente-autour-de-la-ferte-bernard$  immobilier.php?recherche_offre=achat&recherche_commune=autour-ferte&recherche_tri=DISTANCE_ASC  [L]
+RewriteRule ^ventes-autres-secteurs$  immobilier.php?recherche_offre=achat&recherche_commune=autres-secteurs&recherche_tri=DISTANCE_ASC  [L]
+
+RewriteRule ^exclusivites/page-(.+)  immobilier.php?type_page=exclusivite&recherche_offre=achat&recherche_tri=DATE_DESC&page=$1   [L]
+RewriteRule ^nouveautes/page-(.+)  immobilier.php?type_page=nouveaute&recherche_offre=achat&recherche_tri=DATE_DESC&page=$1  [L]
+RewriteRule ^baisses-de-prix/page-(.+)  immobilier.php?type_page=baisse-de-prix&recherche_offre=achat&recherche_tri=DATE_DESC&page=$1  [L]
+
+RewriteRule ^exclusivites$  immobilier.php?type_page=exclusivite&recherche_offre=achat&recherche_tri=DATE_DESC  [L]
+RewriteRule ^nouveautes$  immobilier.php?type_page=nouveaute&recherche_offre=achat&recherche_tri=DATE_DESC  [L]
+RewriteRule ^baisses-de-prix$  immobilier.php?type_page=baisse-de-prix&recherche_offre=achat&recherche_tri=DATE_DESC  [L]
+
+RewriteRule ^vente$  vente.php  [L]
+RewriteRule ^credit$  credit.php  [L]
+RewriteRule ^mentions-legales$  mention.php  [L]
+
+RewriteRule ^equipe/(.+)  equipe_annonce.php?equipe_vcard=$1  [L]
+
+RewriteRule ^maison-(.+)  detail_modif.php?MAVREF=$1&compteur_consultation=1  [L]
+RewriteRule ^[0-9]+-pieces/maison-(.+)  detail_modif.php?MAVREF=$1&compteur_consultation=1  [L]
+RewriteRule ^[0-9]+-chambres/maison-(.+)  detail_modif.php?MAVREF=$1&compteur_consultation=1  [L]
+RewriteRule ^[0-9]+-pieces/[0-9]+-chambres/maison-(.+)  detail_modif.php?MAVREF=$1&compteur_consultation=1  [L]
+
+RewriteRule ^immobilier/appartement/a-vendre/[a-z-]+[0-9]+/appartement-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/appartement/a-louer/[a-z-]+[0-9]+/appartement-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/immeuble/a-vendre/[a-z-]+[0-9]+/immeuble-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/immeuble/a-louer/[a-z-]+[0-9]+/immeuble-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/local/a-vendre/[a-z-]+[0-9]+/local-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/local/a-louer/[a-z-]+[0-9]+/local-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/maison/a-vendre/[a-z-]+[0-9]+/maison-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/maison/a-louer/[a-z-]+[0-9]+/maison-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/propriete/a-vendre/[a-z-]+[0-9]+/propriete-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/propriete/a-louer/[a-z-]+[0-9]+/propriete-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/studio/a-vendre/[a-z-]+[0-9]+/studio-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/studio/a-louer/[a-z-]+[0-9]+/studio-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/terrain/a-vendre/[a-z-]+[0-9]+/terrain-(.+)  detail.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/terrain/a-louer/[a-z-]+[0-9]+/terrain-(.+)  detail.php?MAVREF=$1  [L]
+
+RewriteRule ^immobilier/appartement/a-vendre/[a-z-]+[0-9]+/fiche/appartement-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/appartement/a-louer/[a-z-]+[0-9]+/fiche/appartement-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/immeuble/a-vendre/[a-z-]+[0-9]+/fiche/immeuble-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/immeuble/a-louer/[a-z-]+[0-9]+/fiche/immeuble-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/local/a-vendre/[a-z-]+[0-9]+/fiche/local-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/local/a-louer/[a-z-]+[0-9]+/fiche/local-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/maison/a-vendre/[a-z-]+[0-9]+/fiche/maison-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/maison/a-louer/[a-z-]+[0-9]+/fiche/maison-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/propriete/a-vendre/[a-z-]+[0-9]+/fiche/propriete-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/propriete/a-louer/[a-z-]+[0-9]+/fiche/propriete-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/studio/a-vendre/[a-z-]+[0-9]+/fiche/studio-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/studio/a-louer/[a-z-]+[0-9]+/fiche/studio-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/terrain/a-vendre/[a-z-]+[0-9]+/fiche/terrain-(.+)  detail_pdf.php?MAVREF=$1  [L]
+RewriteRule ^immobilier/terrain/a-louer/[a-z-]+[0-9]+/fiche/terrain-(.+)  detail_pdf.php?MAVREF=$1  [L]
+
+
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-eloignees/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=DISTANCE_DESC&page=$2  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-recentes/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=DATE_DESC&page=$2  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-anciennes/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=DATE_ASC&page=$2  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-plusieurs-chambres/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=CHAMBRE_DESC&page=$2  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-chambre/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=CHAMBRE_ASC&page=$2  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-moins-cher/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=PRIX_ASC&page=$2  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-plus-cher/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=PRIX_DESC&page=$2  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-type-annonces-asc/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=TYPE_ASC&page=$2  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-type-annonces-desc/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=TYPE_DESC&page=$2  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-petite-surface/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=SURFACE_ASC&page=$2  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-grande-surface/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=SURFACE_DESC&page=$2  [L]
+
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-eloignees/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=DISTANCE_DESC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-recentes/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=DATE_DESC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-anciennes/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=DATE_ASC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-plusieurs-chambres/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=CHAMBRE_DESC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-chambre/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=CHAMBRE_ASC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-moins-cher/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=PRIX_ASC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-plus-cher/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=PRIX_DESC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-type-annonces-asc/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=TYPE_ASC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-type-annonces-desc/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=TYPE_DESC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-petite-surface/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=SURFACE_ASC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-grande-surface/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=SURFACE_DESC&page=$2  [L]
+
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=DISTANCE_ASC&page=$2  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/page-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=DISTANCE_ASC&page=$2  [L]
+
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-eloignees  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=DISTANCE_DESC  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-recentes  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=DATE_DESC  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-anciennes  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=DATE_ASC  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-plusieurs-chambres  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=CHAMBRE_DESC  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-chambre  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=CHAMBRE_ASC  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-moins-cher  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=PRIX_ASC  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-plus-cher  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=PRIX_DESC  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-type-annonces-asc  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=TYPE_ASC  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-type-annonces-desc  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=TYPE_DESC  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-petite-surface  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=SURFACE_ASC  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)/tri-annonces-grande-surface  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=SURFACE_DESC  [L]
+
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-eloignees  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=DISTANCE_DESC  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-recentes  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=DATE_DESC  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-anciennes  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=DATE_ASC  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-plusieurs-chambres  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=CHAMBRE_DESC  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-chambre  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=CHAMBRE_ASC  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-moins-cher  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=PRIX_ASC  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-plus-cher  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=PRIX_DESC  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-type-annonces-asc  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=TYPE_ASC  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-type-annonces-desc  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=TYPE_DESC  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-petite-surface  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=SURFACE_ASC  [L]
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)/tri-annonces-grande-surface  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=SURFACE_DESC  [L]
+
+RewriteRule ^immobilier/Local-a-vendre-(.+)  immobilier.php?recherche_commune=$1&recherche_offre=achat&recherche_type_bien[]=professionnel  [L]
+RewriteRule ^immobilier/Terrains-a-vendre-(.+)  immobilier.php?recherche_commune=$1&recherche_offre=achat&recherche_type_bien[]=terrain  [L]
+RewriteRule ^immobilier/Maisons-a-vendre-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=maison&recherche_commune=$1&recherche_tri=DISTANCE_ASC  [L]
+RewriteRule ^immobilier/Immeubles-a-vendre-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=immeuble&recherche_commune=$1&recherche_tri=DISTANCE_DESC  [L]
+
+RewriteRule ^immobilier/Proprietes-a-vendre-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=propriete&recherche_commune=$1&recherche_tri=DISTANCE_DESC  [L]
+
+RewriteRule ^immobilier/Terrains-a-vendre-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=terrain&recherche_commune=$1&recherche_tri=DISTANCE_DESC  [L]
+
+RewriteRule ^immobilier/Studios-a-vendre-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=studio&recherche_commune=$1&recherche_tri=DISTANCE_DESC  [L]
+
+
+RewriteRule ^immobilier/Appartements-a-vendre-(.+)  immobilier.php?type_page=referencement&recherche_offre=achat&recherche_type_bien[]=appartement&recherche_commune=$1&recherche_tri=DISTANCE_ASC  [L]
+
+#ErrorDocument 404 index.php
 
 <IfModule mod_expires.c>
 ExpiresActive on

@@ -87,7 +87,7 @@
 	        <div class="col-6 small">
 	            <div class="lc-block">
 	                <div editable="rich" >
-	                    <p>Copyright 2022 © <a class="text-decoration-none" target="_blank" href="https://sycatle.dev">sycatle.dev</a></p>
+	                    <p>Copyright 2021-<?= date("Y") ?> © <a class="text-decoration-none" target="_blank" href="https://sycatle.dev">sycatle.dev</a></p>
 	                </div>
 	            </div>
 	            <!-- /lc-block -->
@@ -96,8 +96,8 @@
 	            <div class="lc-block">
 	                <div editable="rich">
 	                    <p>
-	                        <a class="text-decoration-none" href="#">License Details</a> -
-	                        <a class="text-decoration-none" href="#">Terms &amp; Conditions</a>
+	                        <a class="text-decoration-none" href="#">Détails de la license</a> -
+	                        <a class="text-decoration-none" href="#">Termes &amp; Conditions</a>
 	                    </p>
 	                </div>
 	            </div>

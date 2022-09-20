@@ -87,7 +87,7 @@ class BookManager extends Manager {
         $statement->execute();
         $row=$statement->fetch(\PDO::FETCH_ASSOC);
 
-        return new Book($row['book_id']);
+        return $this->getBookById($row['book_id']);
     }
 
     function registerBook($title, $slug, $author_id, $description, $summary, $parution, $gender_id, $book_cover) {

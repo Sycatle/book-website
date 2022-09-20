@@ -7,7 +7,7 @@
                         <p><?= $row['quote_text'] ?></p>
                     </blockquote>
                     <figcaption class="blockquote-footer">
-                        <a href="?r=author&slug=<?= $row['author_slug'] ?>">
+                        <a href="./author/<?= $row['author_slug'] ?>">
                             <span title="<?= $row['author_name'] ?>">
                                 <?= $row['author_name'] ?>
                             </span>

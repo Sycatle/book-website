@@ -9,7 +9,7 @@
                 <line x1="17" y1="18" x2="3" y2="18"></line>
             </svg>
         </button>
-        <a class="navbar-brand" href="." title="bebl.io brand">
+        <a class="navbar-brand" href="." title="bebl.io">
             <img id="brand-icon" src="./assets/img/dark/brand_icon.svg" height="40px">
         </a>
 
@@ -38,12 +38,12 @@
                 </form>
             </div>
             <?php if ($user != null) { /* Affichage des modules uniquement si connecté. */ ?>
-                <a href="." class="">
+                <a href="." class="d-none d-lg-block mx-auto align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="align-middle">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
                     </svg>
-                    <small class="item-text d-none d-lg-flex">Accueil</small>
+                    <small class="item-text d-flex">Accueil</small>
                 </a>
                 <a href="#" class="text-white text-decoration-none mx-3" data-bs-toggle="dropdown" aria-expanded="false">
                     <img class="avatar-thumbnail rounded-circle" src="<?= $user->getAvatarUrl() ?>" height="35" width="35">
@@ -53,7 +53,9 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="align-middle">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                             </svg>
-                            Thème: Sombre</a></li>
+                            Thème Sombre
+                        </a>
+                    </li>
                     <li>
                         <a class="dropdown-item" href="./?r=settings">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="align-middle">

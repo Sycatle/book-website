@@ -6,11 +6,11 @@
     <div class="carousel author-carousel row" height="200px" data-flickity='{ "wrapAround": true, "cellAlign": "left", "dragThreshold": "30", "pageDots": false, "resize": true, "autoPlay": <?= $sliderRate ?>  }'>
         <?php foreach ($searchedAuthors as $author) {  ?>
             <div class="author-cell d-flex">
-                <a href="./?r=author&slug=<?= $author['author_slug'] ?>" title="<?= $author['author_name'] ?>"><img class="cell-image" src="./uploads/authors/<?= $author['author_slug'] ?>.webp"></a>
+                <a href="./author/<?= $author['author_slug'] ?>" title="<?= $author['author_name'] ?>"><img class="cell-image" src="./uploads/authors/<?= $author['author_slug'] ?>.webp"></a>
                 <div class="cell-content w-100">
-                    <div class="cell-header d-flex my-2 row">
+                    <div class="cell-header d-flex my-1 row">
                         <p class="cell-title col-10 d-flex my-auto">
-                            <a href="./?r=author&slug=<?= $author['author_slug'] ?>" title="<?= $author['author_name'] ?>"><?= $author['author_name'] ?></a>
+                            <a href="./author/<?= $author['author_slug'] ?>" title="<?= $author['author_name'] ?>"><?= $author['author_name'] ?></a>
                         </p>
                         <div class="btn-group col-2">
                             <button class="btn-more" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" title="Plus d'informations">
@@ -29,7 +29,7 @@
                                         Ajouter à une liste
                                     </a>
                                 </li>
-                                <li><a class="dropdown-item" href="./?r=gender&slug=<?= $author['gender_slug'] ?>">
+                                <li><a class="dropdown-item" href="./gender/<?= $author['gender_slug'] ?>">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag align-middle me-2">
                                             <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
                                             <line x1="7" y1="7" x2="7.01" y2="7"></line>
@@ -54,8 +54,8 @@
                         </div>
                     </div>
                     <div class="d-flex flex-column">
-                        <div class="author-gender my-2">
-                            <a href="./?r=gender&slug=<?= $author['gender_slug'] ?>" title="<?= $author['gender_name'] ?>">
+                        <div class="author-gender my-1">
+                            <a href="./gender/<?= $author['gender_slug'] ?>" title="<?= $author['gender_name'] ?>">
                                 <?= $author['gender_name'] ?>
                             </a>
                         </div>
@@ -66,7 +66,7 @@
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                             </svg>
                         </a>
-                        <a href="./?r=author&slug=<?= $author['author_slug'] ?>" class="btn-access mx-1" title="Accéder">
+                        <a href="./author/<?= $author['author_slug'] ?>" class="btn-access mx-1" title="Accéder">
                             Accéder
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right align-middle"><polyline points="9 18 15 12 9 6"></polyline></svg>
                         </a>

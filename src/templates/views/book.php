@@ -4,7 +4,7 @@ ob_start();
 
 <div class="container">
     <p>
-        <a class="text-decoration-none" href='./?r=books'>
+        <a class="text-decoration-none" href='<?= getcwd() ?>/books'>
             <?= $pageTypeName ?>
         </a>
         >
@@ -19,10 +19,10 @@ ob_start();
 
             <div class="book-main-infos">
                 <h3 class="book-title"><?= $book->getTitle() ?></h3>
-                <a href="./?r=author&slug=<?= $book->getAuthor()->getSlug() ?>">
+                <a href="../author/<?= $book->getAuthor()->getSlug() ?>">
                     <?= $book->getAuthor()->getName() ?>
                 </a>
-                <a href="?r=gender&slug=<?= $book->getGender()->getSlug() ?>">
+                <a href="../gender/<?= $book->getGender()->getSlug() ?>">
                     <?= $book->getGender()->getName() ?>
                 </a>
 

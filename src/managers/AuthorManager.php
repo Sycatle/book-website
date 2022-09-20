@@ -20,7 +20,7 @@ class AuthorManager extends \sycatle\beblio\Manager {
         $statement->execute();
         $row = $statement->fetch(\PDO::FETCH_ASSOC);
 
-        return new Author($row['author_id']);
+        return $this->getAuthorById($row['author_id']);
     }
 
     public function getAuthors($limit = 15){
