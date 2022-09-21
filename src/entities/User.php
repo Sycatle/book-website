@@ -2,11 +2,11 @@
 
 namespace sycatle\beblio\entities;
 
-require_once('./src/Manager.php');
+require_once('Manager.php');
 
 use sycatle\beblio\Manager;
 
-require_once('./src/entities/Postable.php');
+require_once('entities/Postable.php');
 
 use sycatle\beblio\entities\Postable;
 

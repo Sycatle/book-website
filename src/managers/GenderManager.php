@@ -1,9 +1,9 @@
 <?php 
 namespace sycatle\beblio\managers;
 
-require_once("./src/Manager.php");
+require_once("Manager.php");
 use sycatle\beblio\Manager;
-require_once("./src/entities/postables/Gender.php");
+require_once("entities/postables/Gender.php");
 use sycatle\beblio\entities\Gender;
 
 class GenderManager extends Manager {

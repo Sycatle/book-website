@@ -6,11 +6,12 @@
     <div class="carousel author-carousel row" height="200px" data-flickity='{ "wrapAround": true, "cellAlign": "left", "dragThreshold": "30", "pageDots": false, "resize": true, "autoPlay": <?= $sliderRate ?>  }'>
         <?php foreach ($searchedAuthors as $author) {  ?>
             <div class="author-cell d-flex">
-                <a href="./author/<?= $author['author_slug'] ?>" title="<?= $author['author_name'] ?>"><img class="cell-image" src="./uploads/authors/<?= $author['author_slug'] ?>.webp"></a>
+                <a class="mx-auto" href="./author/<?= $author['author_id'] ?>" title="<?= $author['author_name'] ?>"><img class="cell-image" src="./uploads/authors/<?= $author['author_slug'] ?>.webp"></a>
+                <?php /* ?>
                 <div class="cell-content w-100">
                     <div class="cell-header d-flex my-1 row">
                         <p class="cell-title col-10 d-flex my-auto">
-                            <a href="./author/<?= $author['author_slug'] ?>" title="<?= $author['author_name'] ?>"><?= $author['author_name'] ?></a>
+                            <a href="./author/<?= $author['author_id'] ?>" title="<?= $author['author_name'] ?>"><?= $author['author_name'] ?></a>
                         </p>
                         <div class="btn-group col-2">
                             <button class="btn-more" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" title="Plus d'informations">
@@ -55,7 +56,7 @@
                     </div>
                     <div class="d-flex flex-column">
                         <div class="author-gender my-1">
-                            <a href="./gender/<?= $author['gender_slug'] ?>" title="<?= $author['gender_name'] ?>">
+                            <a href="./gender/<?= $author['gender_id'] ?>" title="<?= $author['gender_name'] ?>">
                                 <?= $author['gender_name'] ?>
                             </a>
                         </div>
@@ -66,12 +67,13 @@
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                             </svg>
                         </a>
-                        <a href="./author/<?= $author['author_slug'] ?>" class="btn-access mx-1" title="Accéder">
+                        <a href="./author/<?= $author['author_id'] ?>" class="btn-access mx-1" title="Accéder">
                             Accéder
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right align-middle"><polyline points="9 18 15 12 9 6"></polyline></svg>
                         </a>
                     </div>
                 </div>
+                <?php */ ?>
             </div>
         <?php } ?>
     </div>

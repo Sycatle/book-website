@@ -2,9 +2,9 @@
 namespace sycatle\beblio\managers;
 use sycatle\beblio\entities\Postable;
 
-require_once("./src/Manager.php");
+require_once("Manager.php");
 use sycatle\beblio\Manager;
-require_once("./src/entities/User.php");
+require_once("entities/User.php");
 use sycatle\beblio\entities\User;
 
 class PostManager extends Manager {

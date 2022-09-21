@@ -1,6 +1,6 @@
 <?php 
 namespace sycatle\beblio\managers;
-require_once("./src/Manager.php");
+require_once("Manager.php");
 use sycatle\beblio\Manager;
 
 class QuoteManager extends Manager {

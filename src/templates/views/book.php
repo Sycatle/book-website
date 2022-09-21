@@ -55,12 +55,12 @@ ob_start();
         $sliderTitle = "De " . $book->getAuthor()->getName();
         $sliderRate = 0;
         $searchedBooks = $bookManager->getBooksByAuthor($book->getAuthor()->getId());
-        include("./src/templates/contents/book_carousel.php");
+        include("templates/contents/book_carousel.php");
         ?>
     </article>
 </div>
 
 <?php
 $content = ob_get_clean();
-require("./src/templates/template.php");
+require("templates/template.php");
 ?>

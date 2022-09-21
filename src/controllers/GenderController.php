@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION)) session_start();
 
-require("./src/Manager.php");
+require("Manager.php");
 
 $manager = new \sycatle\beblio\Manager();
 $genderManager = $manager->getGenderManager();
@@ -16,7 +16,7 @@ if (isset($_GET['slug'])) {
     $genderId = $genderData['gender_id'];
     $genderName = $genderData['gender_name'];
     $genderDescription = $genderData['gender_description'];
-    require("./src/templates/views/gender.php");
+    require("templates/views/gender.php");
 } else {
     header("Location: .");
 }

@@ -1,14 +1,14 @@
 <?php
 namespace sycatle\beblio;
-require_once("./src/managers/DataManager.php");
-require_once("./src/managers/PostManager.php");
-require_once("./src/managers/BookManager.php");
-require_once("./src/managers/UserManager.php");
-require_once("./src/managers/AuthorManager.php");
-require_once("./src/managers/GenderManager.php");
-require_once("./src/managers/QuoteManager.php");
-require_once("./src/managers/FormManager.php");
-require_once("./src/managers/ImageManager.php");
+require_once("managers/DataManager.php");
+require_once("managers/PostManager.php");
+require_once("managers/BookManager.php");
+require_once("managers/UserManager.php");
+require_once("managers/AuthorManager.php");
+require_once("managers/GenderManager.php");
+require_once("managers/QuoteManager.php");
+require_once("managers/FormManager.php");
+require_once("managers/ImageManager.php");
 
 class Manager{
     public function getDataManager() {

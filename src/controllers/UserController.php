@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION)) session_start();
 
-require("./src/Manager.php");
+require("Manager.php");
 $manager = new \sycatle\beblio\Manager();
 $userManager = $manager->getUserManager();
 

@@ -11,7 +11,7 @@ ob_start();
 <div id="banner" class="top-separator">
     <?php
     $searchedQuotes = $manager->getQuoteManager()->getQuotesByGender($genderId);
-    include("./src/templates/contents/quote_carousel.php");
+    include("templates/contents/quote_carousel.php");
     ?>
 </div>
 <section class="container">
@@ -20,7 +20,7 @@ ob_start();
         $sliderTitle = "De " . $genderName;
         $sliderRate = 0;
         $searchedBooks = $manager->getBookManager()->getBooksByGender($genderId);
-        include("./src/templates/contents/book_carousel.php");
+        include("templates/contents/book_carousel.php");
         ?>
     </div>
     <div class="mt-5">
@@ -28,12 +28,12 @@ ob_start();
         $sliderTitle = "De " . $genderName;
         $sliderRate = 0;
         $searchedAuthors = $manager->getAuthorManager()->getAuthorsByGender($genderId);
-        include("./src/templates/contents/author_carousel.php");
+        include("templates/contents/author_carousel.php");
         ?>
     </div>
 </section>
 
 <?php
 $content = ob_get_clean();
-require("./src/templates/template.php");
+require("templates/template.php");
 ?>

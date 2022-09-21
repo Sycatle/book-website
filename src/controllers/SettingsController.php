@@ -18,7 +18,7 @@ if ($user != null) {
 }
 
 if ($user != null) {
-    require("./src/templates/pages/settings.php");
+    require("templates/pages/settings.php");
 } else {
     header("Location: ./?r=connect");
 }

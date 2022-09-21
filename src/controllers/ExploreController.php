@@ -9,7 +9,7 @@ $user = isset($_SESSION['id']) ? new \sycatle\beblio\entities\User($_SESSION['id
 
 if ($user != null) {
 	$books = $manager->getBookManager()->getBooks();
-	require("./src/templates/pages/explore.php");
+	require("templates/pages/explore.php");
 } else {
 	header("Location: .");
 }

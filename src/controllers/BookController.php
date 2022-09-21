@@ -1,6 +1,6 @@
 <?php if (!isset($_SESSION)) session_start();
 
-require("./src/Manager.php");
+require("Manager.php");
 
 $manager = new \sycatle\beblio\Manager();
 $bookManager = $manager->getBookManager();
@@ -18,7 +18,7 @@ if (isset($_GET['slug']) || isset($_GET['id'])) {
 
         $book->incrementView();
 
-        require("./src/templates/views/book.php");
+        require("templates/views/book.php");
     } else {
         header("Location: ./?error=404");
     }

@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION)) session_start();
 
-require("./src/Manager.php");
+require("Manager.php");
 $manager = new \sycatle\beblio\Manager();
 $formManager = $manager->getFormManager();
 $bookManager = $manager->getBookManager();
@@ -134,7 +134,7 @@ if ($user != null) {
 /* Si l'utilisateur est connecté, afficher le formulaire de post de contenu. Sinon, demander à l'utilisateur de se connecter
 puis de rediriger l'utilisateur vers le formulaire de post. */
 if ($user != null) {
-	require("./src/templates/pages/post.php");
+	require("templates/pages/post.php");
 } else {
 	header("Location: ./?r=connect&&a=post");
 }

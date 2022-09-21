@@ -1,63 +1,63 @@
-/* --- SETTING UP UTILS --- */
+// /* --- SETTING UP UTILS --- */
 
-/* IMPORTING VARIABLES */
-@import "./utils/variables";
-/* END VARIABLES */
+// /* IMPORTING VARIABLES */
+// @import "./utils/variables";
+// /* END VARIABLES */
 
-/* --- END UTILS --- */
-
-
-/* --- SETTING UP LAYOUTS --- */
-
-/* IMPORTING NAV */
-@import "./layouts/nav";
-@import "./layouts/form";
-/* END NAV */
-
-/* --- SETTING UP LAYOUTS --- */
+// /* --- END UTILS --- */
 
 
-/* IMPORTING COMPONENTS */
-@import "./components/card";
-@import "./components/quotations";
-/* END COMPONENTS */
+// /* --- SETTING UP LAYOUTS --- */
 
-/* --- SETTING UP BASE --- */
+// /* IMPORTING NAV */
+// @import "./layouts/nav";
+// @import "./layouts/form";
+// /* END NAV */
 
-/* IMPORTING BASE */
-@import "./base/base";
-@import "./base/typography";
-/* END BASE */
-
-/* --- SETTING UP BASE --- */
+// /* --- SETTING UP LAYOUTS --- */
 
 
-/* --- SETTING UP VENDORS --- */
+// /* IMPORTING COMPONENTS */
+// @import "./components/card";
+// @import "./components/quotations";
+// /* END COMPONENTS */
 
-/* IMPORTING FLICKITY */
-@import "./vendors/bootstrap";
+// /* --- SETTING UP BASE --- */
+
+// /* IMPORTING BASE */
+// @import "./base/base";
+// @import "./base/typography";
+// /* END BASE */
+
+// /* --- SETTING UP BASE --- */
+
+
+// /* --- SETTING UP VENDORS --- */
+
+// /* IMPORTING FLICKITY */
+// @import "./vendors/bootstrap";
 @import "./vendors/flickity";
 /* END FLICKITY */
 
-/* --- SETTING UP VENDORS --- */
+// /* --- SETTING UP VENDORS --- */
 
 
-/* --- SETTING UP PAGES --- */
+// /* --- SETTING UP PAGES --- */
 
-/* IMPORTING USER-PROFILE */
-@import "./pages/book-page";
-@import "./pages/author-page";
+// /* IMPORTING USER-PROFILE */
+// @import "./pages/book-page";
+// @import "./pages/author-page";
 
-/* END USER-PROFILE */
+// /* END USER-PROFILE */
 
-/* --- SETTING UP PAGES --- */
+// /* --- SETTING UP PAGES --- */
 
 
-/* --- SETTING UP THEMES --- */
+// /* --- SETTING UP THEMES --- */
 
-/* IMPORTING THEMES */
-@import "./themes/themes";
-@import "./themes/colorations";
-/* END THEMES */
+// /* IMPORTING THEMES */
+// @import "./themes/themes";
+// @import "./themes/colorations";
+// /* END THEMES */
 
-/* --- SETTING UP THEMES --- */
+// /* --- SETTING UP THEMES --- */

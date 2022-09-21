@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION)) session_start();
 
-require("./src/Manager.php");
+require("Manager.php");
 
 $manager = new \sycatle\beblio\Manager();
 $authorManager = $manager->getAuthorManager();
@@ -19,7 +19,7 @@ if (isset($_GET['slug']) || isset($_GET['id'])) {
 
     $author->incrementView();
 
-    require("./src/templates/views/author.php");
+    require("templates/views/author.php");
 } else {
     header("Location: .");
 }

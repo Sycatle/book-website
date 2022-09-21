@@ -1,7 +1,7 @@
 <?php 
 namespace sycatle\beblio\managers;
-require_once("./src/Manager.php");
-require_once("./src/entities/postables/Author.php");
+require_once("Manager.php");
+require_once("entities/postables/Author.php");
 use sycatle\beblio\entities\Author;
 
 class AuthorManager extends \sycatle\beblio\Manager {

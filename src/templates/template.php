@@ -6,14 +6,15 @@ $pageTypeName;
 $pageKeywords;
 
 $pageCss = array(
-  "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
+  /* "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
+  "./dist/css/style.min.css",*/
   "./dist/css/flickity.min.css",
-  "./dist/css/style.min.css"
+  "./dist/css/output.css"
 );
 $pageJavascripts = array(
-  "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
-  "https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js",
-  "./dist/js/app.js"
+  /* "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js", 
+  "./dist/js/app.js", */
+  "https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js"
 );
 
 ?>
@@ -58,15 +59,15 @@ $pageJavascripts = array(
 
 </head>
 
-<body class="dark-mode">
-    <?php if (!isset($noHeader)) { include("layouts/mainbar.php"); } ?>
-    <div id="main-content" style="margin-top: 65px;">
-      <?php if (!isset($noSidebar)) { include("layouts/leftbar.php"); } ?>
-        <!-- Affichage du contenu de la page -->
+<body>
+    <?php include("layouts/mainbar.php"); ?>
+    <div id="main-content">
+      <?php /* include("layouts/leftbar.php"); */ ?>
+
         <?= $content ?>
-        <!-- Fin de l'affichage du contenu de la page -->
+
     </div>
-    <?php if (!isset($noFooter)) { include("layouts/footer.php"); } ?>
+    <?php include("layouts/footer.php"); ?>
 </body>
 
 </html>

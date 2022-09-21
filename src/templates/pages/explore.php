@@ -11,12 +11,12 @@ ob_start();
 		$sliderTitle = "Les livres en tendances";
 		$sliderRate = 16000;
 		$searchedBooks = $manager->getBookManager()->getBooks(9);
-		include("./src/templates/contents/book_carousel.php");
+		include("templates/contents/book_carousel.php");
 		?>
 	</div>
 </section>
 
 <?php
 $content = ob_get_clean();
-require("./src/templates/template.php");
+require("templates/template.php");
 ?>

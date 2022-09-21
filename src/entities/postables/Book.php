@@ -1,13 +1,13 @@
 <?php
 namespace sycatle\beblio\entities;
 
-require_once("./src/Manager.php");
+require_once("Manager.php");
 use sycatle\beblio\Manager;
-require_once("./src/entities/Postable.php");
+require_once("entities/Postable.php");
 use sycatle\beblio\entities\Postable;
-require_once("./src/entities/postables/Gender.php");
+require_once("entities/postables/Gender.php");
 use sycatle\beblio\entities\Gender;
-require_once("./src/entities/postables/Author.php");
+require_once("entities/postables/Author.php");
 use sycatle\beblio\entities\Author;
 
 class Book extends Postable {

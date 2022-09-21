@@ -5,8 +5,8 @@ namespace sycatle\beblio\managers;
 use sycatle\beblio\entities\User;
 use sycatle\beblio\Manager;
 
-require_once("./src/Manager.php");
-require_once("./src/entities/User.php");
+require_once("Manager.php");
+require_once("entities/User.php");
 
 class UserManager extends Manager
 {

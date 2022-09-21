@@ -9,14 +9,17 @@ RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{SERVER_PORT} 80
 #RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-RewriteRule ^book/([a-z].+)  index.php/?r=book&&slug=$1 [L]
-RewriteRule ^book/([0-9]+)  index.php/?r=book&&id=$1 [L]
+RewriteRule .* src/App.php [L]
+RewriteRule home/ src/App.php [L]
 
-RewriteRule ^author/([a-z].+)  index.php/?r=author&&slug=$1 [L]
-RewriteRule ^author/([0-9]+)  index.php/?r=author&&id=$1 [L]
+RewriteRule ^book/([a-z].+)  src/App.php/?r=book&&slug=$1 [L]
+RewriteRule ^book/([0-9]+)  src/App.php/?r=book&&id=$1 [L]
 
-RewriteRule ^gender/([a-z].+)  index.php/?r=gender&&slug=$1 [L]
-RewriteRule ^gender/([0-9]+)  index.php/?r=gender&&id=$1 [L]
+RewriteRule ^author/([a-z].+)  src/App.php/?r=author&&slug=$1 [L]
+RewriteRule ^author/([0-9]+)  src/App.php/?r=author&&id=$1 [L]
+
+RewriteRule ^gender/([a-z].+)  src/App.php/r=gender&&slug=$1 [L]
+RewriteRule ^gender/([0-9]+)  src/App.php/r=gender&&id=$1 [L]
 
 
 

@@ -41,26 +41,26 @@ $router->run(); */
 if (isset($_GET['r'])) {
     $getter = $_GET['r'];
     switch ($getter) {
-        case 'admin': require("./src/controllers/AdminController.php");exit();
+        case 'admin': require("controllers/AdminController.php");exit();
 
-        case 'login': require("./src/controllers/LoginController.php"); exit();
-        case 'signup': require("./src/controllers/SignUpController.php"); exit();
-        case 'logout': require("./src/controllers/LogoutController.php");exit();
+        case 'login': require("controllers/LoginController.php"); exit();
+        case 'signup': require("controllers/SignUpController.php"); exit();
+        case 'logout': require("controllers/LogoutController.php");exit();
 
-        case 'explore': require("./src/controllers/ExploreController.php"); exit();
-        case 'post': require("./src/controllers/PostController.php");exit();
-        case 'library': require("./src/controllers/LibraryController.php");exit();
-        case 'settings': require("./src/controllers/SettingsController.php");exit();
+        case 'explore': require("controllers/ExploreController.php"); exit();
+        case 'post': require("controllers/PostController.php");exit();
+        case 'library': require("controllers/LibraryController.php");exit();
+        case 'settings': require("controllers/SettingsController.php");exit();
 
         // Contents Pages
-        case 'book': require("./src/controllers/BookController.php");exit();
-        case 'author': require("./src/controllers/AuthorController.php");exit();
-        case 'quote': require("./src/controllers/QuoteController.php");exit();
-        case 'gender': require("./src/controllers/GenderController.php");exit();
+        case 'book': require("controllers/BookController.php");exit();
+        case 'author': require("controllers/AuthorController.php");exit();
+        case 'quote': require("controllers/QuoteController.php");exit();
+        case 'gender': require("controllers/GenderController.php");exit();
 
-        case 'error': require("./src/controllers/ErrorController.php");exit();
+        case 'error': require("controllers/ErrorController.php");exit();
         default: header("Location: ./?error=404");exit();
     }
 } else {
-    require("./src/controllers/HomeController.php");
+    require("controllers/HomeController.php");
 }

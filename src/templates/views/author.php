@@ -50,11 +50,11 @@
         $sliderTitle = "De " . $author->getName();
         $sliderRate = 0;
         $searchedBooks = $author->getBooks();
-        include("./src/templates/contents/book_carousel.php");
+        include("templates/contents/book_carousel.php");
         ?>
     </article>
 </div>
 <?php
 $content = ob_get_clean();
-require("./src/templates/template.php");
+require("templates/template.php");
 ?>

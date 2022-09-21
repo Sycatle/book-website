@@ -18,10 +18,10 @@ ob_start();
             <div class="tab-content col-lg-9" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-account" role="tabpanel" aria-labelledby="v-pills-account-tab">
                     <?php
-                    include("./src/templates/modals/settings/username.php");
-                    include("./src/templates/modals/settings/email.php");
-                    include("./src/templates/modals/settings/delete_account.php");
-                    include("./src/templates/modals/settings/disconnect.php");
+                    include("templates/modals/settings/username.php");
+                    include("templates/modals/settings/email.php");
+                    include("templates/modals/settings/delete_account.php");
+                    include("templates/modals/settings/disconnect.php");
                     ?>
                     <h3>Mon Compte</h3>
                     <div class="card rounded-3 mx-auto container">
@@ -74,5 +74,5 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-require("./src/templates/template.php");
+require("templates/template.php");
 ?>

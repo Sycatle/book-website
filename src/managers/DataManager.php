@@ -1,9 +1,9 @@
 <?php 
 namespace sycatle\beblio\managers;
 
-require_once("./src/Config.php");
+require_once("Config.php");
 use sycatle\beblio\Config;
-require_once("./src/Manager.php");
+require_once("Manager.php");
 use sycatle\beblio\Manager;
 
 class DataManager extends Manager {

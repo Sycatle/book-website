@@ -1,10 +1,10 @@
 <?php 
 namespace sycatle\beblio\managers;
 
-require_once("./src/Manager.php");
+require_once("Manager.php");
 
 use sycatle\beblio\Manager;
-require_once("./src/entities/postables/Book.php");
+require_once("entities/postables/Book.php");
 use sycatle\beblio\entities\Book;
 
 class BookManager extends Manager {

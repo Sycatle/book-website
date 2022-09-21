@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION)) session_start();
 
-require("./src/Manager.php");
+require("Manager.php");
 $manager = new \sycatle\beblio\Manager();
 $quoteManager = $manager->getQuoteManager();
 
@@ -16,7 +16,7 @@ if (isset($_GET['slug'])) {
     $quoteGenderSlug = $quoteData['gender_slug'];
     $quoteAuthorName = $quoteData['author_name'];
     $quoteAuthorSlug = $quoteData['author_slug'];
-    require("./src/templates/views/quote.php");
+    require("templates/views/quote.php");
 } else {
     header("Location: .");
 }
